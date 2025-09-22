@@ -1,66 +1,41 @@
 # RoyerTUAssignments
 import allel
 import pandas as pd
-from collections import Counter
+import collections #import Counter
 import numpy as np
 
 tmpvcf = 'C:/Users/laure/Documents/BIOL5131/Altai_1000lines.vcf'
 # longvcf = 'C:/Users/laure/Documents/BIOL5131/AltaiNea.hg19_1000g.22.mod.vcf.gz'
 
-readvcf = allel.read_vcf(tmpvcf)
-# print(readvcf)
-keys = readvcf.keys()
-print(keys)
+# readvcf = allel.read_vcf(tmpvcf)
+# keys = readvcf.keys()
+# print(keys)
 
-key_to_find = "variants/ALT"
+#############
+### update to specific call rather than full df for counts
+#############
 
-##################
-alt_alleles = readvcf['variants/ALT']
-python_list = alt_alleles.tolist()
-# print(python_list)
-# print("\nType of Python List:", type(python_list))
-# (print(len(python_list)))
-readvcf['altlist'] = python_list
-# print(readvcf)
+subset = allel.read_vcf(tmpvcf, fields = ['variants/REF', 'variants/ALT'])
 
-ref_alleles = readvcf['variants/REF']
-python_reflist = ref_alleles.tolist()
-# print(python_reflist)
-# print("\nType of Python List:", type(python_reflist))
-# (print(len(python_reflist)))
-readvcf['reflist'] = python_reflist
-# print(readvcf)
+alt_alleles = subset['variants/ALT']
+ref_alleles = subset['variants/REF']
 
 ###################
-keys_to_combine = ['refllist', 'altlist']
+combinationcounts = collections.Counter()
 
-# Extract combinations as tuples
-combinations = []
-for d in readvcf:
-    combination = tuple(d[key] for key in keys_to_combine)
-    combinations.append(combination)
+for ref, alt_list in zip(ref_alleles, alt_alleles):
+    # Flag to check if we found any valid ALT
+    has_valid_alt = False
+    
+    for alt in alt_list:
+        if alt and alt != '.':
+            combinationcounts[(ref, alt)] += 1
+            has_valid_alt = True
+    
+    # If no valid ALT, count as ref -> ref
+    if not has_valid_alt:
+        combinationcounts[(ref, ref)] += 1
 
-# Count the occurrences of each combination
-combination_counts = Counter(combinations)
-
-print(combination_counts)
-
-
-
-
-
-
-
-
-
-# print("\nFirst few reference alleles:", ref_alleles[:5])
-# print("First few alternate alleles:", alt_alleles[:1000])
-
-
-
-
-# combinations_to_count = [(d['variants/REF'], d['variants/ID']) for d in readvcf]
-# combination_counts = Counter(combinations_to_count)
-
-# print("Counts of (key1, key2) combinations:")
-# print(combination_counts)
+# Print results
+for (ref, alt), count in combinationcounts.items():
+    print(f"{ref} -> {alt}: {count}")
