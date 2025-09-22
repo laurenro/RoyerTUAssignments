@@ -36,6 +36,12 @@ for ref, alt_list in zip(ref_alleles, alt_alleles):
     if not has_valid_alt:
         combinationcounts[(ref, ref)] += 1
 
-# Print results
-for (ref, alt), count in combinationcounts.items():
-    print(f"{ref} -> {alt}: {count}")
+###Print results
+# for (ref, alt), count in combinationcounts.items():
+#     print(f"{ref} -> {alt}: {count}")
+###Print results in table
+countdf = pd.DataFrame.from_dict(combinationcounts, orient= "index", columns=["count"])
+countdf.index =  pd.MultiIndex.from_tuples(countdf.index, names=["REF", "ALT"])
+table = countdf["count"].unstack(fill_value=0)
+
+table.to_csv('tmp_val.csv', index=False)
