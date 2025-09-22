@@ -1,0 +1,1000 @@
+##fileformat=VCFv4.1
+##FORMAT=<ID=A,Number=2,Type=Integer,Description="Number of A bases on forward and reverse strand">
+##FORMAT=<ID=C,Number=2,Type=Integer,Description="Number of C bases on forward and reverse strand">
+##FORMAT=<ID=G,Number=2,Type=Integer,Description="Number of G bases on forward and reverse strand">
+##FORMAT=<ID=T,Number=2,Type=Integer,Description="Number of T bases on forward and reverse strand">
+##FORMAT=<ID=IR,Number=1,Type=Integer,Description="Number of reads with InDel starting at this position">
+##FORMAT=<ID=AD,Number=.,Type=Integer,Description="Allelic depths for the ref and alt alleles in the order listed">
+##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Read Depth (only filtered reads used for calling)">
+##FORMAT=<ID=GQ,Number=1,Type=Float,Description="Genotype Quality">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=PL,Number=G,Type=Integer,Description="Normalized, Phred-scaled likelihoods for genotypes as defined in the VCF specification">
+##INFO=<ID=AF1000g,Number=1,Type=Float,Description="Global alternative allele frequency (AF) based on Alternate Allele Count/Total Allele Count in the 20110521 1000Genome release">
+##INFO=<ID=AMR_AF,Number=1,Type=Float,Description="Alternative allele frequency (AF) for samples from AMR based on 1000G">
+##INFO=<ID=ASN_AF,Number=1,Type=Float,Description="Alternative allele frequency (AF) for samples from ASN based on 1000G">
+##INFO=<ID=AFR_AF,Number=1,Type=Float,Description="Alternative allele frequency (AF) for samples from AFR based on 1000G">
+##INFO=<ID=EUR_AF,Number=1,Type=Float,Description="Alternative allele frequency (AF) for samples from EUR based on 1000G">
+##INFO=<ID=1000gALT,Number=1,Type=String,Description="Alternative allele referred to by 1000G">
+##INFO=<ID=TS,Number=1,Type=String,Description="Sequences in Ensembl v64 EPO Compara 6 primate block">
+##INFO=<ID=TSseq,Number=1,Type=String,Description="Primary species bases (in order of TS field) in the EPO Compara 6 primate block">
+##INFO=<ID=CAnc,Number=1,Type=String,Description="Ref-Chimp/Human ancestor base at this position">
+##INFO=<ID=GAnc,Number=1,Type=String,Description="Ref-Gorilla ancestor base at this position">
+##INFO=<ID=OAnc,Number=1,Type=String,Description="Ref-Orang ancestor base at this position">
+##INFO=<ID=mSC,Number=1,Type=Float,Description="PhastCons Mammalian conservation score (excluding human)">
+##INFO=<ID=pSC,Number=1,Type=Float,Description="PhastCons Primate conservation score (excluding human)">
+##INFO=<ID=GRP,Number=1,Type=Float,Description="GERP conservation score">
+##INFO=<ID=bSC,Number=1,Type=Float,Description="B score">
+##INFO=<ID=Map20,Number=1,Type=Float,Description="Mapability score of Duke University (determined from 20bp reads)">
+##INFO=<ID=CpG,Number=0,Type=Flag,Description="Position is in a CpG context based on the Ref/Ancestor">
+##INFO=<ID=RM,Number=0,Type=Flag,Description="Position is repeat masked in the reference sequence of the EPO 6 primate block">
+##INFO=<ID=SysErr,Number=0,Type=Flag,Description="Position was identified as systematic error in the 1000 genome trios">
+##INFO=<ID=SysErrHCB,Number=0,Type=Flag,Description="Position was identified as systematic error based on shared SNPs in human, chimp and bonobo">
+##INFO=<ID=UR,Number=0,Type=Flag,Description="Position is in a copy number control region identified by the Eichler lab">
+##INFO=<ID=AC,Number=A,Type=Integer,Description="Allele count in genotypes, for each ALT allele, in the same order as listed">
+##INFO=<ID=AF,Number=A,Type=Float,Description="Allele Frequency, for each ALT allele, in the same order as listed">
+##INFO=<ID=AN,Number=1,Type=Integer,Description="Total number of alleles in called genotypes">
+##INFO=<ID=BaseQRankSum,Number=1,Type=Float,Description="Z-score from Wilcoxon rank sum test of Alt Vs. Ref base qualities">
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Filtered Depth">
+##INFO=<ID=DS,Number=0,Type=Flag,Description="Were any of the samples downsampled?">
+##INFO=<ID=Dels,Number=1,Type=Float,Description="Fraction of Reads Containing Spanning Deletions">
+##INFO=<ID=FS,Number=1,Type=Float,Description="Phred-scaled p-value using Fisher's exact test to detect strand bias">
+##INFO=<ID=HRun,Number=1,Type=Integer,Description="Largest Contiguous Homopolymer Run of Variant Allele In Either Direction">
+##INFO=<ID=HaplotypeScore,Number=1,Type=Float,Description="Consistency of the site with at most two segregating haplotypes">
+##INFO=<ID=InbreedingCoeff,Number=1,Type=Float,Description="Inbreeding coefficient as estimated from the genotype likelihoods per-sample when compared against the Hardy-Weinberg expectation">
+##INFO=<ID=MQ,Number=1,Type=Float,Description="RMS Mapping Quality">
+##INFO=<ID=MQ0,Number=1,Type=Integer,Description="Total Mapping Quality Zero Reads">
+##INFO=<ID=MQRankSum,Number=1,Type=Float,Description="Z-score From Wilcoxon rank sum test of Alt vs. Ref read mapping qualities">
+##INFO=<ID=QD,Number=1,Type=Float,Description="Variant Confidence/Quality by Depth">
+##INFO=<ID=ReadPosRankSum,Number=1,Type=Float,Description="Z-score from Wilcoxon rank sum test of Alt vs. Ref read position bias">
+##UnifiedGenotyper="analysis_type=UnifiedGenotyper input_file=[/mnt/ngs_data/AltaiNeanderthal_temp_folder/final_bam/hg19_1000g/AltaiNea.hg19_1000g.22.dq.bam] read_buffer_size=null phone_home=STANDARD read_filter=[] intervals=[org.broadinstitute.sting.commandline.IntervalBinding@68ed662d] excludeIntervals=null interval_set_rule=UNION interval_merging=ALL reference_sequence=/mnt/solexa/Genomes/hg19_1000g/whole_genome.fa rodBind=[] nonDeterministicRandomSeed=false downsampling_type=BY_SAMPLE downsample_to_fraction=null downsample_to_coverage=250 baq=OFF baqGapOpenPenalty=40.0 performanceLog=null useOriginalQualities=false defaultBaseQualities=-1 validation_strictness=SILENT unsafe=null num_threads=1 read_group_black_list=null pedigree=[] pedigreeString=[] pedigreeValidationType=STRICT allow_intervals_with_unindexed_bam=false disable_experimental_low_memory_sharding=false logging_level=INFO log_to_file=null help=false genotype_likelihoods_model=BOTH p_nonref_model=EXACT heterozygosity=0.001 pcr_error_rate=1.0E-4 genotyping_mode=DISCOVERY output_mode=EMIT_ALL_SITES standard_min_confidence_threshold_for_calling=30.0 standard_min_confidence_threshold_for_emitting=30.0 computeSLOD=false alleles=(RodBinding name= source=UNBOUND) assume_single_sample_reads=null min_base_quality_score=17 max_deletion_fraction=0.05 min_indel_count_for_genotyping=5 indel_heterozygosity=1.25E-4 indelGapContinuationPenalty=10.0 indelGapOpenPenalty=45.0 indelHaplotypeSize=80 bandedIndel=false indelDebug=false ignoreSNPAlleles=false dbsnp=(RodBinding name= source=UNBOUND) out=org.broadinstitute.sting.gatk.io.stubs.VCFWriterStub NO_HEADER=org.broadinstitute.sting.gatk.io.stubs.VCFWriterStub sites_only=org.broadinstitute.sting.gatk.io.stubs.VCFWriterStub debug_file=null metrics_file=null annotation=[] excludeAnnotation=[] filter_mismatching_base_and_quals=false"
+##contig=<ID=1,length=249250621>
+##contig=<ID=10,length=135534747>
+##contig=<ID=11,length=135006516>
+##contig=<ID=12,length=133851895>
+##contig=<ID=13,length=115169878>
+##contig=<ID=14,length=107349540>
+##contig=<ID=15,length=102531392>
+##contig=<ID=16,length=90354753>
+##contig=<ID=17,length=81195210>
+##contig=<ID=18,length=78077248>
+##contig=<ID=19,length=59128983>
+##contig=<ID=2,length=243199373>
+##contig=<ID=20,length=63025520>
+##contig=<ID=21,length=48129895>
+##contig=<ID=22,length=51304566>
+##contig=<ID=3,length=198022430>
+##contig=<ID=4,length=191154276>
+##contig=<ID=5,length=180915260>
+##contig=<ID=6,length=171115067>
+##contig=<ID=7,length=159138663>
+##contig=<ID=8,length=146364022>
+##contig=<ID=9,length=141213431>
+##contig=<ID=GL000191.1,length=106433>
+##contig=<ID=GL000192.1,length=547496>
+##contig=<ID=GL000193.1,length=189789>
+##contig=<ID=GL000194.1,length=191469>
+##contig=<ID=GL000195.1,length=182896>
+##contig=<ID=GL000196.1,length=38914>
+##contig=<ID=GL000197.1,length=37175>
+##contig=<ID=GL000198.1,length=90085>
+##contig=<ID=GL000199.1,length=169874>
+##contig=<ID=GL000200.1,length=187035>
+##contig=<ID=GL000201.1,length=36148>
+##contig=<ID=GL000202.1,length=40103>
+##contig=<ID=GL000203.1,length=37498>
+##contig=<ID=GL000204.1,length=81310>
+##contig=<ID=GL000205.1,length=174588>
+##contig=<ID=GL000206.1,length=41001>
+##contig=<ID=GL000207.1,length=4262>
+##contig=<ID=GL000208.1,length=92689>
+##contig=<ID=GL000209.1,length=159169>
+##contig=<ID=GL000210.1,length=27682>
+##contig=<ID=GL000211.1,length=166566>
+##contig=<ID=GL000212.1,length=186858>
+##contig=<ID=GL000213.1,length=164239>
+##contig=<ID=GL000214.1,length=137718>
+##contig=<ID=GL000215.1,length=172545>
+##contig=<ID=GL000216.1,length=172294>
+##contig=<ID=GL000217.1,length=172149>
+##contig=<ID=GL000218.1,length=161147>
+##contig=<ID=GL000219.1,length=179198>
+##contig=<ID=GL000220.1,length=161802>
+##contig=<ID=GL000221.1,length=155397>
+##contig=<ID=GL000222.1,length=186861>
+##contig=<ID=GL000223.1,length=180455>
+##contig=<ID=GL000224.1,length=179693>
+##contig=<ID=GL000225.1,length=211173>
+##contig=<ID=GL000226.1,length=15008>
+##contig=<ID=GL000227.1,length=128374>
+##contig=<ID=GL000228.1,length=129120>
+##contig=<ID=GL000229.1,length=19913>
+##contig=<ID=GL000230.1,length=43691>
+##contig=<ID=GL000231.1,length=27386>
+##contig=<ID=GL000232.1,length=40652>
+##contig=<ID=GL000233.1,length=45941>
+##contig=<ID=GL000234.1,length=40531>
+##contig=<ID=GL000235.1,length=34474>
+##contig=<ID=GL000236.1,length=41934>
+##contig=<ID=GL000237.1,length=45867>
+##contig=<ID=GL000238.1,length=39939>
+##contig=<ID=GL000239.1,length=33824>
+##contig=<ID=GL000240.1,length=41933>
+##contig=<ID=GL000241.1,length=42152>
+##contig=<ID=GL000242.1,length=43523>
+##contig=<ID=GL000243.1,length=43341>
+##contig=<ID=GL000244.1,length=39929>
+##contig=<ID=GL000245.1,length=36651>
+##contig=<ID=GL000246.1,length=38154>
+##contig=<ID=GL000247.1,length=36422>
+##contig=<ID=GL000248.1,length=39786>
+##contig=<ID=GL000249.1,length=38502>
+##contig=<ID=MT,length=16569>
+##contig=<ID=X,length=155270560>
+##contig=<ID=Y,length=59373566>
+##reference=file:///mnt/solexa/Genomes/hg19_1000g/whole_genome.fa
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	AltaiNea
+22	16050037	.	G	.	.	.	DP=1;HaplotypeScore=0.0000;MQ=0.00;MQ0=1	GT:A:C:G:T:IR	./.:0,0:0,0:1,0:0,0:0
+22	16050038	.	A	.	.	.	DP=2;HaplotypeScore=0.0000;MQ=0.00;MQ0=2	GT:A:C:G:T:IR	./.:2,0:0,0:0,0:0,0:0
+22	16050039	.	C	.	.	.	DP=3;HaplotypeScore=0.0000;MQ=0.00;MQ0=3	GT:A:C:G:T:IR	./.:0,0:3,0:0,0:0,0:0
+22	16050040	.	C	.	.	.	DP=3;HaplotypeScore=0.0000;MQ=0.00;MQ0=3	GT:A:C:G:T:IR	./.:0,0:3,0:0,0:0,0:0
+22	16050041	.	T	.	.	.	DP=4;HaplotypeScore=0.0000;MQ=0.00;MQ0=4	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:3,1:0
+22	16050042	.	T	.	.	.	DP=4;HaplotypeScore=0.0000;MQ=0.00;MQ0=4	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:3,1:0
+22	16050043	.	G	.	.	.	DP=4;HaplotypeScore=0.0000;MQ=0.00;MQ0=4	GT:A:C:G:T:IR	./.:0,0:0,0:3,1:0,0:0
+22	16050044	.	G	.	.	.	DP=4;HaplotypeScore=0.0000;MQ=0.00;MQ0=4	GT:A:C:G:T:IR	./.:0,0:0,0:3,1:0,0:0
+22	16050045	.	C	.	.	.	DP=6;HaplotypeScore=0.0000;MQ=0.00;MQ0=6	GT:A:C:G:T:IR	./.:0,0:4,1:0,0:1,0:0
+22	16050046	.	C	.	.	.	DP=6;HaplotypeScore=0.0000;MQ=0.00;MQ0=6	GT:A:C:G:T:IR	./.:0,0:5,1:0,0:0,0:0
+22	16050047	.	A	.	.	.	DP=11;HaplotypeScore=0.0000;MQ=0.00;MQ0=11	GT:A:C:G:T:IR	./.:5,6:0,0:0,0:0,0:0
+22	16050048	.	A	.	.	.	DP=11;HaplotypeScore=0.0000;MQ=0.00;MQ0=11	GT:A:C:G:T:IR	./.:5,6:0,0:0,0:0,0:0
+22	16050049	.	G	.	.	.	DP=11;HaplotypeScore=0.0000;MQ=0.00;MQ0=11	GT:A:C:G:T:IR	./.:0,0:0,0:5,6:0,0:0
+22	16050050	.	T	.	.	.	DP=12;HaplotypeScore=0.0000;MQ=0.00;MQ0=12	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:6,6:0
+22	16050051	.	C	.	.	.	DP=13;HaplotypeScore=0.0000;MQ=0.00;MQ0=13	GT:A:C:G:T:IR	./.:0,0:6,6:0,0:0,1:0
+22	16050052	.	A	.	.	.	DP=13;HaplotypeScore=0.0000;MQ=0.00;MQ0=13	GT:A:C:G:T:IR	./.:6,7:0,0:0,0:0,0:0
+22	16050053	.	C	.	.	.	DP=13;HaplotypeScore=0.0000;MQ=0.00;MQ0=13	GT:A:C:G:T:IR	./.:0,0:6,7:0,0:0,0:0
+22	16050054	.	T	.	.	.	DP=15;HaplotypeScore=0.0000;MQ=0.00;MQ0=15	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:7,8:0
+22	16050055	.	T	.	.	.	DP=15;HaplotypeScore=0.0000;MQ=0.00;MQ0=15	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:7,8:0
+22	16050056	.	C	.	.	.	DP=15;HaplotypeScore=0.0000;MQ=0.00;MQ0=15	GT:A:C:G:T:IR	./.:0,0:7,8:0,0:0,0:0
+22	16050057	.	C	.	.	.	DP=15;HaplotypeScore=0.0000;MQ=0.00;MQ0=15	GT:A:C:G:T:IR	./.:0,0:7,8:0,0:0,0:0
+22	16050058	.	T	.	.	.	DP=15;HaplotypeScore=0.0000;MQ=0.00;MQ0=15	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:7,8:0
+22	16050059	.	C	.	.	.	DP=16;HaplotypeScore=0.0000;MQ=0.00;MQ0=16	GT:A:C:G:T:IR	./.:0,0:7,9:0,0:0,0:0
+22	16050060	.	C	.	.	.	DP=16;HaplotypeScore=0.0000;MQ=0.00;MQ0=16	GT:A:C:G:T:IR	./.:0,0:7,9:0,0:0,0:0
+22	16050061	.	T	.	.	.	DP=16;HaplotypeScore=0.0000;MQ=0.00;MQ0=16	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:7,9:0
+22	16050062	.	T	.	.	.	DP=16;HaplotypeScore=0.0000;MQ=0.00;MQ0=16	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:7,9:0
+22	16050063	.	C	.	.	.	DP=16;HaplotypeScore=0.0000;MQ=0.00;MQ0=16	GT:A:C:G:T:IR	./.:0,0:7,9:0,0:0,0:0
+22	16050064	.	A	.	.	.	DP=16;HaplotypeScore=0.0000;MQ=0.00;MQ0=16	GT:A:C:G:T:IR	./.:7,9:0,0:0,0:0,0:0
+22	16050065	.	G	.	.	.	DP=16;HaplotypeScore=0.0000;MQ=0.00;MQ0=16	GT:A:C:G:T:IR	./.:0,0:0,0:7,9:0,0:0
+22	16050066	.	G	.	.	.	DP=16;HaplotypeScore=0.0000;MQ=0.00;MQ0=16	GT:A:C:G:T:IR	./.:0,0:0,0:7,9:0,0:0
+22	16050067	.	A	.	.	.	DP=16;HaplotypeScore=0.0000;MQ=0.00;MQ0=16	GT:A:C:G:T:IR	./.:7,9:0,0:0,0:0,0:0
+22	16050068	.	A	.	.	.	DP=16;HaplotypeScore=0.0000;MQ=0.00;MQ0=16	GT:A:C:G:T:IR	./.:7,9:0,0:0,0:0,0:0
+22	16050069	.	C	.	.	.	DP=16;HaplotypeScore=0.0000;MQ=0.00;MQ0=16	GT:A:C:G:T:IR	./.:0,0:7,9:0,0:0,0:0
+22	16050070	.	A	.	.	.	DP=16;HaplotypeScore=0.0000;MQ=0.00;MQ0=16	GT:A:C:G:T:IR	./.:7,9:0,0:0,0:0,0:0
+22	16050071	.	T	.	.	.	DP=17;HaplotypeScore=0.0000;MQ=0.00;MQ0=17	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:7,10:0
+22	16050072	.	T	.	.	.	DP=17;HaplotypeScore=0.0000;MQ=0.00;MQ0=17	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:7,10:0
+22	16050073	.	G	.	.	.	DP=18;HaplotypeScore=0.0000;MQ=0.00;MQ0=18	GT:A:C:G:T:IR	./.:0,0:0,0:7,11:0,0:0
+22	16050074	.	C	.	.	.	DP=19;HaplotypeScore=0.0000;MQ=0.00;MQ0=19	GT:A:C:G:T:IR	./.:0,0:8,11:0,0:0,0:0
+22	16050075	.	A	.	.	.	DP=21;HaplotypeScore=0.0000;MQ=0.00;MQ0=21	GT:A:C:G:T:IR	./.:8,13:0,0:0,0:0,0:0
+22	16050076	.	G	.	.	.	DP=21;HaplotypeScore=0.0000;MQ=0.00;MQ0=21	GT:A:C:G:T:IR	./.:0,0:0,0:8,13:0,0:0
+22	16050077	.	T	.	.	.	DP=22;HaplotypeScore=0.0000;MQ=0.00;MQ0=22	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:8,14:0
+22	16050078	.	G	.	.	.	DP=23;HaplotypeScore=0.0000;MQ=0.00;MQ0=23	GT:A:C:G:T:IR	./.:0,0:0,0:9,14:0,0:0
+22	16050079	.	G	.	.	.	DP=24;HaplotypeScore=0.0000;MQ=0.00;MQ0=24	GT:A:C:G:T:IR	./.:0,0:0,0:10,14:0,0:0
+22	16050080	.	G	.	.	.	DP=23;HaplotypeScore=0.0000;MQ=0.00;MQ0=23	GT:A:C:G:T:IR	./.:0,0:0,0:9,14:0,0:0
+22	16050081	.	C	.	.	.	DP=24;HaplotypeScore=0.0000;MQ=0.00;MQ0=24	GT:A:C:G:T:IR	./.:0,0:9,15:0,0:0,0:0
+22	16050082	.	C	.	.	.	DP=25;HaplotypeScore=0.0000;MQ=0.00;MQ0=25	GT:A:C:G:T:IR	./.:0,0:10,15:0,0:0,0:0
+22	16050083	.	T	.	.	.	DP=28;HaplotypeScore=0.0000;MQ=0.00;MQ0=28	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:11,16:0
+22	16050084	.	A	.	.	.	DP=29;HaplotypeScore=0.0000;MQ=0.00;MQ0=29	GT:A:C:G:T:IR	./.:12,16:0,0:0,0:0,0:0
+22	16050085	.	A	.	.	.	DP=29;HaplotypeScore=0.0000;MQ=0.00;MQ0=29	GT:A:C:G:T:IR	./.:12,16:0,0:0,0:0,0:0
+22	16050086	.	G	.	.	.	DP=29;HaplotypeScore=0.0000;MQ=0.00;MQ0=29	GT:A:C:G:T:IR	./.:0,1:0,0:11,16:0,0:0
+22	16050087	.	T	.	.	.	DP=29;HaplotypeScore=0.0000;MQ=0.00;MQ0=29	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:11,17:0
+22	16050088	.	G	.	.	.	DP=31;HaplotypeScore=0.0000;MQ=0.00;MQ0=31	GT:A:C:G:T:IR	./.:0,0:0,0:12,18:0,0:0
+22	16050089	.	C	.	.	.	DP=31;HaplotypeScore=0.0000;MQ=0.00;MQ0=31	GT:A:C:G:T:IR	./.:0,0:12,18:0,0:0,0:0
+22	16050090	.	C	.	.	.	DP=34;HaplotypeScore=0.0000;MQ=0.00;MQ0=34	GT:A:C:G:T:IR	./.:0,0:13,19:0,0:0,0:0
+22	16050091	.	T	.	.	.	DP=38;HaplotypeScore=0.0000;MQ=0.00;MQ0=38	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:14,22:0
+22	16050092	.	C	.	.	.	DP=38;HaplotypeScore=0.0000;MQ=0.00;MQ0=38	GT:A:C:G:T:IR	./.:0,0:14,22:0,0:0,0:0
+22	16050093	.	C	.	.	.	DP=38;HaplotypeScore=0.0000;MQ=0.00;MQ0=38	GT:A:C:G:T:IR	./.:0,0:14,22:0,0:0,0:0
+22	16050094	.	T	.	.	.	DP=40;HaplotypeScore=0.0000;MQ=0.00;MQ0=40	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:15,23:0
+22	16050095	.	C	.	.	.	DP=41;HaplotypeScore=0.0000;MQ=0.00;MQ0=41	GT:A:C:G:T:IR	./.:0,0:16,23:0,0:0,0:0
+22	16050096	.	T	.	.	.	DP=44;HaplotypeScore=0.0000;MQ=0.00;MQ0=44	GT:A:C:G:T:IR	./.:0,0:0,0:1,0:15,26:0
+22	16050097	.	C	.	.	.	DP=45;HaplotypeScore=0.0000;MQ=0.00;MQ0=45;CpG	GT:A:C:G:T:IR	./.:0,0:16,26:0,0:1,0:0
+22	16050098	.	G	.	.	.	DP=45;HaplotypeScore=0.0000;MQ=0.00;MQ0=45;CpG	GT:A:C:G:T:IR	./.:0,0:0,0:17,26:0,0:0
+22	16050099	.	G	.	.	.	DP=45;HaplotypeScore=0.0000;MQ=0.00;MQ0=45	GT:A:C:G:T:IR	./.:0,0:0,0:17,26:0,0:0
+22	16050100	.	G	.	.	.	DP=45;HaplotypeScore=0.0000;MQ=0.00;MQ0=45	GT:A:C:G:T:IR	./.:0,0:0,0:17,26:0,0:0
+22	16050101	.	A	.	.	.	DP=45;HaplotypeScore=0.0000;MQ=0.00;MQ0=45	GT:A:C:G:T:IR	./.:18,25:0,0:0,0:0,0:0
+22	16050102	.	C	.	.	.	DP=45;HaplotypeScore=0.0000;MQ=0.00;MQ0=45	GT:A:C:G:T:IR	./.:0,0:18,25:0,0:0,0:0
+22	16050103	.	T	.	.	.	DP=47;HaplotypeScore=0.0000;MQ=0.00;MQ0=47	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:18,27:0
+22	16050104	.	G	.	.	.	DP=46;HaplotypeScore=0.0000;MQ=0.00;MQ0=46	GT:A:C:G:T:IR	./.:0,0:0,0:18,26:0,0:0
+22	16050105	.	G	.	.	.	DP=49;HaplotypeScore=0.0000;MQ=0.00;MQ0=49	GT:A:C:G:T:IR	./.:0,0:0,0:21,26:0,0:0
+22	16050106	.	T	.	.	.	DP=49;HaplotypeScore=0.0000;MQ=0.00;MQ0=49	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:21,26:0
+22	16050107	.	A	.	.	.	DP=49;HaplotypeScore=0.0000;MQ=0.00;MQ0=49	GT:A:C:G:T:IR	./.:21,26:0,0:0,0:0,0:0
+22	16050108	.	T	.	.	.	DP=49;HaplotypeScore=0.0000;MQ=0.00;MQ0=49	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:21,26:0
+22	16050109	.	G	.	.	.	DP=48;HaplotypeScore=0.0000;MQ=0.00;MQ0=48	GT:A:C:G:T:IR	./.:0,0:0,0:21,25:0,0:0
+22	16050110	.	G	.	.	.	DP=48;HaplotypeScore=0.0000;MQ=0.00;MQ0=48	GT:A:C:G:T:IR	./.:0,0:0,0:21,25:0,0:0
+22	16050111	.	G	.	.	.	DP=49;HaplotypeScore=0.0000;MQ=0.00;MQ0=49	GT:A:C:G:T:IR	./.:0,0:0,0:22,25:0,0:0
+22	16050112	.	G	.	.	.	DP=51;HaplotypeScore=0.0000;MQ=0.00;MQ0=51	GT:A:C:G:T:IR	./.:0,0:0,0:23,25:1,0:0
+22	16050113	.	A	.	.	.	DP=51;HaplotypeScore=0.0000;MQ=0.00;MQ0=51	GT:A:C:G:T:IR	./.:24,25:0,0:0,0:0,0:0
+22	16050114	.	C	.	.	.	DP=49;HaplotypeScore=0.0000;MQ=0.00;MQ0=49;CpG	GT:A:C:G:T:IR	./.:0,0:23,24:0,0:0,0:0
+22	16050115	.	G	.	.	.	DP=49;HaplotypeScore=0.0000;MQ=0.00;MQ0=49;CpG	GT:A:C:G:T:IR	./.:0,1:0,0:23,23:0,0:0
+22	16050116	.	G	.	.	.	DP=50;HaplotypeScore=0.0000;MQ=0.00;MQ0=50	GT:A:C:G:T:IR	./.:0,1:0,0:24,23:0,0:0
+22	16050117	.	T	.	.	.	DP=50;HaplotypeScore=0.0000;MQ=0.00;MQ0=50	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:25,23:0
+22	16050118	.	C	.	.	.	DP=50;HaplotypeScore=0.0000;MQ=0.00;MQ0=50	GT:A:C:G:T:IR	./.:0,0:25,23:0,0:0,0:0
+22	16050119	.	A	.	.	.	DP=51;HaplotypeScore=0.0000;MQ=0.00;MQ0=51	GT:A:C:G:T:IR	./.:25,24:0,0:0,0:0,0:0
+22	16050120	.	T	.	.	.	DP=51;HaplotypeScore=0.0000;MQ=0.00;MQ0=51	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:25,24:0
+22	16050121	.	G	.	.	.	DP=51;HaplotypeScore=0.0000;MQ=0.00;MQ0=51	GT:A:C:G:T:IR	./.:0,0:0,0:25,24:0,0:0
+22	16050122	.	C	.	.	.	DP=51;HaplotypeScore=0.0000;MQ=0.00;MQ0=51	GT:A:C:G:T:IR	./.:0,0:25,24:0,0:0,0:0
+22	16050123	.	A	.	.	.	DP=51;HaplotypeScore=0.0000;MQ=0.00;MQ0=51	GT:A:C:G:T:IR	./.:25,24:0,0:0,0:0,0:0
+22	16050124	.	A	.	.	.	DP=53;HaplotypeScore=0.0000;MQ=0.00;MQ0=53	GT:A:C:G:T:IR	./.:26,25:0,0:0,0:0,0:0
+22	16050125	.	T	.	.	.	DP=53;HaplotypeScore=0.0000;MQ=0.00;MQ0=53	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:26,25:0
+22	16050126	.	C	.	.	.	DP=52;HaplotypeScore=0.0000;MQ=0.00;MQ0=52	GT:A:C:G:T:IR	./.:0,1:26,23:0,0:0,0:0
+22	16050127	.	T	.	.	.	DP=55;HaplotypeScore=0.0000;MQ=0.00;MQ0=55	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:28,25:0
+22	16050128	.	G	.	.	.	DP=56;HaplotypeScore=0.0000;MQ=0.00;MQ0=56	GT:A:C:G:T:IR	./.:0,1:0,0:28,25:0,0:0
+22	16050129	.	G	.	.	.	DP=57;HaplotypeScore=0.0000;MQ=0.00;MQ0=57	GT:A:C:G:T:IR	./.:0,0:0,0:29,26:0,0:0
+22	16050130	.	A	.	.	.	DP=58;HaplotypeScore=0.0000;MQ=0.00;MQ0=58	GT:A:C:G:T:IR	./.:29,27:0,0:0,0:0,0:0
+22	16050131	.	C	.	.	.	DP=57;HaplotypeScore=0.0000;MQ=0.00;MQ0=57	GT:A:C:G:T:IR	./.:0,0:28,27:0,0:0,0:0
+22	16050132	.	A	.	.	.	DP=58;HaplotypeScore=0.0000;MQ=0.00;MQ0=58	GT:A:C:G:T:IR	./.:29,27:0,0:0,0:0,0:0
+22	16050133	.	A	.	.	.	DP=59;HaplotypeScore=0.0000;MQ=0.00;MQ0=59	GT:A:C:G:T:IR	./.:29,28:0,0:0,0:0,0:0
+22	16050134	.	C	.	.	.	DP=58;HaplotypeScore=0.0000;MQ=0.00;MQ0=58	GT:A:C:G:T:IR	./.:0,0:29,27:0,0:0,0:0
+22	16050135	.	A	.	.	.	DP=59;HaplotypeScore=0.0000;MQ=0.00;MQ0=59	GT:A:C:G:T:IR	./.:28,29:0,0:0,0:0,0:0
+22	16050136	.	T	.	.	.	DP=59;HaplotypeScore=0.0000;MQ=0.00;MQ0=59	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:28,29:0
+22	16050137	.	T	.	.	.	DP=60;HaplotypeScore=0.0000;MQ=0.00;MQ0=60	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:28,30:0
+22	16050138	.	C	.	.	.	DP=60;HaplotypeScore=0.0000;MQ=0.00;MQ0=60	GT:A:C:G:T:IR	./.:0,0:28,30:0,0:0,0:0
+22	16050139	.	A	.	.	.	DP=65;HaplotypeScore=0.0000;MQ=0.00;MQ0=65	GT:A:C:G:T:IR	./.:31,32:0,0:0,0:0,0:0
+22	16050140	.	C	.	.	.	DP=66;HaplotypeScore=0.0000;MQ=0.00;MQ0=66	GT:A:C:G:T:IR	./.:0,0:31,33:0,0:0,0:0
+22	16050141	.	C	.	.	.	DP=68;HaplotypeScore=0.0000;MQ=0.00;MQ0=68	GT:A:C:G:T:IR	./.:0,1:32,33:0,0:0,0:0
+22	16050142	.	T	.	.	.	DP=71;HaplotypeScore=0.0000;MQ=0.00;MQ0=71	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:32,37:0
+22	16050143	.	T	.	.	.	DP=70;HaplotypeScore=0.0000;MQ=0.00;MQ0=70	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:32,36:0
+22	16050144	.	T	.	.	.	DP=69;HaplotypeScore=0.0000;MQ=0.00;MQ0=69	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:32,35:0
+22	16050145	.	A	.	.	.	DP=70;HaplotypeScore=0.0000;MQ=0.00;MQ0=70	GT:A:C:G:T:IR	./.:32,36:0,0:0,0:0,0:0
+22	16050146	.	A	.	.	.	DP=70;HaplotypeScore=0.0000;MQ=0.00;MQ0=70	GT:A:C:G:T:IR	./.:32,36:0,0:0,0:0,0:0
+22	16050147	.	A	.	.	.	DP=72;HaplotypeScore=0.0000;MQ=0.00;MQ0=72	GT:A:C:G:T:IR	./.:33,37:0,0:0,0:0,0:0
+22	16050148	.	A	.	.	.	DP=73;HaplotypeScore=0.0000;MQ=0.00;MQ0=73	GT:A:C:G:T:IR	./.:34,37:0,0:0,0:0,0:0
+22	16050149	.	G	.	.	.	DP=74;HaplotypeScore=0.0000;MQ=0.00;MQ0=74	GT:A:C:G:T:IR	./.:0,1:0,0:34,37:0,0:0
+22	16050150	.	T	.	.	.	DP=72;HaplotypeScore=0.0000;MQ=0.00;MQ0=72	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:33,37:0
+22	16050151	.	T	.	.	.	DP=72;HaplotypeScore=0.0000;MQ=0.00;MQ0=72	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:33,37:0
+22	16050152	.	T	.	.	.	DP=73;HaplotypeScore=0.0000;MQ=3.39;MQ0=72	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:33,37:0
+22	16050153	.	A	.	.	.	DP=73;HaplotypeScore=0.0000;MQ=3.39;MQ0=72	GT:A:C:G:T:IR	./.:34,37:0,0:0,0:0,0:0
+22	16050154	.	T	.	33	.	AC=0;AF=0.00;AN=2;DP=75;MQ=3.35;MQ0=74	GT:DP:GQ:PL:A:C:G:T:IR	0/0:75:3.01:0,3,33:0,0:0,0:0,0:34,38:0
+22	16050155	.	T	.	33	.	AC=0;AF=0.00;AN=2;DP=75;MQ=3.35;MQ0=74	GT:DP:GQ:PL:A:C:G:T:IR	0/0:75:3.01:0,3,33:0,0:0,0:0,0:34,38:0
+22	16050156	.	G	.	33	.	AC=0;AF=0.00;AN=2;DP=74;MQ=3.37;MQ0=73	GT:DP:GQ:PL:A:C:G:T:IR	0/0:74:3.01:0,3,32:0,0:0,0:33,38:0,0:0
+22	16050157	.	A	.	32.99	.	AC=0;AF=0.00;AN=2;DP=74;MQ=3.37;MQ0=73	GT:DP:GQ:PL:A:C:G:T:IR	0/0:74:3:0,3,29:34,37:0,0:0,0:0,0:0
+22	16050158	.	T	.	32.95	.	AC=0;AF=0.00;AN=2;DP=73;MQ=3.39;MQ0=72	GT:DP:GQ:PL:A:C:G:T:IR	0/0:73:2.98:0,3,22:0,0:0,0:0,0:34,36:0
+22	16050159	.	C	.	.	.	DP=73;HaplotypeScore=0.0000;MQ=3.39;MQ0=72	GT:A:C:G:T:IR	./.:0,0:34,36:0,0:0,0:0
+22	16050160	.	T	.	33	.	AC=0;AF=0.00;AN=2;DP=74;MQ=3.37;MQ0=73	GT:DP:GQ:PL:A:C:G:T:IR	0/0:74:3.01:0,3,32:0,0:0,0:0,0:34,37:0
+22	16050161	.	T	.	33	.	AC=0;AF=0.00;AN=2;DP=74;MQ=3.37;MQ0=73	GT:DP:GQ:PL:A:C:G:T:IR	0/0:74:3.01:0,3,32:0,0:0,0:0,0:34,37:0
+22	16050162	.	T	.	33	.	AC=0;AF=0.00;AN=2;DP=74;MQ=3.37;MQ0=73	GT:DP:GQ:PL:A:C:G:T:IR	0/0:74:3.01:0,3,33:0,0:0,0:0,0:34,37:0
+22	16050163	.	T	.	33	.	AC=0;AF=0.00;AN=2;DP=73;MQ=3.39;MQ0=72	GT:DP:GQ:PL:A:C:G:T:IR	0/0:73:3.01:0,3,32:0,0:0,0:0,0:34,36:0
+22	16050164	.	G	.	32.99	.	AC=0;AF=0.00;AN=2;DP=72;MQ=3.42;MQ0=71	GT:DP:GQ:PL:A:C:G:T:IR	0/0:72:3:0,3,29:0,0:0,0:33,36:0,0:0
+22	16050165	.	T	.	33	.	AC=0;AF=0.00;AN=2;DP=74;MQ=3.37;MQ0=73	GT:DP:GQ:PL:A:C:G:T:IR	0/0:74:3.01:0,3,33:0,0:0,0:0,0:33,38:0
+22	16050166	.	G	.	33	.	AC=0;AF=0.00;AN=2;DP=75;MQ=3.35;MQ0=74	GT:DP:GQ:PL:A:C:G:T:IR	0/0:75:3.01:0,3,33:0,0:0,0:33,39:0,0:0
+22	16050167	.	A	.	33	.	AC=0;AF=0.00;AN=2;DP=76;MQ=3.33;MQ0=75	GT:DP:GQ:PL:A:C:G:T:IR	0/0:76:3.01:0,3,33:35,38:0,0:0,0:0,0:0
+22	16050168	.	C	.	33	.	AC=0;AF=0.00;AN=2;DP=75;MQ=3.35;MQ0=74	GT:DP:GQ:PL:A:C:G:T:IR	0/0:75:3.01:0,3,30:0,0:34,38:0,0:0,0:0
+22	16050169	.	A	.	33	.	AC=0;AF=0.00;AN=2;DP=75;MQ=3.35;MQ0=74	GT:DP:GQ:PL:A:C:G:T:IR	0/0:75:3.01:0,3,31:33,39:0,0:0,0:0,0:0
+22	16050170	.	T	.	33	.	AC=0;AF=0.00;AN=2;DP=76;MQ=3.33;MQ0=75	GT:DP:GQ:PL:A:C:G:T:IR	0/0:76:3.01:0,3,33:0,0:0,0:0,0:34,39:0
+22	16050171	.	G	.	33	.	AC=0;AF=0.00;AN=2;DP=75;MQ=3.35;MQ0=74	GT:DP:GQ:PL:A:C:G:T:IR	0/0:75:3.01:0,3,32:0,0:0,0:33,39:0,0:0
+22	16050172	.	C	.	33	.	AC=0;AF=0.00;AN=2;DP=74;MQ=3.37;MQ0=73	GT:DP:GQ:PL:A:C:G:T:IR	0/0:74:3.01:0,3,31:0,0:33,38:0,0:0,0:0
+22	16050173	.	A	.	33	.	AC=0;AF=0.00;AN=2;DP=78;MQ=3.28;MQ0=77	GT:DP:GQ:PL:A:C:G:T:IR	0/0:78:3.01:0,3,32:34,41:0,0:0,0:0,0:0
+22	16050174	.	C	.	33	.	AC=0;AF=0.00;AN=2;DP=77;MQ=3.30;MQ0=76;CpG	GT:DP:GQ:PL:A:C:G:T:IR	0/0:77:3.01:0,3,32:0,0:33,40:0,0:1,0:0
+22	16050175	.	G	.	32.99	.	AC=0;AF=0.00;AN=2;DP=76;MQ=3.33;MQ0=75;CpG	GT:DP:GQ:PL:A:C:G:T:IR	0/0:76:3:0,3,28:0,1:0,0:33,39:0,0:0
+22	16050176	.	T	.	33	.	AC=0;AF=0.00;AN=2;DP=77;MQ=3.30;MQ0=76	GT:DP:GQ:PL:A:C:G:T:IR	0/0:77:3.01:0,3,30:0,0:0,0:0,0:34,40:0
+22	16050177	.	G	.	33	.	AC=0;AF=0.00;AN=2;DP=76;MQ=3.33;MQ0=75	GT:DP:GQ:PL:A:C:G:T:IR	0/0:76:3.01:0,3,32:0,0:0,0:33,39:0,1:0
+22	16050178	.	G	.	33	.	AC=0;AF=0.00;AN=2;DP=74;MQ=3.37;MQ0=73	GT:DP:GQ:PL:A:C:G:T:IR	0/0:74:3.01:0,3,32:0,1:1,0:31,39:0,0:0
+22	16050179	.	G	.	32.99	.	AC=0;AF=0.00;AN=2;DP=72;MQ=3.42;MQ0=71	GT:DP:GQ:PL:A:C:G:T:IR	0/0:72:3:0,3,27:0,0:0,0:31,39:0,0:0
+22	16050180	.	T	.	33	.	AC=0;AF=0.00;AN=2;DP=74;MQ=3.80;MQ0=72	GT:DP:GQ:PL:A:C:G:T:IR	0/0:74:3.01:0,3,30:0,0:0,0:1,0:31,40:0
+22	16050181	.	T	.	33	.	AC=0;AF=0.00;AN=2;DP=74;MQ=3.80;MQ0=72	GT:DP:GQ:PL:A:C:G:T:IR	0/0:74:3.01:0,3,33:0,0:0,0:0,0:32,40:0
+22	16050182	.	C	.	32.99	.	AC=0;AF=0.00;AN=2;DP=72;MQ=3.85;MQ0=70	GT:DP:GQ:PL:A:C:G:T:IR	0/0:72:3:0,3,28:0,0:31,39:0,0:0,0:0
+22	16050183	.	C	.	33	.	AC=0;AF=0.00;AN=2;DP=72;MQ=3.85;MQ0=70	GT:DP:GQ:PL:A:C:G:T:IR	0/0:72:3.01:0,3,33:0,0:31,39:0,0:0,0:0
+22	16050184	.	C	.	33	.	AC=0;AF=0.00;AN=2;DP=73;MQ=3.82;MQ0=71	GT:DP:GQ:PL:A:C:G:T:IR	0/0:73:3.01:0,3,30:0,0:32,39:0,0:0,0:0
+22	16050185	.	A	.	33	.	AC=0;AF=0.00;AN=2;DP=73;MQ=3.82;MQ0=71	GT:DP:GQ:PL:A:C:G:T:IR	0/0:73:3.01:0,3,30:32,39:0,0:0,0:0,0:0
+22	16050186	.	G	.	33	.	AC=0;AF=0.00;AN=2;DP=70;MQ=3.90;MQ0=68	GT:DP:GQ:PL:A:C:G:T:IR	0/0:70:3.01:0,3,30:0,0:0,0:31,37:0,0:0
+22	16050187	.	T	.	33	.	AC=0;AF=0.00;AN=2;DP=68;MQ=3.96;MQ0=66	GT:DP:GQ:PL:A:C:G:T:IR	0/0:68:3.01:0,3,33:0,0:0,0:0,1:30,35:0
+22	16050188	.	A	.	33	.	AC=0;AF=0.00;AN=2;DP=68;MQ=3.96;MQ0=66	GT:DP:GQ:PL:A:C:G:T:IR	0/0:68:3.01:0,3,32:30,36:0,0:0,0:0,0:0
+22	16050189	.	G	.	33	.	AC=0;AF=0.00;AN=2;DP=66;MQ=4.02;MQ0=64	GT:DP:GQ:PL:A:C:G:T:IR	0/0:66:3.01:0,3,31:1,2:0,0:30,31:0,0:0
+22	16050190	.	C	.	32.98	.	AC=0;AF=0.00;AN=2;DP=65;MQ=4.46;MQ0=62	GT:DP:GQ:PL:A:C:G:T:IR	0/0:65:3:0,3,26:0,0:30,33:0,0:0,0:0
+22	16050191	.	A	.	32.99	.	AC=0;AF=0.00;AN=2;DP=68;MQ=4.36;MQ0=65	GT:DP:GQ:PL:A:C:G:T:IR	0/0:68:3:0,3,27:31,36:0,0:0,0:0,0:0
+22	16050192	.	A	.	33	.	AC=0;AF=0.00;AN=2;DP=67;MQ=4.39;MQ0=64	GT:DP:GQ:PL:A:C:G:T:IR	0/0:67:3.01:0,3,31:30,36:0,0:0,0:0,0:0
+22	16050193	.	G	.	32.99	.	AC=0;AF=0.00;AN=2;DP=65;MQ=4.46;MQ0=62	GT:DP:GQ:PL:A:C:G:T:IR	0/0:65:3:0,3,27:0,0:0,0:29,35:0,0:0
+22	16050194	.	A	.	33	.	AC=0;AF=0.00;AN=2;DP=65;MQ=4.46;MQ0=62	GT:DP:GQ:PL:A:C:G:T:IR	0/0:65:3.01:0,3,33:29,35:0,0:0,0:0,0:0
+22	16050195	.	A	.	33	.	AC=0;AF=0.00;AN=2;DP=65;MQ=4.46;MQ0=62	GT:DP:GQ:PL:A:C:G:T:IR	0/0:65:3.01:0,3,33:29,35:0,0:0,0:0,0:0
+22	16050196	.	A	.	33	.	AC=0;AF=0.00;AN=2;DP=65;MQ=4.46;MQ0=62	GT:DP:GQ:PL:A:C:G:T:IR	0/0:65:3.01:0,3,30:28,36:0,0:0,0:0,0:0
+22	16050197	.	C	.	33	.	AC=0;AF=0.00;AN=2;DP=65;MQ=4.46;MQ0=62	GT:DP:GQ:PL:A:C:G:T:IR	0/0:65:3.01:0,3,30:0,0:29,35:0,0:0,0:0
+22	16050198	.	T	.	33	.	AC=0;AF=0.00;AN=2;DP=64;MQ=4.49;MQ0=61	GT:DP:GQ:PL:A:C:G:T:IR	0/0:64:3.01:0,3,31:0,0:0,0:0,0:29,34:0
+22	16050199	.	A	.	32.99	.	AC=0;AF=0.00;AN=2;DP=68;MQ=4.36;MQ0=65	GT:DP:GQ:PL:A:C:G:T:IR	0/0:68:3:0,3,29:29,38:0,0:0,0:0,0:0
+22	16050200	.	A	.	32.99	.	AC=0;AF=0.00;AN=2;DP=70;MQ=4.29;MQ0=67	GT:DP:GQ:PL:A:C:G:T:IR	0/0:70:3:0,3,28:30,39:0,0:0,0:0,0:0
+22	16050201	.	A	.	32.98	.	AC=0;AF=0.00;AN=2;DP=69;MQ=4.33;MQ0=66	GT:DP:GQ:PL:A:C:G:T:IR	0/0:69:3:0,3,25:29,39:0,0:0,0:0,0:0
+22	16050202	.	G	.	33	.	AC=0;AF=0.00;AN=2;DP=69;MQ=4.33;MQ0=66	GT:DP:GQ:PL:A:C:G:T:IR	0/0:69:3.01:0,3,32:0,0:0,0:30,38:0,0:0
+22	16050203	.	G	.	32.99	.	AC=0;AF=0.00;AN=2;DP=69;MQ=4.33;MQ0=66	GT:DP:GQ:PL:A:C:G:T:IR	0/0:69:3:0,3,27:0,0:0,0:31,37:0,0:0
+22	16050204	.	G	.	32.97	.	AC=0;AF=0.00;AN=2;DP=71;MQ=4.26;MQ0=68	GT:DP:GQ:PL:A:C:G:T:IR	0/0:71:2.99:0,3,24:0,0:0,0:32,38:0,0:0
+22	16050205	.	T	.	32.99	.	AC=0;AF=0.00;AN=2;DP=77;MQ=4.09;MQ0=74	GT:DP:GQ:PL:A:C:G:T:IR	0/0:77:3:0,3,29:0,0:0,0:0,0:34,41:0
+22	16050206	.	C	.	.	.	DP=77;HaplotypeScore=0.0000;MQ=4.09;MQ0=74;CpG	GT:A:C:G:T:IR	./.:0,0:33,41:0,0:1,0:0
+22	16050207	.	G	.	32.99	.	AC=0;AF=0.00;AN=2;DP=78;MQ=4.07;MQ0=75;CpG	GT:DP:GQ:PL:A:C:G:T:IR	0/0:78:3:0,3,28:0,4:0,0:33,38:1,0:0
+22	16050208	.	C	.	33	.	AC=0;AF=0.00;AN=2;DP=78;MQ=4.07;MQ0=75	GT:DP:GQ:PL:A:C:G:T:IR	0/0:78:3.01:0,3,31:0,0:35,41:0,0:0,0:0
+22	16050209	.	A	.	33	.	AC=0;AF=0.00;AN=2;DP=78;MQ=4.07;MQ0=75	GT:DP:GQ:PL:A:C:G:T:IR	0/0:78:3.01:0,3,32:35,41:0,0:0,0:0,0:0
+22	16050210	.	G	.	32.97	.	AC=0;AF=0.00;AN=2;DP=76;MQ=4.12;MQ0=73	GT:DP:GQ:PL:A:C:G:T:IR	0/0:76:2.99:0,3,24:0,0:0,0:34,40:0,0:0
+22	16050211	.	G	.	.	.	DP=75;HaplotypeScore=0.0000;MQ=4.15;MQ0=72	GT:A:C:G:T:IR	./.:0,0:0,0:34,39:0,0:0
+22	16050212	.	C	.	33	.	AC=0;AF=0.00;AN=2;DP=74;MQ=4.18;MQ0=71	GT:DP:GQ:PL:A:C:G:T:IR	0/0:74:3.01:0,3,32:0,0:35,37:0,0:0,0:0
+22	16050213	.	C	.	32.99	.	AC=0;AF=0.00;AN=2;DP=76;MQ=4.12;MQ0=73;CpG	GT:DP:GQ:PL:A:C:G:T:IR	0/0:76:3:0,3,27:0,0:38,36:0,0:0,0:0
+22	16050214	.	G	.	32.99	.	AC=0;AF=0.00;AN=2;DP=77;MQ=4.09;MQ0=74;CpG	GT:DP:GQ:PL:A:C:G:T:IR	0/0:77:3:0,3,28:0,1:0,0:38,36:0,0:0
+22	16050215	.	G	.	32.96	.	AC=0;AF=0.00;AN=2;DP=78;MQ=4.07;MQ0=75	GT:DP:GQ:PL:A:C:G:T:IR	0/0:78:2.99:0,3,23:0,0:0,0:38,38:0,0:0
+22	16050216	.	T	.	32.98	.	AC=0;AF=0.00;AN=2;DP=80;MQ=4.02;MQ0=77	GT:DP:GQ:PL:A:C:G:T:IR	0/0:80:3:0,3,25:0,0:0,0:0,0:38,40:0
+22	16050217	.	T	.	33	.	AC=0;AF=0.00;AN=2;DP=81;MQ=3.99;MQ0=78	GT:DP:GQ:PL:A:C:G:T:IR	0/0:81:3.01:0,3,33:0,0:0,0:0,0:38,41:0
+22	16050218	.	T	.	33	.	AC=0;AF=0.00;AN=2;DP=82;MQ=3.97;MQ0=79	GT:DP:GQ:PL:A:C:G:T:IR	0/0:81:3.01:0,3,33:0,0:0,0:0,0:37,42:0
+22	16050219	.	C	.	32.99	.	AC=0;AF=0.00;AN=2;DP=77;MQ=4.09;MQ0=74	GT:DP:GQ:PL:A:C:G:T:IR	0/0:77:3:0,3,28:0,0:34,40:0,0:1,0:0
+22	16050220	.	T	.	32.99	.	AC=0;AF=0.00;AN=2;DP=78;MQ=4.07;MQ0=75	GT:DP:GQ:PL:A:C:G:T:IR	0/0:78:3:0,3,28:0,0:0,0:0,0:35,41:0
+22	16050221	.	G	.	32.98	.	AC=0;AF=0.00;AN=2;DP=77;MQ=4.09;MQ0=74	GT:DP:GQ:PL:A:C:G:T:IR	0/0:77:3:0,3,26:0,0:0,0:34,41:0,0:0
+22	16050222	.	C	.	36.01	.	AC=0;AF=0.00;AN=2;DP=79;MQ=4.80;MQ0=75	GT:DP:GQ:PL:A:C:G:T:IR	0/0:79:6.01:0,6,60:0,0:36,41:0,0:0,0:0
+22	16050223	.	T	.	36	.	AC=0;AF=0.00;AN=2;DP=84;MQ=4.65;MQ0=80	GT:DP:GQ:PL:A:C:G:T:IR	0/0:84:6:0,6,53:0,0:0,0:0,0:36,46:0
+22	16050224	.	A	.	36	.	AC=0;AF=0.00;AN=2;DP=84;MQ=4.65;MQ0=80	GT:DP:GQ:PL:A:C:G:T:IR	0/0:84:6.01:0,6,56:34,48:0,0:0,0:0,0:0
+22	16050225	.	A	.	36	.	AC=0;AF=0.00;AN=2;DP=84;MQ=4.65;MQ0=80	GT:DP:GQ:PL:A:C:G:T:IR	0/0:84:6.01:0,6,58:34,48:0,0:0,0:0,0:0
+22	16050226	.	T	.	36	.	AC=0;AF=0.00;AN=2;DP=86;MQ=4.60;MQ0=82	GT:DP:GQ:PL:A:C:G:T:IR	0/0:86:6.01:0,6,57:0,0:0,0:0,0:35,49:0
+22	16050227	.	T	.	35.98	.	AC=0;AF=0.00;AN=2;DP=86;MQ=4.60;MQ0=82	GT:DP:GQ:PL:A:C:G:T:IR	0/0:86:5.98:0,6,49:0,0:0,0:0,0:35,49:0
+22	16050228	.	T	.	36	.	AC=0;AF=0.00;AN=2;DP=86;MQ=4.60;MQ0=82	GT:DP:GQ:PL:A:C:G:T:IR	0/0:86:6:0,6,53:0,0:0,0:0,0:35,49:0
+22	16050229	.	C	.	35.99	.	AC=0;AF=0.00;AN=2;DP=86;MQ=4.60;MQ0=82	GT:DP:GQ:PL:A:C:G:T:IR	0/0:86:6:0,6,52:0,0:35,49:0,0:0,0:0
+22	16050230	.	T	.	36	.	AC=0;AF=0.00;AN=2;DP=86;MQ=4.60;MQ0=82	GT:DP:GQ:PL:A:C:G:T:IR	0/0:86:6:0,6,53:0,0:0,0:0,0:35,49:0
+22	16050231	.	T	.	36	.	AC=0;AF=0.00;AN=2;DP=89;MQ=4.52;MQ0=85	GT:DP:GQ:PL:A:C:G:T:IR	0/0:89:6.01:0,6,56:0,0:0,0:0,0:35,52:0
+22	16050232	.	T	.	36	.	AC=0;AF=0.00;AN=2;DP=89;MQ=4.52;MQ0=85	GT:DP:GQ:PL:A:C:G:T:IR	0/0:89:6:0,6,54:0,0:0,0:0,0:35,52:0
+22	16050233	.	A	.	36	.	AC=0;AF=0.00;AN=2;DP=90;MQ=4.50;MQ0=86	GT:DP:GQ:PL:A:C:G:T:IR	0/0:90:6.01:0,6,57:36,52:0,0:0,0:0,0:0
+22	16050234	.	A	.	36	.	AC=0;AF=0.00;AN=2;DP=89;MQ=4.52;MQ0=85	GT:DP:GQ:PL:A:C:G:T:IR	0/0:89:6:0,6,54:36,51:0,0:0,0:0,0:0
+22	16050235	.	T	.	36.01	.	AC=0;AF=0.00;AN=2;DP=90;MQ=4.50;MQ0=86	GT:DP:GQ:PL:A:C:G:T:IR	0/0:90:6.01:0,6,61:0,0:0,0:0,0:36,52:0
+22	16050236	.	T	.	38.99	.	AC=0;AF=0.00;AN=2;DP=90;MQ=5.11;MQ0=85	GT:DP:GQ:PL:A:C:G:T:IR	0/0:90:9:0,9,79:0,0:0,0:0,0:36,52:0
+22	16050237	.	C	.	38.99	.	AC=0;AF=0.00;AN=2;DP=87;MQ=5.20;MQ0=82	GT:DP:GQ:PL:A:C:G:T:IR	0/0:87:9:0,9,79:0,0:36,49:0,0:0,0:0
+22	16050238	.	C	.	39	.	AC=0;AF=0.00;AN=2;DP=87;MQ=5.20;MQ0=82	GT:DP:GQ:PL:A:C:G:T:IR	0/0:87:9.01:0,9,83:0,0:37,48:0,0:0,0:0
+22	16050239	.	A	.	39	.	AC=0;AF=0.00;AN=2;DP=88;MQ=5.17;MQ0=83	GT:DP:GQ:PL:A:C:G:T:IR	0/0:88:9.01:0,9,83:37,49:0,0:0,0:0,0:0
+22	16050240	.	A	.	39	.	AC=0;AF=0.00;AN=2;DP=89;MQ=5.14;MQ0=84	GT:DP:GQ:PL:A:C:G:T:IR	0/0:89:9.01:0,9,85:37,50:0,0:0,0:0,0:0
+22	16050241	.	G	.	39	.	AC=0;AF=0.00;AN=2;DP=88;MQ=5.17;MQ0=83	GT:DP:GQ:PL:A:C:G:T:IR	0/0:88:9.01:0,9,82:0,0:0,0:36,50:0,0:0
+22	16050242	.	A	.	38.99	.	AC=0;AF=0.00;AN=2;DP=87;MQ=5.20;MQ0=82	GT:DP:GQ:PL:A:C:G:T:IR	0/0:87:9:0,9,79:35,50:0,0:0,0:0,0:0
+22	16050243	.	C	.	38.99	.	AC=0;AF=0.00;AN=2;DP=88;MQ=5.17;MQ0=83	GT:DP:GQ:PL:A:C:G:T:IR	0/0:88:8.99:0,9,78:0,0:35,51:0,0:0,0:0
+22	16050244	.	A	.	39	.	AC=0;AF=0.00;AN=2;DP=89;MQ=5.14;MQ0=84	GT:DP:GQ:PL:A:C:G:T:IR	0/0:89:9.01:0,9,83:36,51:0,0:0,0:0,0:0
+22	16050245	.	G	.	39	.	AC=0;AF=0.00;AN=2;DP=90;MQ=5.11;MQ0=85	GT:DP:GQ:PL:A:C:G:T:IR	0/0:90:9.01:0,9,82:0,1:0,0:37,50:0,0:0
+22	16050246	.	T	.	38.98	.	AC=0;AF=0.00;AN=2;DP=91;MQ=5.08;MQ0=86	GT:DP:GQ:PL:A:C:G:T:IR	0/0:91:8.98:0,9,75:0,0:0,0:0,0:38,51:0
+22	16050247	.	C	.	38.99	.	AC=0;AF=0.00;AN=2;DP=90;MQ=5.11;MQ0=85	GT:DP:GQ:PL:A:C:G:T:IR	0/0:90:9:0,9,79:0,0:37,51:0,0:0,0:0
+22	16050248	.	T	.	38.99	.	AC=0;AF=0.00;AN=2;DP=88;MQ=5.17;MQ0=83	GT:DP:GQ:PL:A:C:G:T:IR	0/0:88:8.99:0,9,78:0,0:0,0:0,0:37,49:0
+22	16050249	.	C	.	38.98	.	AC=0;AF=0.00;AN=2;DP=87;MQ=5.20;MQ0=82	GT:DP:GQ:PL:A:C:G:T:IR	0/0:87:8.99:0,9,77:0,1:36,47:0,0:0,1:0
+22	16050250	.	A	.	39	.	AC=0;AF=0.00;AN=2;DP=91;MQ=5.08;MQ0=86	GT:DP:GQ:PL:A:C:G:T:IR	0/0:91:9:0,9,81:37,52:0,0:0,0:0,0:0
+22	16050251	.	A	.	39	.	AC=0;AF=0.00;AN=2;DP=91;MQ=5.08;MQ0=86	GT:DP:GQ:PL:A:C:G:T:IR	0/0:91:9.01:0,9,82:37,52:0,0:0,0:0,0:0
+22	16050252	.	A	.	36	.	AC=0;AF=0.00;AN=2;DP=90;MQ=5.11;MQ0=85	GT:DP:GQ:PL:A:C:G:T:IR	0/0:90:6.01:0,6,55:36,52:0,0:0,0:0,0:0
+22	16050253	.	T	.	36	.	AC=0;AF=0.00;AN=2;DP=89;MQ=4.12;MQ0=85	GT:DP:GQ:PL:A:C:G:T:IR	0/0:89:6.01:0,6,55:0,0:0,0:0,0:35,52:0
+22	16050254	.	A	.	36	.	AC=0;AF=0.00;AN=2;DP=89;MQ=4.12;MQ0=85	GT:DP:GQ:PL:A:C:G:T:IR	0/0:89:6.01:0,6,55:35,52:0,0:0,0:0,0:0
+22	16050255	.	T	.	36	.	AC=0;AF=0.00;AN=2;DP=87;MQ=4.16;MQ0=83	GT:DP:GQ:PL:A:C:G:T:IR	0/0:87:6.01:0,6,55:0,0:0,0:0,0:35,51:0
+22	16050256	.	T	.	36	.	AC=0;AF=0.00;AN=2;DP=87;MQ=4.16;MQ0=83	GT:DP:GQ:PL:A:C:G:T:IR	0/0:87:6.01:0,6,55:0,1:0,0:0,0:35,50:0
+22	16050257	.	T	.	36	.	AC=0;AF=0.00;AN=2;DP=87;MQ=4.16;MQ0=83	GT:DP:GQ:PL:A:C:G:T:IR	0/0:87:6.01:0,6,55:0,0:0,0:0,0:35,51:0
+22	16050258	.	T	.	36	.	AC=0;AF=0.00;AN=2;DP=87;MQ=4.16;MQ0=83	GT:DP:GQ:PL:A:C:G:T:IR	0/0:87:6.01:0,6,55:0,0:0,0:0,0:35,51:0
+22	16050259	.	C	.	36	.	AC=0;AF=0.00;AN=2;DP=82;MQ=4.29;MQ0=78	GT:DP:GQ:PL:A:C:G:T:IR	0/0:82:6.01:0,6,55:0,0:35,46:0,0:0,0:0
+22	16050260	.	T	.	36	.	AC=0;AF=0.00;AN=2;DP=86;MQ=4.19;MQ0=82	GT:DP:GQ:PL:A:C:G:T:IR	0/0:86:6.01:0,6,55:0,0:0,0:0,0:35,50:0
+22	16050261	.	T	.	36	.	AC=0;AF=0.00;AN=2;DP=86;MQ=4.19;MQ0=82	GT:DP:GQ:PL:A:C:G:T:IR	0/0:86:6.01:0,6,55:0,0:0,0:0,0:34,51:0
+22	16050262	.	A	.	36	.	AC=0;AF=0.00;AN=2;DP=86;MQ=4.19;MQ0=82	GT:DP:GQ:PL:A:C:G:T:IR	0/0:86:6.01:0,6,55:36,49:0,0:0,0:0,0:0
+22	16050263	.	T	.	36	.	AC=0;AF=0.00;AN=2;DP=88;MQ=4.14;MQ0=84	GT:DP:GQ:PL:A:C:G:T:IR	0/0:88:6.01:0,6,55:0,0:0,0:0,0:37,50:0
+22	16050264	.	T	.	36	.	AC=0;AF=0.00;AN=2;DP=89;MQ=4.12;MQ0=85	GT:DP:GQ:PL:A:C:G:T:IR	0/0:89:6.01:0,6,55:0,0:0,0:0,0:38,50:0
+22	16050265	.	A	.	36	.	AC=0;AF=0.00;AN=2;DP=90;MQ=4.09;MQ0=86	GT:DP:GQ:PL:A:C:G:T:IR	0/0:90:6.01:0,6,55:38,51:0,0:0,0:0,0:0
+22	16050266	.	A	.	36	.	AC=0;AF=0.00;AN=2;DP=92;MQ=4.05;MQ0=88	GT:DP:GQ:PL:A:C:G:T:IR	0/0:92:6.01:0,6,55:38,53:0,0:0,0:0,0:0
+22	16050267	.	C	.	36	.	AC=0;AF=0.00;AN=2;DP=86;MQ=4.19;MQ0=82	GT:DP:GQ:PL:A:C:G:T:IR	0/0:86:6.01:0,6,55:0,0:36,49:0,0:0,0:0
+22	16050268	.	T	.	36	.	AC=0;AF=0.00;AN=2;DP=87;MQ=4.16;MQ0=83	GT:DP:GQ:PL:A:C:G:T:IR	0/0:87:6.01:0,6,55:0,0:0,0:1,0:35,50:0
+22	16050269	.	T	.	39.01	.	AC=0;AF=0.00;AN=2;DP=87;MQ=5.46;MQ0=82	GT:DP:GQ:PL:A:C:G:T:IR	0/0:87:9.02:0,9,92:0,0:0,0:0,0:37,49:0
+22	16050270	.	C	.	39.01	.	AC=0;AF=0.00;AN=2;DP=79;MQ=5.73;MQ0=74	GT:DP:GQ:PL:A:C:G:T:IR	0/0:79:9.02:0,9,92:0,0:33,45:0,0:0,0:0
+22	16050271	.	C	.	42.01	.	AC=0;AF=0.00;AN=2;DP=81;MQ=6.21;MQ0=75	GT:DP:GQ:PL:A:C:G:T:IR	0/0:81:12.02:0,12,120:0,0:33,47:0,0:0,0:0
+22	16050272	.	T	.	42.01	.	AC=0;AF=0.00;AN=2;DP=80;MQ=6.25;MQ0=74	GT:DP:GQ:PL:A:C:G:T:IR	0/0:80:12.02:0,12,120:0,0:0,0:0,0:33,46:0
+22	16050273	.	G	.	42.01	.	AC=0;AF=0.00;AN=2;DP=78;MQ=6.33;MQ0=72	GT:DP:GQ:PL:A:C:G:T:IR	0/0:78:12.02:0,12,120:0,0:0,0:33,44:0,0:0
+22	16050274	.	G	.	42.01	.	AC=0;AF=0.00;AN=2;DP=79;MQ=6.29;MQ0=73	GT:DP:GQ:PL:A:C:G:T:IR	0/0:79:12.01:0,12,118:0,1:0,0:34,43:0,0:0
+22	16050275	.	A	.	42.01	.	AC=0;AF=0.00;AN=2;DP=81;MQ=5.98;MQ0=76	GT:DP:GQ:PL:A:C:G:T:IR	0/0:81:12.02:0,12,120:34,46:0,0:0,0:0,0:0
+22	16050276	.	G	.	42.01	.	AC=0;AF=0.00;AN=2;DP=80;MQ=6.02;MQ0=75	GT:DP:GQ:PL:A:C:G:T:IR	0/0:80:12.02:0,12,120:0,0:0,0:34,45:0,0:0
+22	16050277	.	G	.	42.01	.	AC=0;AF=0.00;AN=2;DP=80;MQ=6.02;MQ0=75	GT:DP:GQ:PL:A:C:G:T:IR	0/0:80:12.02:0,12,120:0,0:0,0:34,45:0,0:0
+22	16050278	.	G	.	42.01	.	AC=0;AF=0.00;AN=2;DP=77;MQ=6.14;MQ0=72	GT:DP:GQ:PL:A:C:G:T:IR	0/0:77:12.02:0,12,120:0,0:0,0:32,44:0,0:0
+22	16050279	.	A	.	42.01	.	AC=0;AF=0.00;AN=2;DP=79;MQ=6.06;MQ0=74	GT:DP:GQ:PL:A:C:G:T:IR	0/0:79:12.02:0,12,120:33,45:0,0:0,0:0,0:0
+22	16050280	.	G	.	42.01	.	AC=0;AF=0.00;AN=2;DP=78;MQ=6.10;MQ0=73	GT:DP:GQ:PL:A:C:G:T:IR	0/0:78:12.02:0,12,120:0,0:0,0:33,44:0,0:0
+22	16050281	.	G	.	42.01	.	AC=0;AF=0.00;AN=2;DP=76;MQ=6.18;MQ0=71	GT:DP:GQ:PL:A:C:G:T:IR	0/0:76:12.01:0,12,118:0,0:0,0:31,44:0,0:0
+22	16050282	.	C	.	42.01	.	AC=0;AF=0.00;AN=2;DP=79;MQ=6.06;MQ0=74	GT:DP:GQ:PL:A:C:G:T:IR	0/0:79:12.02:0,12,120:0,0:34,43:0,0:0,1:0
+22	16050283	.	T	.	42.01	.	AC=0;AF=0.00;AN=2;DP=81;MQ=5.98;MQ0=76	GT:DP:GQ:PL:A:C:G:T:IR	0/0:81:12.02:0,12,120:0,0:0,1:0,0:35,44:0
+22	16050284	.	T	.	42.01	.	AC=0;AF=0.00;AN=2;DP=80;MQ=6.02;MQ0=75	GT:DP:GQ:PL:A:C:G:T:IR	0/0:80:12.02:0,12,120:0,0:0,0:0,0:34,45:0
+22	16050285	.	A	.	42.01	.	AC=0;AF=0.00;AN=2;DP=80;MQ=5.78;MQ0=76	GT:DP:GQ:PL:A:C:G:T:IR	0/0:80:12.02:0,12,120:33,46:0,0:0,0:0,0:0
+22	16050286	.	T	.	42.01	.	AC=0;AF=0.00;AN=2;DP=80;MQ=5.78;MQ0=76	GT:DP:GQ:PL:A:C:G:T:IR	0/0:80:12.02:0,12,120:0,0:0,0:0,0:34,45:0
+22	16050287	.	C	.	42.01	.	AC=0;AF=0.00;AN=2;DP=80;MQ=5.78;MQ0=76	GT:DP:GQ:PL:A:C:G:T:IR	0/0:80:12.02:0,12,120:0,0:34,45:0,0:0,0:0
+22	16050288	.	A	.	45.01	.	AC=0;AF=0.00;AN=2;DP=82;MQ=6.25;MQ0=77	GT:DP:GQ:PL:A:C:G:T:IR	0/0:82:15.02:0,15,148:34,47:0,0:0,0:0,0:0
+22	16050289	.	T	.	45.01	.	AC=0;AF=0.00;AN=2;DP=82;MQ=6.25;MQ0=77	GT:DP:GQ:PL:A:C:G:T:IR	0/0:82:15.02:0,15,148:0,0:0,0:0,0:34,47:0
+22	16050290	.	T	.	45.01	.	AC=0;AF=0.00;AN=2;DP=81;MQ=6.29;MQ0=76	GT:DP:GQ:PL:A:C:G:T:IR	0/0:81:15.02:0,15,148:0,0:0,0:0,0:33,47:0
+22	16050291	.	C	.	45.01	.	AC=0;AF=0.00;AN=2;DP=79;MQ=6.37;MQ0=74	GT:DP:GQ:PL:A:C:G:T:IR	0/0:79:15.02:0,15,148:0,0:33,45:0,0:0,0:0
+22	16050292	.	T	.	45.01	.	AC=0;AF=0.00;AN=2;DP=80;MQ=6.83;MQ0=74	GT:DP:GQ:PL:A:C:G:T:IR	0/0:80:15.02:0,15,148:0,0:0,0:0,0:34,45:0
+22	16050293	.	C	.	48.02	.	AC=0;AF=0.00;AN=2;DP=79;MQ=6.88;MQ0=73	GT:DP:GQ:PL:A:C:G:T:IR	0/0:79:18.02:0,18,175:0,0:34,44:0,0:0,0:0
+22	16050294	.	T	.	51.02	.	AC=0;AF=0.00;AN=2;DP=81;MQ=7.25;MQ0=74	GT:DP:GQ:PL:A:C:G:T:IR	0/0:81:21.03:0,21,203:0,0:0,0:0,0:34,46:0
+22	16050295	.	C	.	54.02	.	AC=0;AF=0.00;AN=2;DP=80;MQ=7.74;MQ0=72	GT:DP:GQ:PL:A:C:G:T:IR	0/0:80:24.03:0,24,231:0,0:35,43:0,1:0,0:0
+22	16050296	.	T	.	57.03	.	AC=0;AF=0.00;AN=2;DP=81;MQ=8.72;MQ0=72	GT:DP:GQ:PL:A:C:G:T:IR	0/0:81:27.04:0,27,271:0,0:0,0:0,0:35,45:0
+22	16050297	.	T	.	57.03	.	AC=0;AF=0.00;AN=2;DP=81;MQ=8.72;MQ0=72	GT:DP:GQ:PL:A:C:G:T:IR	0/0:81:27.04:0,27,271:0,0:0,0:0,0:35,45:0
+22	16050298	.	T	.	60.04	.	AC=0;AF=0.00;AN=2;DP=81;MQ=9.09;MQ0=71	GT:DP:GQ:PL:A:C:G:T:IR	0/0:81:30.04:0,30,298:0,0:0,0:0,0:36,44:0
+22	16050299	.	T	.	60.04	.	AC=0;AF=0.00;AN=2;DP=82;MQ=9.91;MQ0=71	GT:DP:GQ:PL:A:C:G:T:IR	0/0:82:30.04:0,30,298:0,0:0,0:0,0:37,44:0
+22	16050300	.	G	.	63.04	.	AC=0;AF=0.00;AN=2;DP=81;MQ=9.97;MQ0=70	GT:DP:GQ:PL:A:C:G:T:IR	0/0:81:33.05:0,33,327:0,0:0,0:37,44:0,0:0
+22	16050301	.	G	.	63.04	.	AC=0;AF=0.00;AN=2;DP=81;MQ=9.97;MQ0=70	GT:DP:GQ:PL:A:C:G:T:IR	0/0:81:33.05:0,33,329:0,0:0,0:37,44:0,0:0
+22	16050302	.	A	.	69.04	.	AC=0;AF=0.00;AN=2;DP=83;MQ=10.95;MQ0=70	GT:DP:GQ:PL:A:C:G:T:IR	0/0:83:39.05:0,39,384:38,45:0,0:0,0:0,0:0
+22	16050303	.	T	.	69.06	.	AC=0;AF=0.00;AN=2;DP=84;MQ=10.89;MQ0=71	GT:DP:GQ:PL:A:C:G:T:IR	0/0:84:39.06:0,39,394:0,0:0,0:0,0:38,46:0
+22	16050304	.	G	.	75.06	.	AC=0;AF=0.00;AN=2;DP=81;MQ=11.66;MQ0=66	GT:DP:GQ:PL:A:C:G:T:IR	0/0:81:45.07:0,45,454:0,0:0,0:35,46:0,0:0
+22	16050305	.	A	.	72.06	.	AC=0;AF=0.00;AN=2;DP=81;MQ=11.66;MQ0=66	GT:DP:GQ:PL:A:C:G:T:IR	0/0:81:42.06:0,42,423:35,46:0,0:0,0:0,0:0
+22	16050306	.	T	.	75.06	.	AC=0;AF=0.00;AN=2;DP=81;MQ=11.66;MQ0=66	GT:DP:GQ:PL:A:C:G:T:IR	0/0:81:45.07:0,45,455:0,0:0,0:0,0:35,46:0
+22	16050307	.	T	.	75.06	.	AC=0;AF=0.00;AN=2;DP=80;MQ=11.73;MQ0=65	GT:DP:GQ:PL:A:C:G:T:IR	0/0:80:45.07:0,45,456:0,0:0,0:0,0:34,46:0
+22	16050308	.	C	.	75.06	.	AC=0;AF=0.00;AN=2;DP=81;MQ=11.66;MQ0=66	GT:DP:GQ:PL:A:C:G:T:IR	0/0:81:45.07:0,45,457:0,0:34,47:0,0:0,0:0
+22	16050309	.	T	.	78.07	.	AC=0;AF=0.00;AN=2;DP=82;MQ=11.87;MQ0=66	GT:DP:GQ:PL:A:C:G:T:IR	0/0:82:48.07:0,48,483:0,0:0,0:0,0:34,48:0
+22	16050310	.	A	.	75.06	.	AC=0;AF=0.00;AN=2;DP=85;MQ=12.18;MQ0=67	GT:DP:GQ:PL:A:C:G:T:IR	0/0:85:45.06:0,45,449:35,50:0,0:0,0:0,0:0
+22	16050311	.	A	.	78.07	.	AC=0;AF=0.00;AN=2;DP=83;MQ=12.32;MQ0=65	GT:DP:GQ:PL:A:C:G:T:IR	0/0:83:48.07:0,48,486:35,48:0,0:0,0:0,0:0
+22	16050312	.	G	.	87.08	.	AC=0;AF=0.00;AN=2;DP=83;MQ=13.32;MQ0=64	GT:DP:GQ:PL:A:C:G:T:IR	0/0:83:57.09:0,57,571:0,0:0,0:36,47:0,0:0
+22	16050313	.	T	.	87.08	.	AC=0;AF=0.00;AN=2;DP=81;MQ=13.48;MQ0=62	GT:DP:GQ:PL:A:C:G:T:IR	0/0:81:57.08:0,57,570:0,0:0,0:0,0:36,45:0
+22	16050314	.	A	.	84.07	.	AC=0;AF=0.00;AN=2;DP=83;MQ=14.15;MQ0=62	GT:DP:GQ:PL:A:C:G:T:IR	0/0:82:54.08:0,54,542:35,47:0,0:0,0:0,0:0
+22	16050315	.	C	.	93.08	.	AC=0;AF=0.00;AN=2;DP=80;MQ=14.41;MQ0=59	GT:DP:GQ:PL:A:C:G:T:IR	0/0:80:63.09:0,63,625:0,0:36,44:0,0:0,0:0
+22	16050316	.	C	.	96.09	.	AC=0;AF=0.00;AN=2;DP=79;MQ=14.73;MQ0=57	GT:DP:GQ:PL:A:C:G:T:IR	0/0:79:66.10:0,66,660:0,0:35,43:0,0:1,0:0
+22	16050317	.	A	.	96.09	.	AC=0;AF=0.00;AN=2;DP=82;MQ=14.90;MQ0=58	GT:DP:GQ:PL:A:C:G:T:IR	0/0:82:66.10:0,66,654:35,47:0,0:0,0:0,0:0
+22	16050318	.	G	.	105.10	.	AC=0;AF=0.00;AN=2;DP=80;MQ=15.30;MQ0=55	GT:DP:GQ:PL:A:C:G:T:IR	0/0:80:75.11:0,75,747:0,0:0,0:33,47:0,0:0
+22	16050319	.	C	.	108.11	.	AC=0;AF=0.00;AN=2;DP=79;MQ=15.95;MQ0=53	GT:DP:GQ:PL:A:C:G:T:IR	0/0:79:78.12:0,78,780:0,0:31,48:0,0:0,0:0
+22	16050320	.	T	.	108.12	.	AC=0;AF=0.00;AN=2;DP=80;MQ=16.78;MQ0=51	GT:DP:GQ:PL:A:C:G:T:IR	0/0:80:78.12:0,78,794:0,0:0,0:0,0:34,46:0
+22	16050321	.	A	.	117.13	.	AC=0;AF=0.00;AN=2;DP=82;MQ=16.77;MQ0=52	GT:DP:GQ:PL:A:C:G:T:IR	0/0:82:87.13:0,87,873:34,48:0,0:0,0:0,0:0
+22	16050322	.	A	.	117.13	.	AC=0;AF=0.00;AN=2;DP=81;MQ=16.87;MQ0=51	GT:DP:GQ:PL:A:C:G:T:IR	0/0:81:87.14:0,87,881:34,47:0,0:0,0:0,0:0
+22	16050323	.	A	.	120.13	.	AC=0;AF=0.00;AN=2;DP=83;MQ=16.86;MQ0=52	GT:DP:GQ:PL:A:C:G:T:IR	0/0:83:90.14:0,90,908:34,49:0,0:0,0:0,0:0
+22	16050324	.	A	.	95.47	.	AC=0;AF=0.00;AN=2;DP=83;MQ=16.86;MQ0=52	GT:DP:GQ:PL:A:C:G:T:IR	0/0:83:65.48:0,65,878:34,48:0,0:0,0:0,1:0
+22	16050325	.	T	.	95.47	.	AC=0;AF=0.00;AN=2;DP=83;MQ=16.86;MQ0=52	GT:DP:GQ:PL:A:C:G:T:IR	0/0:83:65.48:0,65,880:0,0:0,1:0,0:34,48:0
+22	16050326	.	A	.	95.47	.	AC=0;AF=0.00;AN=2;DP=83;MQ=16.86;MQ0=52	GT:DP:GQ:PL:A:C:G:T:IR	0/0:83:65.48:0,65,880:34,48:0,0:0,0:0,1:0
+22	16050327	.	C	.	123.13	.	AC=0;AF=0.00;AN=2;DP=82;MQ=16.96;MQ0=51	GT:DP:GQ:PL:A:C:G:T:IR	0/0:82:93.14:0,93,928:0,0:34,48:0,0:0,0:0
+22	16050328	.	A	.	126.14	.	AC=0;AF=0.00;AN=2;DP=86;MQ=17.57;MQ0=51	GT:DP:GQ:PL:A:C:G:T:IR	0/0:86:96.15:0,96,969:35,51:0,0:0,0:0,0:0
+22	16050329	.	G	.	138.15	.	AC=0;AF=0.00;AN=2;DP=85;MQ=17.85;MQ0=49	GT:DP:GQ:PL:A:C:G:T:IR	0/0:85:99:0,108,1075:0,0:0,0:35,50:0,0:0
+22	16050330	.	C	.	141.15	.	AC=0;AF=0.00;AN=2;DP=84;MQ=18.13;MQ0=47	GT:DP:GQ:PL:A:C:G:T:IR	0/0:84:99:0,111,1095:0,0:35,49:0,0:0,0:0
+22	16050331	.	T	.	153.17	.	AC=0;AF=0.00;AN=2;DP=89;MQ=18.85;MQ0=46	GT:DP:GQ:PL:A:C:G:T:IR	0/0:89:99:0,123,1213:0,0:0,0:0,0:37,52:0
+22	16050332	.	A	.	147.17	.	AC=0;AF=0.00;AN=2;DP=92;MQ=19.00;MQ0=46	GT:DP:GQ:PL:A:C:G:T:IR	0/0:92:99:0,117,1178:37,55:0,0:0,0:0,0:0
+22	16050333	.	T	.	168.19	.	AC=0;AF=0.00;AN=2;DP=91;MQ=19.10;MQ0=45	GT:DP:GQ:PL:A:C:G:T:IR	0/0:91:99:0,138,1370:0,0:0,0:0,0:36,55:0
+22	16050334	.	C	.	168.19	.	AC=0;AF=0.00;AN=2;DP=90;MQ=19.21;MQ0=44	GT:DP:GQ:PL:A:C:G:T:IR	0/0:90:99:0,138,1369:0,0:36,53:0,1:0,0:0
+22	16050335	.	A	.	171.19	.	AC=0;AF=0.00;AN=2;DP=92;MQ=19.45;MQ0=43	GT:DP:GQ:PL:A:C:G:T:IR	0/0:92:99:0,141,1399:36,56:0,0:0,0:0,0:0
+22	16050336	.	T	.	183.21	.	AC=0;AF=0.00;AN=2;DP=94;MQ=19.53;MQ0=43	GT:DP:GQ:PL:A:C:G:T:IR	0/0:94:99:0,153,1514:0,0:0,0:0,0:36,58:0
+22	16050337	.	T	.	183.19	.	AC=0;AF=0.00;AN=2;DP=94;MQ=19.53;MQ0=43	GT:DP:GQ:PL:A:C:G:T:IR	0/0:94:99:0,153,1508:0,0:0,0:0,0:35,59:0
+22	16050338	.	C	.	186.21	.	AC=0;AF=0.00;AN=2;DP=93;MQ=19.78;MQ0=41	GT:DP:GQ:PL:A:C:G:T:IR	0/0:93:99:0,156,1533:0,0:34,58:0,0:1,0:0
+22	16050339	.	A	.	186.21	.	AC=0;AF=0.00;AN=2;DP=97;MQ=19.86;MQ0=43	GT:DP:GQ:PL:A:C:G:T:IR	0/0:97:99:0,156,1555:37,60:0,0:0,0:0,0:0
+22	16050340	.	T	.	192.22	.	AC=0;AF=0.00;AN=2;DP=97;MQ=19.86;MQ0=43	GT:DP:GQ:PL:A:C:G:T:IR	0/0:97:99:0,162,1605:0,0:0,0:0,0:37,60:0
+22	16050341	.	T	.	192.22	.	AC=0;AF=0.00;AN=2;DP=97;MQ=19.86;MQ0=43	GT:DP:GQ:PL:A:C:G:T:IR	0/0:97:99:0,162,1607:0,0:0,0:0,0:37,60:0
+22	16050342	.	T	.	195.22	.	AC=0;AF=0.00;AN=2;DP=98;MQ=19.90;MQ0=43	GT:DP:GQ:PL:A:C:G:T:IR	0/0:98:99:0,165,1635:0,0:0,0:0,0:37,61:0
+22	16050343	.	T	.	195.22	.	AC=0;AF=0.00;AN=2;DP=98;MQ=19.90;MQ0=43	GT:DP:GQ:PL:A:C:G:T:IR	0/0:98:99:0,165,1636:0,0:0,0:0,0:37,61:0
+22	16050344	.	C	.	201.21	.	AC=0;AF=0.00;AN=2;DP=98;MQ=20.17;MQ0=41	GT:DP:GQ:PL:A:C:G:T:IR	0/0:98:99:0,171,1660:0,0:37,61:0,0:0,0:0
+22	16050345	.	C	.	207.22	.	AC=0;AF=0.00;AN=2;DP=98;MQ=20.43;MQ0=39	GT:DP:GQ:PL:A:C:G:T:IR	0/0:98:99:0,177,1722:0,0:37,61:0,0:0,0:0
+22	16050346	.	T	.	207.24	.	AC=0;AF=0.00;AN=2;DP=100;MQ=20.56;MQ0=40	GT:DP:GQ:PL:A:C:G:T:IR	0/0:100:99:0,177,1750:0,0:0,0:0,0:39,61:0
+22	16050347	.	T	.	210.25	.	AC=0;AF=0.00;AN=2;DP=99;MQ=20.67;MQ0=39	GT:DP:GQ:PL:A:C:G:T:IR	0/0:99:99:0,180,1788:0,0:0,0:0,0:38,61:0
+22	16050348	.	G	.	216.25	.	AC=0;AF=0.00;AN=2;DP=101;MQ=20.84;MQ0=38	GT:DP:GQ:PL:A:C:G:T:IR	0/0:101:99:0,186,1843:0,1:0,0:39,61:0,0:0
+22	16050349	.	A	.	216.25	.	AC=0;AF=0.00;AN=2;DP=103;MQ=20.89;MQ0=38	GT:DP:GQ:PL:A:C:G:T:IR	0/0:103:99:0,186,1835:40,63:0,0:0,0:0,0:0
+22	16050350	.	T	.	225.26	.	AC=0;AF=0.00;AN=2;DP=103;MQ=20.89;MQ0=38	GT:DP:GQ:PL:A:C:G:T:IR	0/0:103:99:0,195,1925:0,0:0,0:0,0:40,63:0
+22	16050351	.	T	.	228.26	.	AC=0;AF=0.00;AN=2;DP=104;MQ=20.91;MQ0=38	GT:DP:GQ:PL:A:C:G:T:IR	0/0:104:99:0,198,1954:0,0:0,0:0,0:40,64:0
+22	16050352	.	T	.	228.26	.	AC=0;AF=0.00;AN=2;DP=104;MQ=20.91;MQ0=38	GT:DP:GQ:PL:A:C:G:T:IR	0/0:104:99:0,198,1959:0,0:0,0:0,0:40,64:0
+22	16050353	.	G	.	228.26	.	AC=0;AF=0.00;AN=2;DP=102;MQ=21.11;MQ0=36	GT:DP:GQ:PL:A:C:G:T:IR	0/0:102:99:0,198,1958:0,0:0,0:39,63:0,0:0
+22	16050354	.	G	.	228.26	.	AC=0;AF=0.00;AN=2;DP=102;MQ=21.11;MQ0=36	GT:DP:GQ:PL:A:C:G:T:IR	0/0:102:99:0,198,1949:0,0:0,0:40,62:0,0:0
+22	16050355	.	G	.	231.27	.	AC=0;AF=0.00;AN=2;DP=101;MQ=21.53;MQ0=34	GT:DP:GQ:PL:A:C:G:T:IR	0/0:101:99:0,201,1984:0,0:0,0:38,63:0,0:0
+22	16050356	.	A	.	234.28	.	AC=0;AF=0.00;AN=2;DP=102;MQ=21.86;MQ0=33	GT:DP:GQ:PL:A:C:G:T:IR	0/0:102:99:0,204,2028:39,63:0,0:0,0:0,0:0
+22	16050357	.	G	.	243.30	.	AC=0;AF=0.00;AN=2;DP=104;MQ=22.06;MQ0=33	GT:DP:GQ:PL:A:C:G:T:IR	0/0:104:99:0,213,2132:0,0:0,0:39,65:0,0:0
+22	16050358	.	C	.	221.64	.	AC=0;AF=0.00;AN=2;DP=105;MQ=22.37;MQ0=32	GT:DP:GQ:PL:A:C:G:T:IR	0/0:105:99:0,192,2132:0,1:39,64:0,0:1,0:0
+22	16050359	.	C	.	215.31	.	AC=0;AF=0.00;AN=2;DP=108;MQ=22.45;MQ0=33	GT:DP:GQ:PL:A:C:G:T:IR	0/0:108:99:0,185,2172:0,0:40,66:0,0:2,0:0
+22	16050360	.	T	.	267.36	.	AC=0;AF=0.00;AN=2;DP=114;MQ=23.38;MQ0=32	GT:DP:GQ:PL:A:C:G:T:IR	0/0:114:99:0,237,2414:0,0:0,0:0,0:44,70:0
+22	16050361	.	A	.	264.34	.	AC=0;AF=0.00;AN=2;DP=115;MQ=23.53;MQ0=32	GT:DP:GQ:PL:A:C:G:T:IR	0/0:115:99:0,234,2366:44,71:0,0:0,0:0,0:0
+22	16050362	.	A	.	276.38	.	AC=0;AF=0.00;AN=2;DP=115;MQ=23.79;MQ0=31	GT:DP:GQ:PL:A:C:G:T:IR	0/0:115:99:0,246,2519:43,72:0,0:0,0:0,0:0
+22	16050363	.	T	.	279.39	.	AC=0;AF=0.00;AN=2;DP=114;MQ=23.89;MQ0=30	GT:DP:GQ:PL:A:C:G:T:IR	0/0:114:99:0,249,2562:0,0:0,0:0,0:43,71:0
+22	16050364	.	T	.	251.73	.	AC=0;AF=0.00;AN=2;DP=114;MQ=23.69;MQ0=31	GT:DP:GQ:PL:A:C:G:T:IR	0/0:114:99:0,222,2509:0,0:1,0:0,0:41,72:0
+22	16050365	.	T	.	279.39	.	AC=0;AF=0.00;AN=2;DP=111;MQ=24.01;MQ0=28	GT:DP:GQ:PL:A:C:G:T:IR	0/0:111:99:0,249,2569:0,0:0,0:0,0:41,70:0
+22	16050366	.	C	.	282.39	.	AC=0;AF=0.00;AN=2;DP=111;MQ=24.26;MQ0=27	GT:DP:GQ:PL:A:C:G:T:IR	0/0:111:99:0,252,2594:0,0:42,69:0,0:0,0:0
+22	16050367	.	T	.	288.42	.	AC=0;AF=0.00;AN=2;DP=114;MQ=24.68;MQ0=27	GT:DP:GQ:PL:A:C:G:T:IR	0/0:114:99:0,258,2688:0,0:0,0:0,0:44,70:0
+22	16050368	.	T	.	294.43	.	AC=0;AF=0.00;AN=2;DP=115;MQ=25.05;MQ0=26	GT:DP:GQ:PL:A:C:G:T:IR	0/0:115:99:0,264,2753:0,0:0,0:0,0:44,71:0
+22	16050369	.	T	.	297.45	.	AC=0;AF=0.00;AN=2;DP=115;MQ=25.05;MQ0=26	GT:DP:GQ:PL:A:C:G:T:IR	0/0:115:99:0,267,2800:0,0:0,0:0,0:44,71:0
+22	16050370	.	A	.	297.44	.	AC=0;AF=0.00;AN=2;DP=115;MQ=25.05;MQ0=26	GT:DP:GQ:PL:A:C:G:T:IR	0/0:115:99:0,267,2784:45,70:0,0:0,0:0,0:0
+22	16050371	.	A	.	300.45	.	AC=0;AF=0.00;AN=2;DP=117;MQ=25.07;MQ0=27	GT:DP:GQ:PL:A:C:G:T:IR	0/0:117:99:0,270,2827:46,71:0,0:0,0:0,0:0
+22	16050372	.	T	.	300.45	.	AC=0;AF=0.00;AN=2;DP=117;MQ=25.31;MQ0=26	GT:DP:GQ:PL:A:C:G:T:IR	0/0:117:99:0,270,2831:0,0:0,0:0,0:47,70:0
+22	16050373	.	T	.	303.47	.	AC=0;AF=0.00;AN=2;DP=118;MQ=25.20;MQ0=27	GT:DP:GQ:PL:A:C:G:T:IR	0/0:118:99:0,273,2875:0,0:0,0:0,0:47,71:0
+22	16050374	.	T	.	303.47	.	AC=0;AF=0.00;AN=2;DP=118;MQ=25.65;MQ0=25	GT:DP:GQ:PL:A:C:G:T:IR	0/0:118:99:0,273,2889:0,0:0,0:0,0:47,71:0
+22	16050375	.	A	.	297.47	.	AC=0;AF=0.00;AN=2;DP=119;MQ=25.77;MQ0=25	GT:DP:GQ:PL:A:C:G:T:IR	0/0:119:99:0,267,2852:48,71:0,0:0,0:0,0:0
+22	16050376	.	G	.	300.47	.	AC=0;AF=0.00;AN=2;DP=115;MQ=25.86;MQ0=25	GT:DP:GQ:PL:A:C:G:T:IR	0/0:115:99:0,270,2882:1,0:0,0:46,68:0,0:0
+22	16050377	.	T	.	291.47	.	AC=0;AF=0.00;AN=2;DP=115;MQ=25.86;MQ0=25	GT:DP:GQ:PL:A:C:G:T:IR	0/0:115:99:0,261,2800:0,0:0,0:0,0:48,67:0
+22	16050378	.	A	.	282.47	.	AC=0;AF=0.00;AN=2;DP=113;MQ=25.91;MQ0=25	GT:DP:GQ:PL:A:C:G:T:IR	0/0:113:99:0,252,2728:48,65:0,0:0,0:0,0:0
+22	16050379	.	T	.	279.46	.	AC=0;AF=0.00;AN=2;DP=108;MQ=26.04;MQ0=25	GT:DP:GQ:PL:A:C:G:T:IR	0/0:108:99:0,249,2698:0,0:0,0:0,0:47,61:0
+22	16050380	.	G	.	270.46	.	AC=0;AF=0.00;AN=2;DP=105;MQ=26.12;MQ0=25	GT:DP:GQ:PL:A:C:G:T:IR	0/0:105:99:0,240,2622:0,0:0,0:47,58:0,0:0
+22	16050381	.	C	.	270.45	.	AC=0;AF=0.00;AN=2;DP=105;MQ=26.12;MQ0=25	GT:DP:GQ:PL:A:C:G:T:IR	0/0:105:99:0,240,2609:0,0:48,57:0,0:0,0:0
+22	16050382	.	A	.	279.47	.	AC=0;AF=0.00;AN=2;DP=113;MQ=25.91;MQ0=25	GT:DP:GQ:PL:A:C:G:T:IR	0/0:113:99:0,249,2701:54,59:0,0:0,0:0,0:0
+22	16050383	.	A	.	270.46	.	AC=0;AF=0.00;AN=2;DP=112;MQ=25.93;MQ0=25	GT:DP:GQ:PL:A:C:G:T:IR	0/0:112:99:0,240,2616:54,58:0,0:0,0:0,0:0
+22	16050384	.	G	.	282.47	.	AC=0;AF=0.00;AN=2;DP=109;MQ=26.01;MQ0=25	GT:DP:GQ:PL:A:C:G:T:IR	0/0:109:99:0,252,2727:0,1:0,0:54,54:0,0:0
+22	16050385	.	A	.	291.48	.	AC=0;AF=0.00;AN=2;DP=112;MQ=25.93;MQ0=25	GT:DP:GQ:PL:A:C:G:T:IR	0/0:112:99:0,261,2814:58,54:0,0:0,0:0,0:0
+22	16050386	.	A	.	294.48	.	AC=0;AF=0.00;AN=2;DP=113;MQ=25.91;MQ0=25	GT:DP:GQ:PL:A:C:G:T:IR	0/0:113:99:0,264,2844:59,54:0,0:0,0:0,0:0
+22	16050387	.	A	.	294.48	.	AC=0;AF=0.00;AN=2;DP=113;MQ=25.91;MQ0=25	GT:DP:GQ:PL:A:C:G:T:IR	0/0:113:99:0,264,2844:59,54:0,0:0,0:0,0:0
+22	16050388	.	A	.	291.48	.	AC=0;AF=0.00;AN=2;DP=113;MQ=25.91;MQ0=25	GT:DP:GQ:PL:A:C:G:T:IR	0/0:113:99:0,261,2811:59,54:0,0:0,0:0,0:0
+22	16050389	.	C	.	260.81	.	AC=0;AF=0.00;AN=2;DP=111;MQ=25.96;MQ0=25	GT:DP:GQ:PL:A:C:G:T:IR	0/0:111:99:0,231,2725:0,0:58,52:0,1:0,0:0
+22	16050390	.	C	.	270.46	.	AC=0;AF=0.00;AN=2;DP=105;MQ=26.12;MQ0=25	GT:DP:GQ:PL:A:C:G:T:IR	0/0:105:99:0,240,2616:0,0:57,48:0,0:0,0:0
+22	16050391	.	A	.	267.46	.	AC=0;AF=0.00;AN=2;DP=107;MQ=26.06;MQ0=25	GT:DP:GQ:PL:A:C:G:T:IR	0/0:107:99:0,237,2598:57,50:0,0:0,0:0,0:0
+22	16050392	.	A	.	270.46	.	AC=0;AF=0.00;AN=2;DP=107;MQ=26.06;MQ0=25	GT:DP:GQ:PL:A:C:G:T:IR	0/0:107:99:0,240,2621:57,50:0,0:0,0:0,0:0
+22	16050393	.	T	.	267.45	.	AC=0;AF=0.00;AN=2;DP=107;MQ=26.06;MQ0=25	GT:DP:GQ:PL:A:C:G:T:IR	0/0:107:99:0,237,2589:0,0:0,0:0,0:57,50:0
+22	16050394	.	T	.	267.45	.	AC=0;AF=0.00;AN=2;DP=106;MQ=26.09;MQ0=25	GT:DP:GQ:PL:A:C:G:T:IR	0/0:106:99:0,237,2585:0,0:0,0:0,0:56,50:0
+22	16050395	.	T	.	261.45	.	AC=0;AF=0.00;AN=2;DP=106;MQ=26.09;MQ0=25	GT:DP:GQ:PL:A:C:G:T:IR	0/0:106:99:0,231,2534:0,0:0,0:0,0:56,50:0
+22	16050396	.	G	.	227.44	.	AC=0;AF=0.00;AN=2;DP=104;MQ=26.15;MQ0=25	GT:DP:GQ:PL:A:C:G:T:IR	0/0:104:99:0,197,2499:0,0:1,0:54,49:0,0:0
+22	16050397	.	G	.	255.44	.	AC=0;AF=0.00;AN=2;DP=101;MQ=26.13;MQ0=26	GT:DP:GQ:PL:A:C:G:T:IR	0/0:101:99:0,225,2469:0,0:0,0:53,48:0,0:0
+22	16050398	.	A	.	252.43	.	AC=0;AF=0.00;AN=2;DP=101;MQ=26.13;MQ0=26	GT:DP:GQ:PL:A:C:G:T:IR	0/0:101:99:0,222,2438:53,48:0,0:0,0:0,0:0
+22	16050399	.	A	.	249.44	.	AC=0;AF=0.00;AN=2;DP=101;MQ=26.13;MQ0=26	GT:DP:GQ:PL:A:C:G:T:IR	0/0:101:99:0,219,2425:53,48:0,0:0,0:0,0:0
+22	16050400	.	A	.	243.41	.	AC=0;AF=0.00;AN=2;DP=99;MQ=26.19;MQ0=26	GT:DP:GQ:PL:A:C:G:T:IR	0/0:99:99:0,213,2351:52,47:0,0:0,0:0,0:0
+22	16050401	.	T	.	243.43	.	AC=0;AF=0.00;AN=2;DP=97;MQ=26.26;MQ0=26	GT:DP:GQ:PL:A:C:G:T:IR	0/0:97:99:0,213,2360:0,0:0,0:0,0:51,46:0
+22	16050402	.	A	.	237.42	.	AC=0;AF=0.00;AN=2;DP=99;MQ=26.09;MQ0=27	GT:DP:GQ:PL:A:C:G:T:IR	0/0:99:99:0,207,2303:51,48:0,0:0,0:0,0:0
+22	16050403	.	T	.	240.43	.	AC=0;AF=0.00;AN=2;DP=98;MQ=26.12;MQ0=27	GT:DP:GQ:PL:A:C:G:T:IR	0/0:98:99:0,210,2335:0,0:0,0:0,0:51,47:0
+22	16050404	.	C	.	237.42	.	AC=0;AF=0.00;AN=2;DP=96;MQ=26.18;MQ0=27	GT:DP:GQ:PL:A:C:G:T:IR	0/0:96:99:0,207,2305:0,0:50,46:0,0:0,0:0
+22	16050405	.	A	.	243.43	.	AC=0;AF=0.00;AN=2;DP=100;MQ=26.36;MQ0=27	GT:DP:GQ:PL:A:C:G:T:IR	0/0:100:99:0,213,2381:52,48:0,0:0,0:0,0:0
+22	16050406	.	A	.	231.42	.	AC=0;AF=0.00;AN=2;DP=100;MQ=26.36;MQ0=27	GT:DP:GQ:PL:A:C:G:T:IR	0/0:100:99:0,201,2258:52,48:0,0:0,0:0,0:0
+22	16050407	.	C	.	234.42	.	AC=0;AF=0.00;AN=2;DP=95;MQ=26.21;MQ0=27	GT:DP:GQ:PL:A:C:G:T:IR	0/0:95:99:0,204,2277:0,0:51,44:0,0:0,0:0
+22	16050408	rs149201999	T	.	228.41	.	AC=0;AF=0.00;AN=2;DP=96;MQ=26.18;MQ0=27;1000gALT=C;AF1000g=0.06;AFR_AF=0.09;AMR_AF=0.05;ASN_AF=0.04;EUR_AF=0.06	GT:DP:GQ:PL:A:C:G:T:IR	0/0:96:99:0,198,2211:0,1:11,16:0,0:41,27:0
+22	16050409	.	G	.	234.42	.	AC=0;AF=0.00;AN=2;DP=95;MQ=26.04;MQ0=27	GT:DP:GQ:PL:A:C:G:T:IR	0/0:95:99:0,204,2270:0,1:0,0:51,43:0,0:0
+22	16050410	.	T	.	231.40	.	AC=0;AF=0.00;AN=2;DP=94;MQ=26.18;MQ0=26	GT:DP:GQ:PL:A:C:G:T:IR	0/0:94:99:0,201,2226:0,0:0,0:0,0:50,44:0
+22	16050411	.	T	.	231.40	.	AC=0;AF=0.00;AN=2;DP=93;MQ=26.04;MQ0=26	GT:DP:GQ:PL:A:C:G:T:IR	0/0:93:99:0,201,2216:0,0:0,0:0,0:49,44:0
+22	16050412	.	T	.	222.38	.	AC=0;AF=0.00;AN=2;DP=93;MQ=26.04;MQ0=26	GT:DP:GQ:PL:A:C:G:T:IR	0/0:93:99:0,192,2116:0,0:0,0:0,0:49,44:0
+22	16050413	.	T	.	219.36	.	AC=0;AF=0.00;AN=2;DP=93;MQ=26.04;MQ0=26	GT:DP:GQ:PL:A:C:G:T:IR	0/0:93:99:0,189,2072:0,0:0,0:0,0:49,44:0
+22	16050414	.	G	.	154.71	.	AC=0;AF=0.00;AN=2;DP=90;MQ=25.78;MQ0=26	GT:DP:GQ:PL:A:C:G:T:IR	0/0:90:99:0,125,1979:0,0:0,0:44,44:2,0:0
+22	16050415	.	G	.	191.71	.	AC=0;AF=0.00;AN=2;DP=88;MQ=25.77;MQ0=25	GT:DP:GQ:PL:A:C:G:T:IR	0/0:88:99:0,162,2015:0,0:1,0:43,44:0,0:0
+22	16050416	.	A	.	179.36	.	AC=0;AF=0.00;AN=2;DP=88;MQ=25.77;MQ0=25	GT:DP:GQ:PL:A:C:G:T:IR	0/0:88:99:0,149,1991:43,44:0,0:0,0:1,0:0
+22	16050417	.	A	.	216.37	.	AC=0;AF=0.00;AN=2;DP=88;MQ=25.77;MQ0=25	GT:DP:GQ:PL:A:C:G:T:IR	0/0:88:99:0,186,2047:44,44:0,0:0,0:0,0:0
+22	16050418	.	A	.	207.33	.	AC=0;AF=0.00;AN=2;DP=87;MQ=25.61;MQ0=25	GT:DP:GQ:PL:A:C:G:T:IR	0/0:87:99:0,177,1915:44,43:0,0:0,0:0,0:0
+22	16050419	.	C	.	207.32	.	AC=0;AF=0.00;AN=2;DP=83;MQ=25.26;MQ0=24	GT:DP:GQ:PL:A:C:G:T:IR	0/0:83:99:0,177,1898:0,0:44,39:0,0:0,0:0
+22	16050420	.	C	.	201.32	.	AC=0;AF=0.00;AN=2;DP=82;MQ=25.41;MQ0=23	GT:DP:GQ:PL:A:C:G:T:IR	0/0:82:99:0,171,1840:0,0:43,38:0,0:1,0:0
+22	16050421	.	T	.	198.32	.	AC=0;AF=0.00;AN=2;DP=82;MQ=25.29;MQ0=24	GT:DP:GQ:PL:A:C:G:T:IR	0/0:82:99:0,168,1826:0,0:0,0:0,0:44,38:0
+22	16050422	.	T	.	189.31	.	AC=0;AF=0.00;AN=2;DP=80;MQ=25.47;MQ0=23	GT:DP:GQ:PL:A:C:G:T:IR	0/0:80:99:0,159,1737:0,0:0,0:0,0:43,37:0
+22	16050423	.	A	.	195.32	.	AC=0;AF=0.00;AN=2;DP=78;MQ=25.32;MQ0=23	GT:DP:GQ:PL:A:C:G:T:IR	0/0:78:99:0,165,1799:42,36:0,0:0,0:0,0:0
+22	16050424	.	G	.	158.61	.	AC=0;AF=0.00;AN=2;DP=74;MQ=25.36;MQ0=22	GT:DP:GQ:PL:A:C:G:T:IR	0/0:74:99:0,129,1621:0,0:1,0:37,36:0,0:0
+22	16050425	.	A	.	183.28	.	AC=0;AF=0.00;AN=2;DP=75;MQ=25.19;MQ0=23	GT:DP:GQ:PL:A:C:G:T:IR	0/0:75:99:0,153,1650:39,36:0,0:0,0:0,0:0
+22	16050426	.	C	.	171.27	.	AC=0;AF=0.00;AN=2;DP=69;MQ=25.82;MQ0=20	GT:DP:GQ:PL:A:C:G:T:IR	0/0:69:99:0,141,1533:0,0:35,32:0,0:2,0:0
+22	16050427	.	C	.	171.27	.	AC=0;AF=0.00;AN=2;DP=68;MQ=25.46;MQ0=21	GT:DP:GQ:PL:A:C:G:T:IR	0/0:68:99:0,141,1536:0,0:36,32:0,0:0,0:0
+22	16050428	.	T	.	165.26	.	AC=0;AF=0.00;AN=2;DP=69;MQ=25.13;MQ0=23	GT:DP:GQ:PL:A:C:G:T:IR	0/0:69:99:0,135,1460:0,0:0,0:0,0:36,33:0
+22	16050429	.	A	.	165.26	.	AC=0;AF=0.00;AN=2;DP=69;MQ=25.13;MQ0=23	GT:DP:GQ:PL:A:C:G:T:IR	0/0:68:99:0,135,1484:36,32:0,0:0,0:0,0:0
+22	16050430	.	G	.	162.25	.	AC=0;AF=0.00;AN=2;DP=66;MQ=24.87;MQ0=22	GT:DP:GQ:PL:A:C:G:T:IR	0/0:66:99:0,132,1434:0,0:0,0:34,32:0,0:0
+22	16050431	.	G	.	134.59	.	AC=0;AF=0.00;AN=2;DP=67;MQ=24.68;MQ0=23	GT:DP:GQ:PL:A:C:G:T:IR	0/0:67:99:0,105,1384:0,1:0,0:34,32:0,0:0
+22	16050432	.	T	.	159.24	.	AC=0;AF=0.00;AN=2;DP=69;MQ=24.32;MQ0=25	GT:DP:GQ:PL:A:C:G:T:IR	0/0:69:99:0,129,1388:0,0:0,0:0,0:35,34:0
+22	16050433	.	C	.	153.22	.	AC=0;AF=0.00;AN=2;DP=65;MQ=24.04;MQ0=24	GT:DP:GQ:PL:A:C:G:T:IR	0/0:65:99:0,123,1316:0,0:35,30:0,0:0,0:0
+22	16050434	.	A	.	150.22	.	AC=0;AF=0.00;AN=2;DP=64;MQ=23.78;MQ0=24	GT:DP:GQ:PL:A:C:G:T:IR	0/0:64:99:0,120,1283:34,30:0,0:0,0:0,0:0
+22	16050435	.	T	.	147.21	.	AC=0;AF=0.00;AN=2;DP=64;MQ=23.78;MQ0=24	GT:DP:GQ:PL:A:C:G:T:IR	0/0:64:99:0,117,1242:0,0:0,0:0,0:34,30:0
+22	16050436	.	C	.	147.20	.	AC=0;AF=0.00;AN=2;DP=64;MQ=23.32;MQ0=25	GT:DP:GQ:PL:A:C:G:T:IR	0/0:64:99:0,117,1232:0,0:34,30:0,0:0,0:0
+22	16050437	.	C	.	147.21	.	AC=0;AF=0.00;AN=2;DP=64;MQ=23.32;MQ0=25	GT:DP:GQ:PL:A:C:G:T:IR	0/0:64:99:0,117,1245:0,0:34,30:0,0:0,0:0
+22	16050438	.	T	.	144.20	.	AC=0;AF=0.00;AN=2;DP=64;MQ=23.32;MQ0=25	GT:DP:GQ:PL:A:C:G:T:IR	0/0:64:99:0,114,1195:0,0:0,0:0,0:34,30:0
+22	16050439	.	T	.	141.19	.	AC=0;AF=0.00;AN=2;DP=64;MQ=23.32;MQ0=25	GT:DP:GQ:PL:A:C:G:T:IR	0/0:64:99:0,111,1166:0,0:0,0:0,0:34,30:0
+22	16050440	.	A	.	147.19	.	AC=0;AF=0.00;AN=2;DP=65;MQ=22.81;MQ0=26	GT:DP:GQ:PL:A:C:G:T:IR	0/0:65:99:0,117,1239:33,31:0,1:0,0:0,0:0
+22	16050441	.	G	.	144.19	.	AC=0;AF=0.00;AN=2;DP=65;MQ=22.63;MQ0=27	GT:DP:GQ:PL:A:C:G:T:IR	0/0:65:99:0,114,1201:0,0:0,0:33,32:0,0:0
+22	16050442	.	T	.	135.16	.	AC=0;AF=0.00;AN=2;DP=64;MQ=22.33;MQ0=27	GT:DP:GQ:PL:A:C:G:T:IR	0/0:64:99:0,105,1088:0,0:0,0:0,0:33,31:0
+22	16050443	.	A	.	138.18	.	AC=0;AF=0.00;AN=2;DP=64;MQ=22.14;MQ0=28	GT:DP:GQ:PL:A:C:G:T:IR	0/0:64:99:0,108,1135:33,31:0,0:0,0:0,0:0
+22	16050444	.	A	.	123.14	.	AC=0;AF=0.00;AN=2;DP=63;MQ=21.83;MQ0=28	GT:DP:GQ:PL:A:C:G:T:IR	0/0:63:93.15:0,93,972:32,31:0,0:0,0:0,0:0
+22	16050445	.	G	.	123.14	.	AC=0;AF=0.00;AN=2;DP=59;MQ=21.08;MQ0=28	GT:DP:GQ:PL:A:C:G:T:IR	0/0:59:93.15:0,93,963:0,0:0,0:32,27:0,0:0
+22	16050446	.	A	.	123.14	.	AC=0;AF=0.00;AN=2;DP=62;MQ=20.56;MQ0=31	GT:DP:GQ:PL:A:C:G:T:IR	0/0:62:93.15:0,93,964:33,29:0,0:0,0:0,0:0
+22	16050447	.	T	.	123.14	.	AC=0;AF=0.00;AN=2;DP=61;MQ=20.73;MQ0=30	GT:DP:GQ:PL:A:C:G:T:IR	0/0:61:93.15:0,93,959:0,0:0,0:0,0:32,29:0
+22	16050448	.	C	.	123.14	.	AC=0;AF=0.00;AN=2;DP=61;MQ=20.73;MQ0=30	GT:DP:GQ:PL:A:C:G:T:IR	0/0:61:93.15:0,93,962:0,0:32,29:0,0:0,0:0
+22	16050449	.	T	.	117.14	.	AC=0;AF=0.00;AN=2;DP=62;MQ=20.56;MQ0=31	GT:DP:GQ:PL:A:C:G:T:IR	0/0:62:87.14:0,87,906:0,0:0,0:0,0:33,29:0
+22	16050450	.	T	.	117.13	.	AC=0;AF=0.00;AN=2;DP=62;MQ=20.56;MQ0=31	GT:DP:GQ:PL:A:C:G:T:IR	0/0:62:87.14:0,87,895:0,0:0,0:0,0:33,29:0
+22	16050451	.	C	.	114.13	.	AC=0;AF=0.00;AN=2;DP=60;MQ=20.26;MQ0=32	GT:DP:GQ:PL:A:C:G:T:IR	0/0:60:84.13:0,84,874:0,0:33,27:0,0:0,0:0
+22	16050452	.	C	.	111.13	.	AC=0;AF=0.00;AN=2;DP=60;MQ=20.04;MQ0=33	GT:DP:GQ:PL:A:C:G:T:IR	0/0:59:81.14:0,81,851:0,0:33,26:0,0:0,0:0
+22	16050453	.	C	.	108.11	.	AC=0;AF=0.00;AN=2;DP=59;MQ=19.63;MQ0=33	GT:DP:GQ:PL:A:C:G:T:IR	0/0:59:78.12:0,78,804:0,0:32,27:0,0:0,0:0
+22	16050454	.	A	.	108.12	.	AC=0;AF=0.00;AN=2;DP=60;MQ=19.46;MQ0=34	GT:DP:GQ:PL:A:C:G:T:IR	0/0:60:78.13:0,78,815:32,28:0,0:0,0:0,0:0
+22	16050455	.	T	.	105.11	.	AC=0;AF=0.00;AN=2;DP=61;MQ=19.30;MQ0=35	GT:DP:GQ:PL:A:C:G:T:IR	0/0:61:75.12:0,75,767:0,0:0,0:0,0:33,28:0
+22	16050456	.	T	.	105.10	.	AC=0;AF=0.00;AN=2;DP=61;MQ=18.71;MQ0=36	GT:DP:GQ:PL:A:C:G:T:IR	0/0:61:75.11:0,75,762:0,0:0,0:0,0:34,27:0
+22	16050457	.	T	.	99.09	.	AC=0;AF=0.00;AN=2;DP=58;MQ=18.57;MQ0=34	GT:DP:GQ:PL:A:C:G:T:IR	0/0:58:69.10:0,69,692:0,0:0,0:0,0:32,26:0
+22	16050458	.	A	.	102.10	.	AC=0;AF=0.00;AN=2;DP=59;MQ=18.41;MQ0=35	GT:DP:GQ:PL:A:C:G:T:IR	0/0:59:72.11:0,72,736:32,27:0,0:0,0:0,0:0
+22	16050459	.	T	.	96.07	.	AC=0;AF=0.00;AN=2;DP=58;MQ=17.92;MQ0=35	GT:DP:GQ:PL:A:C:G:T:IR	0/0:58:66.08:0,66,643:0,0:0,0:0,0:31,27:0
+22	16050460	.	A	.	96.08	.	AC=0;AF=0.00;AN=2;DP=57;MQ=17.40;MQ0=35	GT:DP:GQ:PL:A:C:G:T:IR	0/0:57:66.09:0,66,662:30,27:0,0:0,0:0,0:0
+22	16050461	.	T	.	96.08	.	AC=0;AF=0.00;AN=2;DP=58;MQ=17.25;MQ0=36	GT:DP:GQ:PL:A:C:G:T:IR	0/0:58:66.08:0,66,650:0,0:0,1:0,0:30,27:0
+22	16050462	.	A	.	93.08	.	AC=0;AF=0.00;AN=2;DP=57;MQ=17.13;MQ0=36	GT:DP:GQ:PL:A:C:G:T:IR	0/0:57:63.09:0,63,639:30,26:0,0:0,0:0,1:0
+22	16050463	.	A	.	93.08	.	AC=0;AF=0.00;AN=2;DP=57;MQ=17.13;MQ0=36	GT:DP:GQ:PL:A:C:G:T:IR	0/0:57:63.09:0,63,628:30,27:0,0:0,0:0,0:0
+22	16050464	.	A	.	90.08	.	AC=0;AF=0.00;AN=2;DP=57;MQ=16.86;MQ0=37	GT:DP:GQ:PL:A:C:G:T:IR	0/0:57:60.08:0,60,600:29,28:0,0:0,0:0,0:0
+22	16050465	.	T	.	62.40	.	AC=0;AF=0.00;AN=2;DP=58;MQ=16.71;MQ0=38	GT:DP:GQ:PL:A:C:G:T:IR	0/0:58:32.41:0,32,521:0,0:0,0:0,1:30,27:0
+22	16050466	.	A	.	90.07	.	AC=0;AF=0.00;AN=2;DP=57;MQ=16.86;MQ0=37	GT:DP:GQ:PL:A:C:G:T:IR	0/0:57:60.07:0,60,589:29,28:0,0:0,0:0,0:0
+22	16050467	.	C	.	87.06	.	AC=0;AF=0.00;AN=2;DP=58;MQ=16.71;MQ0=38	GT:DP:GQ:PL:A:C:G:T:IR	0/0:58:57.06:0,57,549:0,0:29,28:0,0:1,0:0
+22	16050468	.	T	.	87.06	.	AC=0;AF=0.00;AN=2;DP=57;MQ=16.13;MQ0=38	GT:DP:GQ:PL:A:C:G:T:IR	0/0:57:57.07:0,57,552:0,0:0,0:0,0:29,28:0
+22	16050469	.	T	.	81.06	.	AC=0;AF=0.00;AN=2;DP=55;MQ=15.64;MQ0=37	GT:DP:GQ:PL:A:C:G:T:IR	0/0:55:51.07:0,51,496:0,0:0,0:0,0:28,27:0
+22	16050470	.	G	.	84.05	.	AC=0;AF=0.00;AN=2;DP=56;MQ=15.50;MQ0=38	GT:DP:GQ:PL:A:C:G:T:IR	0/0:56:54.05:0,54,523:0,1:0,0:28,27:0,0:0
+22	16050471	.	C	.	84.06	.	AC=0;AF=0.00;AN=2;DP=55;MQ=15.64;MQ0=37	GT:DP:GQ:PL:A:C:G:T:IR	0/0:55:54.06:0,54,527:0,0:27,28:0,0:0,0:0
+22	16050472	.	A	.	84.05	.	AC=0;AF=0.00;AN=2;DP=57;MQ=15.37;MQ0=39	GT:DP:GQ:PL:A:C:G:T:IR	0/0:57:54.05:0,54,524:28,29:0,0:0,0:0,0:0
+22	16050473	.	A	.	81.05	.	AC=0;AF=0.00;AN=2;DP=57;MQ=15.37;MQ0=39	GT:DP:GQ:PL:A:C:G:T:IR	0/0:57:51.05:0,51,497:28,29:0,0:0,0:0,0:1
+22	16050474	.	G	.	75.04	.	AC=0;AF=0.00;AN=2;DP=54;MQ=14.29;MQ0=39	GT:DP:GQ:PL:A:C:G:T:IR	0/0:53:45.05:0,45,438:0,0:0,0:25,28:0,0:0
+22	16050475	.	T	.	69.04	.	AC=0;AF=0.00;AN=2;DP=53;MQ=14.43;MQ0=38	GT:DP:GQ:PL:A:C:G:T:IR	0/0:53:39.04:0,39,379:0,0:0,0:0,0:25,28:0
+22	16050476	.	A	.	72.04	.	AC=0;AF=0.00;AN=2;DP=54;MQ=13.95;MQ0=40	GT:DP:GQ:PL:A:C:G:T:IR	0/0:54:42.05:0,42,417:26,28:0,0:0,0:0,0:0
+22	16050477	.	G	.	69.04	.	AC=0;AF=0.00;AN=2;DP=53;MQ=13.72;MQ0=40	GT:DP:GQ:PL:A:C:G:T:IR	0/0:53:39.04:0,39,383:0,0:1,0:24,28:0,0:0
+22	16050478	.	T	.	66.03	.	AC=0;AF=0.00;AN=2;DP=55;MQ=13.47;MQ0=42	GT:DP:GQ:PL:A:C:G:T:IR	0/0:55:36.04:0,36,343:0,0:0,0:0,0:27,28:0
+22	16050479	.	A	.	66.03	.	AC=0;AF=0.00;AN=2;DP=54;MQ=12.62;MQ0=42	GT:DP:GQ:PL:A:C:G:T:IR	0/0:54:36.04:0,36,349:26,28:0,0:0,0:0,0:0
+22	16050480	.	G	.	66.03	.	AC=0;AF=0.00;AN=2;DP=54;MQ=12.62;MQ0=42	GT:DP:GQ:PL:A:C:G:T:IR	0/0:54:36.04:0,36,350:0,0:0,0:26,28:0,0:0
+22	16050481	.	T	.	63.02	.	AC=0;AF=0.00;AN=2;DP=56;MQ=12.01;MQ0=45	GT:DP:GQ:PL:A:C:G:T:IR	0/0:56:33.03:0,33,314:0,0:0,0:0,0:29,27:0
+22	16050482	.	G	.	63.02	.	AC=0;AF=0.00;AN=2;DP=55;MQ=12.12;MQ0=44	GT:DP:GQ:PL:A:C:G:T:IR	0/0:55:33.03:0,33,312:0,0:0,0:31,24:0,0:0
+22	16050483	.	C	.	63.03	.	AC=0;AF=0.00;AN=2;DP=56;MQ=12.01;MQ0=45	GT:DP:GQ:PL:A:C:G:T:IR	0/0:56:33.03:0,33,317:0,0:32,24:0,0:0,0:0
+22	16050484	.	C	.	63.03	.	AC=0;AF=0.00;AN=2;DP=55;MQ=12.12;MQ0=44	GT:DP:GQ:PL:A:C:G:T:IR	0/0:55:33.03:0,33,317:0,0:32,23:0,0:0,0:0
+22	16050485	.	A	.	63.03	.	AC=0;AF=0.00;AN=2;DP=59;MQ=11.70;MQ0=48	GT:DP:GQ:PL:A:C:G:T:IR	0/0:59:33.03:0,33,319:34,25:0,0:0,0:0,0:0
+22	16050486	.	T	.	63.02	.	AC=0;AF=0.00;AN=2;DP=63;MQ=11.32;MQ0=52	GT:DP:GQ:PL:A:C:G:T:IR	0/0:63:33.03:0,33,313:0,0:0,0:0,0:37,26:0
+22	16050487	.	A	.	63.03	.	AC=0;AF=0.00;AN=2;DP=63;MQ=11.32;MQ0=52	GT:DP:GQ:PL:A:C:G:T:IR	0/0:63:33.03:0,33,324:37,26:0,0:0,0:0,0:0
+22	16050488	.	A	.	60.03	.	AC=0;AF=0.00;AN=2;DP=64;MQ=11.23;MQ0=53	GT:DP:GQ:PL:A:C:G:T:IR	0/0:64:30.03:0,30,299:37,27:0,0:0,0:0,0:0
+22	16050489	.	T	.	60.02	.	AC=0;AF=0.00;AN=2;DP=62;MQ=11.03;MQ0=52	GT:DP:GQ:PL:A:C:G:T:IR	0/0:62:30.03:0,30,285:0,0:0,0:0,0:36,26:0
+22	16050490	.	T	.	57.02	.	AC=0;AF=0.00;AN=2;DP=61;MQ=10.73;MQ0=52	GT:DP:GQ:PL:A:C:G:T:IR	0/0:61:27.03:0,27,262:0,0:0,0:0,0:35,26:0
+22	16050491	.	A	.	57.01	.	AC=0;AF=0.00;AN=2;DP=61;MQ=10.73;MQ0=52	GT:DP:GQ:PL:A:C:G:T:IR	0/0:61:27.01:0,27,259:35,26:0,0:0,0:0,0:0
+22	16050492	.	C	.	57.02	.	AC=0;AF=0.00;AN=2;DP=60;MQ=10.82;MQ0=51	GT:DP:GQ:PL:A:C:G:T:IR	0/0:60:27.03:0,27,261:0,0:35,25:0,0:0,0:0
+22	16050493	.	C	.	60.02	.	AC=0;AF=0.00;AN=2;DP=62;MQ=11.03;MQ0=52	GT:DP:GQ:PL:A:C:G:T:IR	0/0:62:30.03:0,30,289:0,0:35,27:0,0:0,0:0
+22	16050494	.	A	.	54.02	.	AC=0;AF=0.00;AN=2;DP=63;MQ=10.95;MQ0=53	GT:DP:GQ:PL:A:C:G:T:IR	0/0:63:24.03:0,24,238:36,27:0,0:0,0:0,0:0
+22	16050495	.	A	.	57.02	.	AC=0;AF=0.00;AN=2;DP=64;MQ=10.47;MQ0=55	GT:DP:GQ:PL:A:C:G:T:IR	0/0:64:27.03:0,27,269:36,28:0,0:0,0:0,0:0
+22	16050496	.	A	.	57.02	.	AC=0;AF=0.00;AN=2;DP=62;MQ=10.64;MQ0=53	GT:DP:GQ:PL:A:C:G:T:IR	0/0:62:27.03:0,27,263:34,28:0,0:0,0:0,0:0
+22	16050497	.	C	.	57.02	.	AC=0;AF=0.00;AN=2;DP=60;MQ=10.82;MQ0=51	GT:DP:GQ:PL:A:C:G:T:IR	0/0:60:27.03:0,27,268:0,0:34,26:0,0:0,0:0
+22	16050498	.	A	.	57.02	.	AC=0;AF=0.00;AN=2;DP=60;MQ=10.82;MQ0=51	GT:DP:GQ:PL:A:C:G:T:IR	0/0:60:27.03:0,27,265:34,26:0,0:0,0:0,0:0
+22	16050499	.	T	.	54.01	.	AC=0;AF=0.00;AN=2;DP=60;MQ=10.82;MQ0=51	GT:DP:GQ:PL:A:C:G:T:IR	0/0:60:24.02:0,24,227:0,0:0,0:0,0:34,26:0
+22	16050500	.	A	.	54.01	.	AC=0;AF=0.00;AN=2;DP=58;MQ=9.20;MQ0=50	GT:DP:GQ:PL:A:C:G:T:IR	0/0:58:24.02:0,24,230:33,25:0,0:0,0:0,0:0
+22	16050501	.	A	.	54.01	.	AC=0;AF=0.00;AN=2;DP=59;MQ=9.12;MQ0=51	GT:DP:GQ:PL:A:C:G:T:IR	0/0:59:24.02:0,24,226:34,25:0,0:0,0:0,0:0
+22	16050502	.	A	.	48.02	.	AC=0;AF=0.00;AN=2;DP=59;MQ=9.12;MQ0=51	GT:DP:GQ:PL:A:C:G:T:IR	0/0:59:18.02:0,18,176:34,25:0,0:0,0:0,0:0
+22	16050503	.	G	.	51.01	.	AC=0;AF=0.00;AN=2;DP=58;MQ=8.69;MQ0=51	GT:DP:GQ:PL:A:C:G:T:IR	0/0:58:21.01:0,21,195:0,0:0,0:34,24:0,0:0
+22	16050504	.	C	.	51.01	.	AC=0;AF=0.00;AN=2;DP=58;MQ=8.69;MQ0=51	GT:DP:GQ:PL:A:C:G:T:IR	0/0:58:21.02:0,21,199:1,0:32,24:0,0:1,0:0
+22	16050505	.	C	.	51.01	.	AC=0;AF=0.00;AN=2;DP=58;MQ=8.69;MQ0=51	GT:DP:GQ:PL:A:C:G:T:IR	0/0:58:21.02:0,21,199:0,0:34,24:0,0:0,0:0
+22	16050506	.	A	.	54	.	AC=0;AF=0.00;AN=2;DP=62;MQ=8.85;MQ0=54	GT:DP:GQ:PL:A:C:G:T:IR	0/0:62:24.01:0,24,224:35,27:0,0:0,0:0,0:0
+22	16050507	.	A	.	54	.	AC=0;AF=0.00;AN=2;DP=64;MQ=8.71;MQ0=56	GT:DP:GQ:PL:A:C:G:T:IR	0/0:64:24:0,24,222:37,27:0,0:0,0:0,0:0
+22	16050508	.	C	.	54.01	.	AC=0;AF=0.00;AN=2;DP=63;MQ=8.78;MQ0=55	GT:DP:GQ:PL:A:C:G:T:IR	0/0:63:24.02:0,24,224:0,0:37,26:0,0:0,0:0
+22	16050509	.	T	.	54	.	AC=0;AF=0.00;AN=2;DP=63;MQ=8.78;MQ0=55	GT:DP:GQ:PL:A:C:G:T:IR	0/0:63:24:0,24,217:0,0:0,0:0,0:38,25:0
+22	16050510	.	G	.	54.01	.	AC=0;AF=0.00;AN=2;DP=63;MQ=8.78;MQ0=55	GT:DP:GQ:PL:A:C:G:T:IR	0/0:63:24.02:0,24,226:0,0:0,0:38,25:0,0:0
+22	16050511	.	A	.	54.01	.	AC=0;AF=0.00;AN=2;DP=64;MQ=8.71;MQ0=56	GT:DP:GQ:PL:A:C:G:T:IR	0/0:64:24.02:0,24,226:39,25:0,0:0,0:0,0:0
+22	16050512	.	G	.	54	.	AC=0;AF=0.00;AN=2;DP=64;MQ=8.71;MQ0=56	GT:DP:GQ:PL:A:C:G:T:IR	0/0:64:24.01:0,24,221:0,0:0,0:40,24:0,0:0
+22	16050513	.	A	.	54.01	.	AC=0;AF=0.00;AN=2;DP=64;MQ=8.71;MQ0=56	GT:DP:GQ:PL:A:C:G:T:IR	0/0:64:24.01:0,24,222:40,24:0,0:0,0:0,0:0
+22	16050514	.	T	.	51	.	AC=0;AF=0.00;AN=2;DP=65;MQ=8.65;MQ0=57	GT:DP:GQ:PL:A:C:G:T:IR	0/0:65:21.01:0,21,189:0,0:0,0:0,0:40,25:0
+22	16050515	.	G	.	54.01	.	AC=0;AF=0.00;AN=2;DP=65;MQ=8.65;MQ0=57	GT:DP:GQ:PL:A:C:G:T:IR	0/0:65:24.02:0,24,222:0,0:0,0:40,24:0,1:0
+22	16050516	.	C	.	51	.	AC=0;AF=0.00;AN=2;DP=63;MQ=7.44;MQ0=56	GT:DP:GQ:PL:A:C:G:T:IR	0/0:63:21.01:0,21,189:0,0:40,23:0,0:0,0:0
+22	16050517	.	C	.	51	.	AC=0;AF=0.00;AN=2;DP=64;MQ=7.38;MQ0=57	GT:DP:GQ:PL:A:C:G:T:IR	0/0:64:21:0,21,188:0,0:40,24:0,0:0,0:0
+22	16050518	.	C	.	51	.	AC=0;AF=0.00;AN=2;DP=64;MQ=7.38;MQ0=57	GT:DP:GQ:PL:A:C:G:T:IR	0/0:64:21.01:0,21,189:0,0:40,24:0,0:0,0:0
+22	16050519	.	A	.	51	.	AC=0;AF=0.00;AN=2;DP=66;MQ=7.27;MQ0=59	GT:DP:GQ:PL:A:C:G:T:IR	0/0:66:21:0,21,188:40,26:0,0:0,0:0,0:0
+22	16050520	.	A	.	51	.	AC=0;AF=0.00;AN=2;DP=66;MQ=7.27;MQ0=59	GT:DP:GQ:PL:A:C:G:T:IR	0/0:66:21.01:0,21,189:39,26:0,0:1,0:0,0:0
+22	16050521	.	A	.	51	.	AC=0;AF=0.00;AN=2;DP=65;MQ=7.33;MQ0=58	GT:DP:GQ:PL:A:C:G:T:IR	0/0:65:21.01:0,21,189:39,26:0,0:0,0:0,0:1
+22	16050522	.	G	.	44.99	.	AC=0;AF=0.00;AN=2;DP=63;MQ=6.21;MQ0=58	GT:DP:GQ:PL:A:C:G:T:IR	0/0:62:15:0,15,133:0,0:0,0:35,26:1,0:0
+22	16050523	.	G	.	44.99	.	AC=0;AF=0.00;AN=2;DP=63;MQ=6.21;MQ0=58	GT:DP:GQ:PL:A:C:G:T:IR	0/0:63:15:0,15,131:0,0:0,0:37,26:0,0:0
+22	16050524	.	G	.	48	.	AC=0;AF=0.00;AN=2;DP=63;MQ=6.86;MQ0=57	GT:DP:GQ:PL:A:C:G:T:IR	0/0:63:18:0,18,161:0,0:0,0:36,26:1,0:0
+22	16050525	.	G	.	47.99	.	AC=0;AF=0.00;AN=2;DP=63;MQ=6.86;MQ0=57	GT:DP:GQ:PL:A:C:G:T:IR	0/0:63:18:0,18,159:0,0:0,0:37,26:0,0:0
+22	16050526	.	G	.	47.99	.	AC=0;AF=0.00;AN=2;DP=62;MQ=6.91;MQ0=56	GT:DP:GQ:PL:A:C:G:T:IR	0/0:62:18:0,18,159:0,0:0,0:36,26:0,0:0
+22	16050527	.	C	.	48	.	AC=0;AF=0.00;AN=2;DP=63;MQ=6.86;MQ0=57	GT:DP:GQ:PL:A:C:G:T:IR	0/0:63:18:0,18,161:0,0:36,26:0,0:0,1:0
+22	16050528	.	C	.	48	.	AC=0;AF=0.00;AN=2;DP=65;MQ=6.75;MQ0=59	GT:DP:GQ:PL:A:C:G:T:IR	0/0:65:18:0,18,161:0,0:36,29:0,0:0,0:0
+22	16050529	.	A	.	47.98	.	AC=0;AF=0.00;AN=2;DP=67;MQ=6.65;MQ0=61	GT:DP:GQ:PL:A:C:G:T:IR	0/0:67:17.99:0,18,156:36,31:0,0:0,0:0,0:0
+22	16050530	.	C	.	51	.	AC=0;AF=0.00;AN=2;DP=63;MQ=7.44;MQ0=56	GT:DP:GQ:PL:A:C:G:T:IR	0/0:63:21.01:0,21,189:0,0:36,27:0,0:0,0:0
+22	16050531	.	T	.	51	.	AC=0;AF=0.00;AN=2;DP=64;MQ=7.38;MQ0=57	GT:DP:GQ:PL:A:C:G:T:IR	0/0:64:21.01:0,21,189:0,0:0,0:0,0:36,28:0
+22	16050532	.	C	.	51	.	AC=0;AF=0.00;AN=2;DP=63;MQ=7.44;MQ0=56	GT:DP:GQ:PL:A:C:G:T:IR	0/0:63:21.01:0,21,189:0,0:35,28:0,0:0,0:0
+22	16050533	.	T	.	51	.	AC=0;AF=0.00;AN=2;DP=64;MQ=7.38;MQ0=57	GT:DP:GQ:PL:A:C:G:T:IR	0/0:64:21.01:0,21,189:0,0:0,0:0,0:35,29:0
+22	16050534	.	C	.	57.01	.	AC=0;AF=0.00;AN=2;DP=64;MQ=8.43;MQ0=55	GT:DP:GQ:PL:A:C:G:T:IR	0/0:64:27.01:0,27,244:0,0:33,31:0,0:0,0:0
+22	16050535	.	C	.	54.01	.	AC=0;AF=0.00;AN=2;DP=65;MQ=8.03;MQ0=57	GT:DP:GQ:PL:A:C:G:T:IR	0/0:65:24.02:0,24,220:0,0:34,31:0,0:0,0:0
+22	16050536	.	T	.	57.02	.	AC=0;AF=0.00;AN=2;DP=67;MQ=8.39;MQ0=58	GT:DP:GQ:PL:A:C:G:T:IR	0/0:67:27.02:0,27,248:0,1:0,0:0,0:35,31:0
+22	16050537	.	T	.	29.36	LowQual	AC=0;AF=0.00;AN=2;DP=68;MQ=8.78;MQ0=58	GT:DP:GQ:PL:A:C:G:T:IR	0/0:67:2.70:1,0,193:0,1:0,0:0,0:34,32:0
+22	16050538	.	G	.	60.02	.	AC=0;AF=0.00;AN=2;DP=68;MQ=8.78;MQ0=58	GT:DP:GQ:PL:A:C:G:T:IR	0/0:68:30.03:0,30,276:0,2:0,0:32,34:0,0:0
+22	16050539	.	C	.	60.02	.	AC=0;AF=0.00;AN=2;DP=69;MQ=8.72;MQ0=59	GT:DP:GQ:PL:A:C:G:T:IR	0/0:69:30.03:0,30,276:0,0:34,35:0,0:0,0:0
+22	16050540	.	T	.	63.02	.	AC=0;AF=0.00;AN=2;DP=73;MQ=10.25;MQ0=60	GT:DP:GQ:PL:A:C:G:T:IR	0/0:73:33.02:0,33,300:0,0:0,0:0,0:36,37:0
+22	16050541	.	T	.	69.04	.	AC=0;AF=0.00;AN=2;DP=72;MQ=10.32;MQ0=59	GT:DP:GQ:PL:A:C:G:T:IR	0/0:72:39.04:0,39,371:0,0:0,0:0,0:35,37:0
+22	16050542	.	T	.	69.03	.	AC=0;AF=0.00;AN=2;DP=72;MQ=10.32;MQ0=59	GT:DP:GQ:PL:A:C:G:T:IR	0/0:72:39.04:0,39,370:0,0:1,0:0,0:34,37:0
+22	16050543	.	T	.	69.03	.	AC=0;AF=0.00;AN=2;DP=72;MQ=10.32;MQ0=59	GT:DP:GQ:PL:A:C:G:T:IR	0/0:72:39.03:0,39,368:0,0:0,1:0,0:34,37:0
+22	16050544	.	C	.	69.03	.	AC=0;AF=0.00;AN=2;DP=72;MQ=10.32;MQ0=59	GT:DP:GQ:PL:A:C:G:T:IR	0/0:72:39.04:0,39,369:0,0:34,38:0,0:0,0:0
+22	16050545	.	C	.	69.04	.	AC=0;AF=0.00;AN=2;DP=73;MQ=10.25;MQ0=60	GT:DP:GQ:PL:A:C:G:T:IR	0/0:73:39.04:0,39,371:0,0:34,39:0,0:0,0:0
+22	16050546	.	T	.	69.04	.	AC=0;AF=0.00;AN=2;DP=73;MQ=10.25;MQ0=60	GT:DP:GQ:PL:A:C:G:T:IR	0/0:73:39.04:0,39,371:0,0:0,0:0,0:34,39:0
+22	16050547	.	C	.	72.03	.	AC=0;AF=0.00;AN=2;DP=73;MQ=10.60;MQ0=59	GT:DP:GQ:PL:A:C:G:T:IR	0/0:73:42.03:0,42,395:0,0:34,39:0,0:0,0:0
+22	16050548	.	C	.	72.04	.	AC=0;AF=0.00;AN=2;DP=72;MQ=10.67;MQ0=58	GT:DP:GQ:PL:A:C:G:T:IR	0/0:72:42.05:0,42,399:0,0:32,40:0,0:0,0:0
+22	16050549	.	T	.	78.03	.	AC=0;AF=0.00;AN=2;DP=76;MQ=11.04;MQ0=60	GT:DP:GQ:PL:A:C:G:T:IR	0/0:76:48.04:0,48,449:0,0:0,0:0,0:33,43:0
+22	16050550	.	T	.	81.05	.	AC=0;AF=0.00;AN=2;DP=77;MQ=11.27;MQ0=60	GT:DP:GQ:PL:A:C:G:T:IR	0/0:77:51.05:0,51,482:0,0:0,0:0,0:33,44:0
+22	16050551	.	T	.	81.05	.	AC=0;AF=0.00;AN=2;DP=77;MQ=11.27;MQ0=60	GT:DP:GQ:PL:A:C:G:T:IR	0/0:77:51.05:0,51,482:0,0:0,0:0,0:33,44:0
+22	16050552	.	T	.	81.05	.	AC=0;AF=0.00;AN=2;DP=78;MQ=11.20;MQ0=61	GT:DP:GQ:PL:A:C:G:T:IR	0/0:78:51.05:0,51,482:0,0:0,0:0,0:33,45:0
+22	16050553	.	T	.	81.05	.	AC=0;AF=0.00;AN=2;DP=78;MQ=11.20;MQ0=61	GT:DP:GQ:PL:A:C:G:T:IR	0/0:78:51.05:0,51,482:0,0:0,0:0,0:33,45:0
+22	16050554	.	A	.	81.05	.	AC=0;AF=0.00;AN=2;DP=76;MQ=11.35;MQ0=59	GT:DP:GQ:PL:A:C:G:T:IR	0/0:76:51.05:0,51,482:31,45:0,0:0,0:0,0:0
+22	16050555	.	G	.	81.05	.	AC=0;AF=0.00;AN=2;DP=74;MQ=11.50;MQ0=57	GT:DP:GQ:PL:A:C:G:T:IR	0/0:74:51.05:0,51,482:1,1:0,0:28,44:0,0:0
+22	16050556	.	A	.	81.05	.	AC=0;AF=0.00;AN=2;DP=77;MQ=11.87;MQ0=58	GT:DP:GQ:PL:A:C:G:T:IR	0/0:77:51.05:0,51,482:31,46:0,0:0,0:0,0:0
+22	16050557	.	G	.	87.04	.	AC=0;AF=0.00;AN=2;DP=75;MQ=12.03;MQ0=56	GT:DP:GQ:PL:A:C:G:T:IR	0/0:75:57.05:0,57,533:0,0:0,0:31,44:0,0:0
+22	16050558	.	G	.	90.05	.	AC=0;AF=0.00;AN=2;DP=78;MQ=12.08;MQ0=58	GT:DP:GQ:PL:A:C:G:T:IR	0/0:78:60.06:0,60,564:0,0:0,0:33,45:0,0:0
+22	16050559	.	A	.	90.05	.	AC=0;AF=0.00;AN=2;DP=81;MQ=12.12;MQ0=60	GT:DP:GQ:PL:A:C:G:T:IR	0/0:81:60.06:0,60,564:34,47:0,0:0,0:0,0:0
+22	16050560	.	T	.	93.06	.	AC=0;AF=0.00;AN=2;DP=83;MQ=11.98;MQ0=62	GT:DP:GQ:PL:A:C:G:T:IR	0/0:83:63.07:0,63,592:0,0:0,0:0,0:34,49:0
+22	16050561	.	T	.	93.06	.	AC=0;AF=0.00;AN=2;DP=84;MQ=11.90;MQ0=63	GT:DP:GQ:PL:A:C:G:T:IR	0/0:84:63.07:0,63,592:0,0:0,0:0,0:34,50:0
+22	16050562	.	T	.	93.06	.	AC=0;AF=0.00;AN=2;DP=86;MQ=12.28;MQ0=63	GT:DP:GQ:PL:A:C:G:T:IR	0/0:86:63.07:0,63,592:0,0:0,0:0,0:35,51:0
+22	16050563	.	A	.	99.06	.	AC=0;AF=0.00;AN=2;DP=86;MQ=12.28;MQ0=63	GT:DP:GQ:PL:A:C:G:T:IR	0/0:86:69.07:0,69,648:35,51:0,0:0,0:0,0:0
+22	16050564	.	T	.	99.06	.	AC=0;AF=0.00;AN=2;DP=86;MQ=12.28;MQ0=63	GT:DP:GQ:PL:A:C:G:T:IR	0/0:86:69.07:0,69,648:0,0:0,0:0,0:35,51:0
+22	16050565	.	T	.	99.06	.	AC=0;AF=0.00;AN=2;DP=83;MQ=12.50;MQ0=60	GT:DP:GQ:PL:A:C:G:T:IR	0/0:83:69.07:0,69,648:0,0:0,0:0,0:33,50:0
+22	16050566	.	T	.	99.06	.	AC=0;AF=0.00;AN=2;DP=82;MQ=12.57;MQ0=59	GT:DP:GQ:PL:A:C:G:T:IR	0/0:82:69.07:0,69,648:0,0:0,0:0,0:33,49:0
+22	16050567	.	C	.	99.06	.	AC=0;AF=0.00;AN=2;DP=80;MQ=12.73;MQ0=57	GT:DP:GQ:PL:A:C:G:T:IR	0/0:80:69.07:0,69,648:0,0:33,47:0,0:0,0:0
+22	16050568	.	C	.	99.06	.	AC=0;AF=0.00;AN=2;DP=80;MQ=12.73;MQ0=57	GT:DP:GQ:PL:A:C:G:T:IR	0/0:80:69.07:0,69,648:0,0:32,47:0,0:1,0:0
+22	16050569	.	C	.	102.07	.	AC=0;AF=0.00;AN=2;DP=77;MQ=13.24;MQ0=53	GT:DP:GQ:PL:A:C:G:T:IR	0/0:77:72.07:0,72,675:0,0:33,44:0,0:0,0:0
+22	16050570	.	A	.	105.07	.	AC=0;AF=0.00;AN=2;DP=80;MQ=13.73;MQ0=53	GT:DP:GQ:PL:A:C:G:T:IR	0/0:80:75.08:0,75,703:34,46:0,0:0,0:0,0:0
+22	16050571	.	T	.	111.08	.	AC=0;AF=0.00;AN=2;DP=80;MQ=13.73;MQ0=53	GT:DP:GQ:PL:A:C:G:T:IR	0/0:80:81.08:0,81,758:0,0:0,0:0,0:34,46:0
+22	16050572	.	T	.	111.08	.	AC=0;AF=0.00;AN=2;DP=80;MQ=13.73;MQ0=53	GT:DP:GQ:PL:A:C:G:T:IR	0/0:80:81.08:0,81,758:0,0:0,0:0,0:34,46:0
+22	16050573	.	T	.	111.08	.	AC=0;AF=0.00;AN=2;DP=80;MQ=13.73;MQ0=53	GT:DP:GQ:PL:A:C:G:T:IR	0/0:80:81.08:0,81,758:0,0:0,0:0,0:34,46:0
+22	16050574	.	T	.	114.08	.	AC=0;AF=0.00;AN=2;DP=82;MQ=14.03;MQ0=53	GT:DP:GQ:PL:A:C:G:T:IR	0/0:82:84.09:0,84,786:0,0:0,0:0,0:35,47:0
+22	16050575	.	T	.	117.08	.	AC=0;AF=0.00;AN=2;DP=82;MQ=14.03;MQ0=53	GT:DP:GQ:PL:A:C:G:T:IR	0/0:82:87.09:0,87,814:0,0:0,0:0,0:35,47:0
+22	16050576	.	C	.	117.08	.	AC=0;AF=0.00;AN=2;DP=81;MQ=14.11;MQ0=52	GT:DP:GQ:PL:A:C:G:T:IR	0/0:81:87.09:0,87,814:0,0:35,46:0,0:0,0:0
+22	16050577	.	T	.	120.08	.	AC=0;AF=0.00;AN=2;DP=82;MQ=14.26;MQ0=52	GT:DP:GQ:PL:A:C:G:T:IR	0/0:81:90.09:0,90,841:0,0:0,0:0,0:35,46:0
+22	16050578	.	T	.	120.08	.	AC=0;AF=0.00;AN=2;DP=82;MQ=14.26;MQ0=52	GT:DP:GQ:PL:A:C:G:T:IR	0/0:82:90.09:0,90,841:0,0:0,0:0,0:35,47:0
+22	16050579	.	A	.	120.08	.	AC=0;AF=0.00;AN=2;DP=82;MQ=14.26;MQ0=52	GT:DP:GQ:PL:A:C:G:T:IR	0/0:82:90.09:0,90,841:35,47:0,0:0,0:0,0:0
+22	16050580	.	A	.	120.08	.	AC=0;AF=0.00;AN=2;DP=80;MQ=14.43;MQ0=50	GT:DP:GQ:PL:A:C:G:T:IR	0/0:80:90.09:0,90,841:34,46:0,0:0,0:0,0:0
+22	16050581	.	A	.	120.08	.	AC=0;AF=0.00;AN=2;DP=79;MQ=14.52;MQ0=49	GT:DP:GQ:PL:A:C:G:T:IR	0/0:79:90.09:0,90,841:33,46:0,0:0,0:0,0:0
+22	16050582	.	A	.	120.08	.	AC=0;AF=0.00;AN=2;DP=78;MQ=14.62;MQ0=48	GT:DP:GQ:PL:A:C:G:T:IR	0/0:78:90.09:0,90,841:32,46:0,0:0,0:0,0:0
+22	16050583	.	A	.	120.08	.	AC=0;AF=0.00;AN=2;DP=76;MQ=14.81;MQ0=46	GT:DP:GQ:PL:A:C:G:T:IR	0/0:76:90.09:0,90,841:32,44:0,0:0,0:0,0:0
+22	16050584	.	G	.	120.08	.	AC=0;AF=0.00;AN=2;DP=68;MQ=15.65;MQ0=38	GT:DP:GQ:PL:A:C:G:T:IR	0/0:68:90.09:0,90,841:0,0:0,0:30,38:0,0:0
+22	16050585	.	G	.	117.08	.	AC=0;AF=0.00;AN=2;DP=62;MQ=16.39;MQ0=32	GT:DP:GQ:PL:A:C:G:T:IR	0/0:62:87.09:0,87,814:0,0:0,0:28,34:0,0:0
+22	16050586	.	A	.	129.11	.	AC=0;AF=0.00;AN=2;DP=66;MQ=19.09;MQ0=31	GT:DP:GQ:PL:A:C:G:T:IR	0/0:66:99:0,99,943:31,35:0,0:0,0:0,0:0
+22	16050587	.	A	.	129.10	.	AC=0;AF=0.00;AN=2;DP=65;MQ=19.45;MQ0=29	GT:DP:GQ:PL:A:C:G:T:IR	0/0:65:99:0,99,938:31,34:0,0:0,0:0,0:0
+22	16050588	.	G	.	138.12	.	AC=0;AF=0.00;AN=2;DP=65;MQ=19.45;MQ0=29	GT:DP:GQ:PL:A:C:G:T:IR	0/0:65:99:0,108,1027:0,0:0,0:31,34:0,0:0
+22	16050589	.	A	.	138.12	.	AC=0;AF=0.00;AN=2;DP=64;MQ=19.60;MQ0=28	GT:DP:GQ:PL:A:C:G:T:IR	0/0:64:99:0,108,1026:31,33:0,0:0,0:0,0:0
+22	16050590	.	A	.	138.11	.	AC=0;AF=0.00;AN=2;DP=64;MQ=19.60;MQ0=28	GT:DP:GQ:PL:A:C:G:T:IR	0/0:64:99:0,108,1023:31,33:0,0:0,0:0,0:0
+22	16050591	.	C	.	138.12	.	AC=0;AF=0.00;AN=2;DP=64;MQ=20.99;MQ0=27	GT:DP:GQ:PL:A:C:G:T:IR	0/0:64:99:0,108,1039:0,0:31,33:0,0:0,0:0
+22	16050592	.	A	.	141.12	.	AC=0;AF=0.00;AN=2;DP=66;MQ=21.05;MQ0=27	GT:DP:GQ:PL:A:C:G:T:IR	0/0:66:99:0,111,1069:32,34:0,0:0,0:0,0:0
+22	16050593	.	A	.	141.12	.	AC=0;AF=0.00;AN=2;DP=66;MQ=21.05;MQ0=27	GT:DP:GQ:PL:A:C:G:T:IR	0/0:66:99:0,111,1064:32,34:0,0:0,0:0,0:0
+22	16050594	.	A	.	144.12	.	AC=0;AF=0.00;AN=2;DP=66;MQ=21.05;MQ0=27	GT:DP:GQ:PL:A:C:G:T:IR	0/0:66:99:0,114,1095:32,34:0,0:0,0:0,0:0
+22	16050595	.	C	.	144.12	.	AC=0;AF=0.00;AN=2;DP=63;MQ=21.55;MQ0=24	GT:DP:GQ:PL:A:C:G:T:IR	0/0:63:99:0,114,1086:0,0:30,33:0,0:0,0:0
+22	16050596	.	T	.	144.12	.	AC=0;AF=0.00;AN=2;DP=64;MQ=21.57;MQ0=24	GT:DP:GQ:PL:A:C:G:T:IR	0/0:64:99:0,114,1094:0,0:0,0:0,0:31,33:0
+22	16050597	.	G	.	150.12	.	AC=0;AF=0.00;AN=2;DP=60;MQ=22.47;MQ0=19	GT:DP:GQ:PL:A:C:G:T:IR	0/0:60:99:0,120,1147:0,0:0,0:29,31:0,0:0
+22	16050598	.	T	.	147.12	.	AC=0;AF=0.00;AN=2;DP=59;MQ=22.66;MQ0=18	GT:DP:GQ:PL:A:C:G:T:IR	0/0:59:99:0,117,1119:0,0:0,0:0,0:29,30:0
+22	16050599	.	G	.	150.13	.	AC=0;AF=0.00;AN=2;DP=59;MQ=22.66;MQ0=18	GT:DP:GQ:PL:A:C:G:T:IR	0/0:59:99:0,120,1152:0,0:0,0:29,30:0,0:0
+22	16050600	.	C	.	153.13	.	AC=0;AF=0.00;AN=2;DP=60;MQ=22.67;MQ0=18	GT:DP:GQ:PL:A:C:G:T:IR	0/0:60:99:0,123,1174:0,0:28,30:0,0:2,0:0
+22	16050601	.	C	.	150.14	.	AC=0;AF=0.00;AN=2;DP=57;MQ=23.08;MQ0=16	GT:DP:GQ:PL:A:C:G:T:IR	0/0:57:99:0,120,1161:0,0:28,28:0,0:1,0:0
+22	16050602	.	C	.	122.47	.	AC=0;AF=0.00;AN=2;DP=53;MQ=23.93;MQ0=12	GT:DP:GQ:PL:A:C:G:T:IR	0/0:53:92.48:0,92,1105:0,1:27,25:0,0:0,0:0
+22	16050603	.	T	.	153.15	.	AC=0;AF=0.00;AN=2;DP=54;MQ=24.24;MQ0=12	GT:DP:GQ:PL:A:C:G:T:IR	0/0:54:99:0,123,1201:0,0:0,0:0,0:27,27:0
+22	16050604	.	A	.	150.14	.	AC=0;AF=0.00;AN=2;DP=54;MQ=24.24;MQ0=12	GT:DP:GQ:PL:A:C:G:T:IR	0/0:54:99:0,120,1161:27,27:0,0:0,0:0,0:0
+22	16050605	.	G	.	153.15	.	AC=0;AF=0.00;AN=2;DP=50;MQ=25.19;MQ0=8	GT:DP:GQ:PL:A:C:G:T:IR	0/0:50:99:0,123,1201:0,0:0,0:25,25:0,0:0
+22	16050606	.	G	.	153.15	.	AC=0;AF=0.00;AN=2;DP=48;MQ=25.71;MQ0=6	GT:DP:GQ:PL:A:C:G:T:IR	0/0:48:99:0,123,1201:0,0:0,0:23,25:0,0:0
+22	16050607	.	G	.	153.15	.	AC=0;AF=0.00;AN=2;DP=46;MQ=26.26;MQ0=4	GT:DP:GQ:PL:A:C:G:T:IR	0/0:46:99:0,123,1201:0,0:0,0:23,23:0,0:0
+22	16050608	.	T	.	156.15	.	AC=0;AF=0.00;AN=2;DP=46;MQ=26.48;MQ0=3	GT:DP:GQ:PL:A:C:G:T:IR	0/0:46:99:0,126,1228:0,0:0,0:0,0:23,23:0
+22	16050609	.	T	.	156.15	.	AC=0;AF=0.00;AN=2;DP=44;MQ=27.07;MQ0=1	GT:DP:GQ:PL:A:C:G:T:IR	0/0:44:99:0,126,1228:0,0:0,0:0,0:22,22:0
+22	16050610	.	T	.	162.16	.	AC=0;AF=0.00;AN=2;DP=46;MQ=27.25;MQ0=1	GT:DP:GQ:PL:A:C:G:T:IR	0/0:46:99:0,132,1296:0,0:0,0:0,0:22,24:0
+22	16050611	.	A	.	156.15	.	AC=0;AF=0.00;AN=2;DP=47;MQ=27.16;MQ0=1	GT:DP:GQ:PL:A:C:G:T:IR	0/0:47:99:0,126,1227:22,25:0,0:0,0:0,0:0
+22	16050612	rs146752890	C	.	165.16	.	AC=0;AF=0.00;AN=2;DP=46;MQ=27.46;MQ0=0;1000gALT=G;AF1000g=0.09;AFR_AF=0.08;AMR_AF=0.14;ASN_AF=0.08;EUR_AF=0.07	GT:DP:GQ:PL:A:C:G:T:IR	0/0:46:99:0,135,1324:0,0:21,25:0,0:0,0:0
+22	16050613	.	T	.	165.16	.	AC=0;AF=0.00;AN=2;DP=48;MQ=26.88;MQ0=2	GT:DP:GQ:PL:A:C:G:T:IR	0/0:48:99:0,135,1324:0,0:0,0:0,0:22,26:0
+22	16050614	.	G	.	162.16	.	AC=0;AF=0.00;AN=2;DP=47;MQ=26.95;MQ0=2	GT:DP:GQ:PL:A:C:G:T:IR	0/0:47:99:0,132,1296:0,0:0,0:22,25:0,0:0
+22	16050615	.	T	.	156.16	.	AC=0;AF=0.00;AN=2;DP=47;MQ=26.95;MQ0=2	GT:DP:GQ:PL:A:C:G:T:IR	0/0:47:99:0,126,1241:0,0:0,0:0,0:23,24:0
+22	16050616	.	G	.	162.16	.	AC=0;AF=0.00;AN=2;DP=47;MQ=26.95;MQ0=2	GT:DP:GQ:PL:A:C:G:T:IR	0/0:47:99:0,132,1296:0,0:0,0:23,24:0,0:0
+22	16050617	.	T	.	153.15	.	AC=0;AF=0.00;AN=2;DP=46;MQ=27.03;MQ0=2	GT:DP:GQ:PL:A:C:G:T:IR	0/0:46:99:0,123,1213:0,0:0,0:0,0:23,23:0
+22	16050618	.	C	.	150.15	.	AC=0;AF=0.00;AN=2;DP=43;MQ=27.29;MQ0=2	GT:DP:GQ:PL:A:C:G:T:IR	0/0:43:99:0,120,1185:0,0:21,22:0,0:0,0:0
+22	16050619	.	A	.	147.15	.	AC=0;AF=0.00;AN=2;DP=46;MQ=26.61;MQ0=4	GT:DP:GQ:PL:A:C:G:T:IR	0/0:46:99:0,117,1158:22,24:0,0:0,0:0,0:0
+22	16050620	.	G	.	150.15	.	AC=0;AF=0.00;AN=2;DP=46;MQ=26.39;MQ0=5	GT:DP:GQ:PL:A:C:G:T:IR	0/0:46:99:0,120,1185:0,0:0,0:23,23:0,0:1
+22	16050621	.	A	.	150.15	.	AC=0;AF=0.00;AN=2;DP=46;MQ=26.39;MQ0=5	GT:DP:GQ:PL:A:C:G:T:IR	0/0:46:99:0,120,1185:23,23:0,0:0,0:0,0:0
+22	16050622	.	A	.	144.14	.	AC=0;AF=0.00;AN=2;DP=47;MQ=26.11;MQ0=6	GT:DP:GQ:PL:A:C:G:T:IR	0/0:47:99:0,114,1130:24,23:0,0:0,0:0,0:0
+22	16050623	.	C	.	144.14	.	AC=0;AF=0.00;AN=2;DP=45;MQ=26.24;MQ0=6	GT:DP:GQ:PL:A:C:G:T:IR	0/0:45:99:0,114,1130:0,0:24,21:0,0:0,0:0
+22	16050624	.	A	.	147.15	.	AC=0;AF=0.00;AN=2;DP=46;MQ=26.17;MQ0=6	GT:DP:GQ:PL:A:C:G:T:IR	0/0:46:99:0,117,1158:25,21:0,0:0,0:0,0:0
+22	16050625	.	G	.	147.15	.	AC=0;AF=0.00;AN=2;DP=46;MQ=26.17;MQ0=6	GT:DP:GQ:PL:A:C:G:T:IR	0/0:46:99:0,117,1158:0,0:0,0:25,21:0,0:0
+22	16050626	.	A	.	147.15	.	AC=0;AF=0.00;AN=2;DP=48;MQ=25.62;MQ0=8	GT:DP:GQ:PL:A:C:G:T:IR	0/0:48:99:0,117,1152:27,21:0,0:0,0:0,0:0
+22	16050627	.	G	.	144.14	.	AC=0;AF=0.00;AN=2;DP=47;MQ=25.67;MQ0=8	GT:DP:GQ:PL:A:C:G:T:IR	0/0:47:99:0,114,1130:0,0:0,0:26,21:0,0:0
+22	16050628	.	T	.	135.14	.	AC=0;AF=0.00;AN=2;DP=46;MQ=25.73;MQ0=8	GT:DP:GQ:PL:A:C:G:T:IR	0/0:46:99:0,105,1047:0,0:0,0:0,0:26,20:0
+22	16050629	.	G	.	141.14	.	AC=0;AF=0.00;AN=2;DP=47;MQ=25.45;MQ0=9	GT:DP:GQ:PL:A:C:G:T:IR	0/0:47:99:0,111,1102:0,1:0,0:26,20:0,0:0
+22	16050630	.	T	.	138.14	.	AC=0;AF=0.00;AN=2;DP=50;MQ=25.10;MQ0=10	GT:DP:GQ:PL:A:C:G:T:IR	0/0:50:99:0,108,1075:0,0:0,0:0,0:27,23:0
+22	16050631	.	G	.	144.14	.	AC=0;AF=0.00;AN=2;DP=49;MQ=25.14;MQ0=10	GT:DP:GQ:PL:A:C:G:T:IR	0/0:49:99:0,114,1130:0,0:0,0:26,23:0,0:0
+22	16050632	.	C	.	141.14	.	AC=0;AF=0.00;AN=2;DP=49;MQ=24.93;MQ0=11	GT:DP:GQ:PL:A:C:G:T:IR	0/0:49:99:0,111,1102:0,0:25,24:0,0:0,0:0
+22	16050633	.	C	.	110.48	.	AC=0;AF=0.00;AN=2;DP=48;MQ=24.96;MQ0=11;CpG	GT:DP:GQ:PL:A:C:G:T:IR	0/0:48:80.48:0,80,1019:0,0:24,23:0,0:1,0:0
+22	16050634	.	G	.	135.14	.	AC=0;AF=0.00;AN=2;DP=48;MQ=24.96;MQ0=11;CpG	GT:DP:GQ:PL:A:C:G:T:IR	0/0:48:99:0,105,1047:0,0:0,0:25,23:0,0:0
+22	16050635	.	A	.	138.13	.	AC=0;AF=0.00;AN=2;DP=48;MQ=24.96;MQ0=11	GT:DP:GQ:PL:A:C:G:T:IR	0/0:48:99:0,108,1072:25,23:0,0:0,0:0,0:0
+22	16050636	.	T	.	126.12	.	AC=0;AF=0.00;AN=2;DP=48;MQ=24.96;MQ0=11	GT:DP:GQ:PL:A:C:G:T:IR	0/0:48:96.13:0,96,961:0,0:0,0:0,0:25,23:0
+22	16050637	.	T	.	129.13	.	AC=0;AF=0.00;AN=2;DP=48;MQ=24.96;MQ0=11	GT:DP:GQ:PL:A:C:G:T:IR	0/0:48:99:0,99,992:0,0:0,0:0,0:25,23:0
+22	16050638	.	G	.	129.11	.	AC=0;AF=0.00;AN=2;DP=45;MQ=25.09;MQ0=11	GT:DP:GQ:PL:A:C:G:T:IR	0/0:45:99:0,99,986:0,0:0,0:22,23:0,0:0
+22	16050639	.	T	.	123.10	.	AC=0;AF=0.00;AN=2;DP=43;MQ=25.18;MQ0=11	GT:DP:GQ:PL:A:C:G:T:IR	0/0:43:93.11:0,93,930:0,0:0,0:0,0:22,21:0
+22	16050640	.	G	.	123.12	.	AC=0;AF=0.00;AN=2;DP=43;MQ=25.18;MQ0=11	GT:DP:GQ:PL:A:C:G:T:IR	0/0:43:93.13:0,93,934:0,0:0,0:22,21:0,0:0
+22	16050641	.	G	.	123.11	.	AC=0;AF=0.00;AN=2;DP=43;MQ=25.18;MQ0=11	GT:DP:GQ:PL:A:C:G:T:IR	0/0:43:93.12:0,93,932:0,0:0,0:22,21:0,0:0
+22	16050642	.	T	.	129.11	.	AC=0;AF=0.00;AN=2;DP=47;MQ=25.00;MQ0=11	GT:DP:GQ:PL:A:C:G:T:IR	0/0:47:99:0,99,987:0,1:0,0:0,0:24,22:0
+22	16050643	.	C	.	132.13	.	AC=0;AF=0.00;AN=2;DP=47;MQ=25.00;MQ0=11	GT:DP:GQ:PL:A:C:G:T:IR	0/0:47:99:0,102,1017:0,0:24,23:0,0:0,0:0
+22	16050644	.	A	.	126.13	.	AC=0;AF=0.00;AN=2;DP=48;MQ=24.96;MQ0=11	GT:DP:GQ:PL:A:C:G:T:IR	0/0:48:96.13:0,96,964:24,24:0,0:0,0:0,0:0
+22	16050645	.	G	.	129.13	.	AC=0;AF=0.00;AN=2;DP=45;MQ=25.09;MQ0=11	GT:DP:GQ:PL:A:C:G:T:IR	0/0:45:99:0,99,990:0,0:0,0:24,21:0,0:0
+22	16050646	.	G	.	126.13	.	AC=0;AF=0.00;AN=2;DP=45;MQ=25.09;MQ0=11	GT:DP:GQ:PL:A:C:G:T:IR	0/0:45:96.13:0,96,964:0,1:0,0:23,21:0,0:0
+22	16050647	.	A	.	126.13	.	AC=0;AF=0.00;AN=2;DP=45;MQ=25.09;MQ0=11	GT:DP:GQ:PL:A:C:G:T:IR	0/0:45:96.13:0,96,964:23,22:0,0:0,0:0,0:0
+22	16050648	.	C	.	129.11	.	AC=0;AF=0.00;AN=2;DP=45;MQ=25.09;MQ0=11	GT:DP:GQ:PL:A:C:G:T:IR	0/0:45:99:0,99,987:0,0:23,22:0,0:0,0:0
+22	16050649	.	T	.	126.12	.	AC=0;AF=0.00;AN=2;DP=45;MQ=25.09;MQ0=11	GT:DP:GQ:PL:A:C:G:T:IR	0/0:45:96.13:0,96,962:0,0:0,0:0,0:23,22:0
+22	16050650	.	C	.	123.12	.	AC=0;AF=0.00;AN=2;DP=43;MQ=25.18;MQ0=11	GT:DP:GQ:PL:A:C:G:T:IR	0/0:43:93.13:0,93,931:0,0:23,20:0,0:0,0:0
+22	16050651	.	C	.	129.12	.	AC=0;AF=0.00;AN=2;DP=45;MQ=25.09;MQ0=11	GT:DP:GQ:PL:A:C:G:T:IR	0/0:45:99:0,99,987:0,0:24,21:0,0:0,0:0
+22	16050652	.	A	.	126.13	.	AC=0;AF=0.00;AN=2;DP=47;MQ=25.00;MQ0=11	GT:DP:GQ:PL:A:C:G:T:IR	0/0:47:96.13:0,96,964:24,23:0,0:0,0:0,0:0
+22	16050653	.	T	.	135.14	.	AC=0;AF=0.00;AN=2;DP=47;MQ=25.00;MQ0=11	GT:DP:GQ:PL:A:C:G:T:IR	0/0:47:99:0,105,1047:0,0:0,0:0,0:24,23:0
+22	16050654	.	A	.	135.14	.	AC=0;AF=0.00;AN=2;DP=47;MQ=25.00;MQ0=11	GT:DP:GQ:PL:A:C:G:T:IR	0/0:47:99:0,105,1047:24,23:0,0:0,0:0,0:0
+22	16050655	.	G	.	135.14	.	AC=0;AF=0.00;AN=2;DP=47;MQ=25.00;MQ0=11	GT:DP:GQ:PL:A:C:G:T:IR	0/0:47:99:0,105,1047:0,0:0,0:24,23:0,0:0
+22	16050656	.	C	.	138.13	.	AC=0;AF=0.00;AN=2;DP=48;MQ=24.96;MQ0=11	GT:DP:GQ:PL:A:C:G:T:IR	0/0:48:99:0,108,1072:0,0:25,23:0,0:0,0:0
+22	16050657	.	A	.	141.14	.	AC=0;AF=0.00;AN=2;DP=52;MQ=24.82;MQ0=11	GT:DP:GQ:PL:A:C:G:T:IR	0/0:52:99:0,111,1102:26,26:0,0:0,0:0,0:0
+22	16050658	.	T	.	150.15	.	AC=0;AF=0.00;AN=2;DP=53;MQ=24.79;MQ0=11	GT:DP:GQ:PL:A:C:G:T:IR	0/0:53:99:0,120,1185:0,0:0,0:0,0:27,26:0
+22	16050659	.	T	.	153.15	.	AC=0;AF=0.00;AN=2;DP=53;MQ=24.79;MQ0=11	GT:DP:GQ:PL:A:C:G:T:IR	0/0:53:99:0,123,1211:0,0:0,0:0,0:27,26:0
+22	16050660	.	T	.	156.16	.	AC=0;AF=0.00;AN=2;DP=54;MQ=24.75;MQ0=11	GT:DP:GQ:PL:A:C:G:T:IR	0/0:54:99:0,126,1238:0,0:0,0:0,0:27,27:0
+22	16050661	.	C	.	159.15	.	AC=0;AF=0.00;AN=2;DP=54;MQ=24.95;MQ0=10	GT:DP:GQ:PL:A:C:G:T:IR	0/0:54:99:0,129,1264:0,0:27,27:0,0:0,0:0
+22	16050662	.	A	.	156.15	.	AC=0;AF=0.00;AN=2;DP=57;MQ=24.85;MQ0=10	GT:DP:GQ:PL:A:C:G:T:IR	0/0:57:99:0,126,1239:29,27:0,1:0,0:0,0:0
+22	16050663	.	C	.	159.16	.	AC=0;AF=0.00;AN=2;DP=55;MQ=24.92;MQ0=10	GT:DP:GQ:PL:A:C:G:T:IR	0/0:55:99:0,129,1268:0,0:28,27:0,0:0,0:0
+22	16050664	.	C	.	162.16	.	AC=0;AF=0.00;AN=2;DP=55;MQ=24.92;MQ0=10	GT:DP:GQ:PL:A:C:G:T:IR	0/0:55:99:0,132,1294:0,0:28,27:0,0:0,0:0
+22	16050665	.	A	.	162.16	.	AC=0;AF=0.00;AN=2;DP=57;MQ=24.85;MQ0=10	GT:DP:GQ:PL:A:C:G:T:IR	0/0:57:99:0,132,1296:29,28:0,0:0,0:0,0:0
+22	16050666	.	T	.	168.16	.	AC=0;AF=0.00;AN=2;DP=58;MQ=24.82;MQ0=10	GT:DP:GQ:PL:A:C:G:T:IR	0/0:58:99:0,138,1345:0,0:0,0:0,0:30,28:0
+22	16050667	.	T	.	165.14	.	AC=0;AF=0.00;AN=2;DP=56;MQ=25.07;MQ0=9	GT:DP:GQ:PL:A:C:G:T:IR	0/0:56:99:0,135,1318:0,0:0,0:0,0:30,26:0
+22	16050668	.	G	.	168.17	.	AC=0;AF=0.00;AN=2;DP=55;MQ=25.30;MQ0=8	GT:DP:GQ:PL:A:C:G:T:IR	0/0:55:99:0,138,1351:0,0:0,0:29,26:0,0:0
+22	16050669	.	A	.	165.16	.	AC=0;AF=0.00;AN=2;DP=55;MQ=25.30;MQ0=8	GT:DP:GQ:PL:A:C:G:T:IR	0/0:55:99:0,135,1322:28,27:0,0:0,0:0,0:0
+22	16050670	.	G	.	162.16	.	AC=0;AF=0.00;AN=2;DP=50;MQ=26.13;MQ0=5	GT:DP:GQ:PL:A:C:G:T:IR	0/0:50:99:0,132,1295:0,0:0,0:24,26:0,0:0
+22	16050671	.	T	.	162.16	.	AC=0;AF=0.00;AN=2;DP=51;MQ=26.08;MQ0=5	GT:DP:GQ:PL:A:C:G:T:IR	0/0:51:99:0,132,1294:0,0:0,0:0,0:25,26:0
+22	16050672	.	T	.	165.16	.	AC=0;AF=0.00;AN=2;DP=50;MQ=26.33;MQ0=4	GT:DP:GQ:PL:A:C:G:T:IR	0/0:50:99:0,135,1324:0,0:0,0:0,0:24,26:0
+22	16050673	.	A	.	165.16	.	AC=0;AF=0.00;AN=2;DP=49;MQ=26.60;MQ0=3	GT:DP:GQ:PL:A:C:G:T:IR	0/0:49:99:0,135,1324:23,26:0,0:0,0:0,0:0
+22	16050674	.	T	.	171.17	.	AC=0;AF=0.00;AN=2;DP=50;MQ=26.73;MQ0=2	GT:DP:GQ:PL:A:C:G:T:IR	0/0:50:99:0,141,1379:0,0:0,0:0,0:22,28:0
+22	16050675	.	T	.	171.17	.	AC=0;AF=0.00;AN=2;DP=51;MQ=26.67;MQ0=2	GT:DP:GQ:PL:A:C:G:T:IR	0/0:51:99:0,141,1375:0,0:0,0:0,0:23,28:0
+22	16050676	.	T	.	174.16	.	AC=0;AF=0.00;AN=2;DP=52;MQ=26.60;MQ0=2	GT:DP:GQ:PL:A:C:G:T:IR	0/0:52:99:0,144,1391:0,0:0,0:0,0:23,29:0
+22	16050677	.	C	.	177.18	.	AC=0;AF=0.00;AN=2;DP=51;MQ=26.86;MQ0=1	GT:DP:GQ:PL:A:C:G:T:IR	0/0:51:99:0,147,1429:0,0:23,28:0,0:0,0:0
+22	16050678	rs139377059	C	.	177.17	.	AC=0;AF=0.00;AN=2;DP=50;MQ=27.13;MQ0=0;1000gALT=T;AF1000g=0.05;AFR_AF=0.07;AMR_AF=0.04;ASN_AF=0.04;EUR_AF=0.06;CpG	GT:DP:GQ:PL:A:C:G:T:IR	0/0:50:99:0,147,1419:0,0:23,27:0,0:0,0:0
+22	16050679	.	G	.	177.18	.	AC=0;AF=0.00;AN=2;DP=50;MQ=27.13;MQ0=0;CpG	GT:DP:GQ:PL:A:C:G:T:IR	0/0:50:99:0,147,1434:0,0:0,0:23,27:0,0:0
+22	16050680	.	C	.	174.16	.	AC=0;AF=0.00;AN=2;DP=49;MQ=25.48;MQ0=1	GT:DP:GQ:PL:A:C:G:T:IR	0/0:49:99:0,144,1378:0,0:22,27:0,0:0,0:0
+22	16050681	.	C	.	174.16	.	AC=0;AF=0.00;AN=2;DP=50;MQ=25.23;MQ0=2	GT:DP:GQ:PL:A:C:G:T:IR	0/0:50:99:0,144,1372:0,0:23,27:0,0:0,0:0
+22	16050682	.	C	.	171.16	.	AC=0;AF=0.00;AN=2;DP=49;MQ=25.27;MQ0=2	GT:DP:GQ:PL:A:C:G:T:IR	0/0:49:99:0,141,1349:0,0:23,26:0,0:0,0:0
+22	16050683	.	C	.	168.16	.	AC=0;AF=0.00;AN=2;DP=49;MQ=25.06;MQ0=3	GT:DP:GQ:PL:A:C:G:T:IR	0/0:49:99:0,138,1317:0,0:23,26:0,0:0,0:0
+22	16050684	.	C	.	168.15	.	AC=0;AF=0.00;AN=2;DP=49;MQ=25.06;MQ0=3	GT:DP:GQ:PL:A:C:G:T:IR	0/0:49:99:0,138,1316:0,0:23,26:0,0:0,0:0
+22	16050685	.	T	.	159.14	.	AC=0;AF=0.00;AN=2;DP=52;MQ=24.32;MQ0=6	GT:DP:GQ:PL:A:C:G:T:IR	0/0:52:99:0,129,1220:0,0:0,0:0,0:24,28:0
+22	16050686	.	T	.	153.13	.	AC=0;AF=0.00;AN=2;DP=50;MQ=22.71;MQ0=6	GT:DP:GQ:PL:A:C:G:T:IR	0/0:50:99:0,123,1168:0,0:0,0:0,0:23,27:0
+22	16050687	.	A	.	150.13	.	AC=0;AF=0.00;AN=2;DP=48;MQ=22.70;MQ0=6	GT:DP:GQ:PL:A:C:G:T:IR	0/0:48:99:0,120,1136:22,26:0,0:0,0:0,0:0
+22	16050688	.	C	.	144.12	.	AC=0;AF=0.00;AN=2;DP=44;MQ=22.67;MQ0=6;CpG	GT:DP:GQ:PL:A:C:G:T:IR	0/0:44:99:0,114,1080:0,0:20,24:0,0:0,0:0
+22	16050689	.	G	.	141.12	.	AC=0;AF=0.00;AN=2;DP=43;MQ=22.67;MQ0=6;CpG	GT:DP:GQ:PL:A:C:G:T:IR	0/0:43:99:0,111,1051:0,0:0,0:19,24:0,0:0
+22	16050690	.	T	.	107.44	.	AC=0;AF=0.00;AN=2;DP=43;MQ=21.67;MQ0=8	GT:DP:GQ:PL:A:C:G:T:IR	0/0:43:77.45:0,77,928:0,0:0,1:0,0:20,22:0
+22	16050691	.	G	.	135.10	.	AC=0;AF=0.00;AN=2;DP=43;MQ=21.67;MQ0=8	GT:DP:GQ:PL:A:C:G:T:IR	0/0:43:99:0,105,983:0,0:0,0:20,23:0,0:0
+22	16050692	.	T	.	132.09	.	AC=0;AF=0.00;AN=2;DP=45;MQ=21.18;MQ0=10	GT:DP:GQ:PL:A:C:G:T:IR	0/0:45:99:0,102,951:0,0:0,0:0,0:21,24:0
+22	16050693	.	C	.	129.10	.	AC=0;AF=0.00;AN=2;DP=43;MQ=21.10;MQ0=10	GT:DP:GQ:PL:A:C:G:T:IR	0/0:43:99:0,99,928:0,0:20,23:0,0:0,0:0
+22	16050694	.	T	.	126.09	.	AC=0;AF=0.00;AN=2;DP=45;MQ=20.62;MQ0=12	GT:DP:GQ:PL:A:C:G:T:IR	0/0:45:96.10:0,96,899:0,0:0,0:0,0:21,24:0
+22	16050695	.	C	.	123.09	.	AC=0;AF=0.00;AN=2;DP=44;MQ=20.27;MQ0=13	GT:DP:GQ:PL:A:C:G:T:IR	0/0:44:93.10:0,93,871:0,0:20,24:0,0:0,0:0
+22	16050696	.	T	.	117.08	.	AC=0;AF=0.00;AN=2;DP=43;MQ=19.71;MQ0=13	GT:DP:GQ:PL:A:C:G:T:IR	0/0:43:87.09:0,87,815:0,0:0,0:0,0:20,23:0
+22	16050697	.	C	.	117.08	.	AC=0;AF=0.00;AN=2;DP=42;MQ=19.63;MQ0=13	GT:DP:GQ:PL:A:C:G:T:IR	0/0:42:87.09:0,87,815:0,0:19,23:0,0:0,0:0
+22	16050698	.	T	.	111.08	.	AC=0;AF=0.00;AN=2;DP=41;MQ=19.54;MQ0=13	GT:DP:GQ:PL:A:C:G:T:IR	0/0:41:81.08:0,81,759:0,0:0,0:0,0:19,22:0
+22	16050699	.	T	.	111.08	.	AC=0;AF=0.00;AN=2;DP=42;MQ=19.30;MQ0=14	GT:DP:GQ:PL:A:C:G:T:IR	0/0:42:81.08:0,81,759:0,0:0,0:0,0:19,23:0
+22	16050700	.	C	.	108.08	.	AC=0;AF=0.00;AN=2;DP=40;MQ=19.10;MQ0=14	GT:DP:GQ:PL:A:C:G:T:IR	0/0:40:78.08:0,78,732:0,0:18,22:0,0:0,0:0
+22	16050701	.	A	.	108.08	.	AC=0;AF=0.00;AN=2;DP=43;MQ=18.42;MQ0=17	GT:DP:GQ:PL:A:C:G:T:IR	0/0:43:78.08:0,78,732:21,22:0,0:0,0:0,0:0
+22	16050702	.	G	.	102.07	.	AC=0;AF=0.00;AN=2;DP=41;MQ=18.17;MQ0=17	GT:DP:GQ:PL:A:C:G:T:IR	0/0:41:72.08:0,72,676:0,0:0,0:19,22:0,0:0
+22	16050703	.	C	.	65.40	.	AC=0;AF=0.00;AN=2;DP=39;MQ=17.89;MQ0=17;CpG	GT:DP:GQ:PL:A:C:G:T:IR	0/0:39:35.40:0,35,538:0,0:18,19:0,0:1,1:0
+22	16050704	.	G	.	90.05	.	AC=0;AF=0.00;AN=2;DP=38;MQ=16.69;MQ0=18;CpG	GT:DP:GQ:PL:A:C:G:T:IR	0/0:38:60.06:0,60,553:0,1:0,0:18,19:0,0:0
+22	16050705	.	G	.	87.05	.	AC=0;AF=0.00;AN=2;DP=37;MQ=16.48;MQ0=18	GT:DP:GQ:PL:A:C:G:T:IR	0/0:37:57.05:0,57,526:0,1:0,0:18,18:0,0:0
+22	16050706	.	T	.	84.05	.	AC=0;AF=0.00;AN=2;DP=38;MQ=15.83;MQ0=20	GT:DP:GQ:PL:A:C:G:T:IR	0/0:38:54.05:0,54,498:0,0:0,0:0,0:20,18:0
+22	16050707	.	C	.	81.04	.	AC=0;AF=0.00;AN=2;DP=37;MQ=15.59;MQ0=20	GT:DP:GQ:PL:A:C:G:T:IR	0/0:37:51.05:0,51,470:0,0:20,17:0,0:0,0:0
+22	16050708	.	T	.	78.04	.	AC=0;AF=0.00;AN=2;DP=37;MQ=15.59;MQ0=20	GT:DP:GQ:PL:A:C:G:T:IR	0/0:37:48.05:0,48,443:0,0:0,0:0,0:20,17:0
+22	16050709	.	A	.	78.04	.	AC=0;AF=0.00;AN=2;DP=37;MQ=15.12;MQ0=21	GT:DP:GQ:PL:A:C:G:T:IR	0/0:37:48.05:0,48,443:19,18:0,0:0,0:0,0:0
+22	16050710	.	T	.	78.04	.	AC=0;AF=0.00;AN=2;DP=37;MQ=15.12;MQ0=21	GT:DP:GQ:PL:A:C:G:T:IR	0/0:37:48.05:0,48,443:0,0:0,0:0,0:19,18:0
+22	16050711	.	T	.	78.04	.	AC=0;AF=0.00;AN=2;DP=38;MQ=14.92;MQ0=22	GT:DP:GQ:PL:A:C:G:T:IR	0/0:38:48.05:0,48,443:0,0:0,0:0,0:19,19:0
+22	16050712	.	A	.	78.04	.	AC=0;AF=0.00;AN=2;DP=40;MQ=14.55;MQ0=24	GT:DP:GQ:PL:A:C:G:T:IR	0/0:40:48.05:0,48,443:21,19:0,0:0,0:0,0:0
+22	16050713	.	T	.	78.04	.	AC=0;AF=0.00;AN=2;DP=40;MQ=14.55;MQ0=24	GT:DP:GQ:PL:A:C:G:T:IR	0/0:40:48.05:0,48,443:0,0:0,0:0,0:21,19:0
+22	16050714	.	C	.	75.04	.	AC=0;AF=0.00;AN=2;DP=39;MQ=14.26;MQ0=24	GT:DP:GQ:PL:A:C:G:T:IR	0/0:39:45.04:0,45,415:0,0:21,18:0,0:0,0:0
+22	16050715	.	T	.	72.03	.	AC=0;AF=0.00;AN=2;DP=38;MQ=13.96;MQ0=24	GT:DP:GQ:PL:A:C:G:T:IR	0/0:38:42.04:0,42,387:0,0:0,0:0,0:21,17:0
+22	16050716	.	C	.	72.03	.	AC=0;AF=0.00;AN=2;DP=38;MQ=13.96;MQ0=24	GT:DP:GQ:PL:A:C:G:T:IR	0/0:38:42.04:0,42,387:0,0:21,17:0,0:0,0:0
+22	16050717	.	C	.	69.03	.	AC=0;AF=0.00;AN=2;DP=37;MQ=13.63;MQ0=24	GT:DP:GQ:PL:A:C:G:T:IR	0/0:37:39.04:0,39,360:0,1:21,15:0,0:0,0:0
+22	16050718	.	A	.	69.03	.	AC=0;AF=0.00;AN=2;DP=39;MQ=13.28;MQ0=26	GT:DP:GQ:PL:A:C:G:T:IR	0/0:39:39.04:0,39,360:23,16:0,0:0,0:0,0:0
+22	16050719	.	A	.	66.03	.	AC=0;AF=0.00;AN=2;DP=39;MQ=13.28;MQ0=26	GT:DP:GQ:PL:A:C:G:T:IR	0/0:39:36.03:0,36,332:23,16:0,0:0,0:0,0:0
+22	16050720	.	G	.	63.03	.	AC=0;AF=0.00;AN=2;DP=37;MQ=12.54;MQ0=26	GT:DP:GQ:PL:A:C:G:T:IR	0/0:37:33.03:0,33,304:0,0:0,0:22,15:0,0:0
+22	16050721	.	A	.	63.03	.	AC=0;AF=0.00;AN=2;DP=38;MQ=12.37;MQ0=27	GT:DP:GQ:PL:A:C:G:T:IR	0/0:38:33.03:0,33,304:23,15:0,0:0,0:0,0:0
+22	16050722	.	G	.	60.02	.	AC=0;AF=0.00;AN=2;DP=39;MQ=11.65;MQ0=29	GT:DP:GQ:PL:A:C:G:T:IR	0/0:39:30.03:0,30,277:0,0:0,0:24,15:0,0:0
+22	16050723	.	G	.	60.02	.	AC=0;AF=0.00;AN=2;DP=39;MQ=11.65;MQ0=29	GT:DP:GQ:PL:A:C:G:T:IR	0/0:39:30.03:0,30,277:0,0:0,0:24,15:0,0:0
+22	16050724	.	G	.	60.02	.	AC=0;AF=0.00;AN=2;DP=41;MQ=11.36;MQ0=31	GT:DP:GQ:PL:A:C:G:T:IR	0/0:41:30.03:0,30,277:0,1:0,0:24,16:0,0:0
+22	16050725	.	C	.	57.02	.	AC=0;AF=0.00;AN=2;DP=42;MQ=10.65;MQ0=33	GT:DP:GQ:PL:A:C:G:T:IR	0/0:42:27.03:0,27,249:0,0:25,17:0,0:0,0:0
+22	16050726	.	A	.	57.02	.	AC=0;AF=0.00;AN=2;DP=44;MQ=10.40;MQ0=35	GT:DP:GQ:PL:A:C:G:T:IR	0/0:44:27.03:0,27,249:25,19:0,0:0,0:0,0:0
+22	16050727	.	T	.	57.02	.	AC=0;AF=0.00;AN=2;DP=44;MQ=10.40;MQ0=35	GT:DP:GQ:PL:A:C:G:T:IR	0/0:44:27.03:0,27,249:0,0:0,0:0,0:25,19:0
+22	16050728	.	A	.	57.02	.	AC=0;AF=0.00;AN=2;DP=44;MQ=10.40;MQ0=35	GT:DP:GQ:PL:A:C:G:T:IR	0/0:44:27.03:0,27,249:25,19:0,0:0,0:0,0:0
+22	16050729	.	A	.	57.02	.	AC=0;AF=0.00;AN=2;DP=44;MQ=10.40;MQ0=35	GT:DP:GQ:PL:A:C:G:T:IR	0/0:44:27.03:0,27,249:25,19:0,0:0,0:0,0:0
+22	16050730	.	A	.	57.02	.	AC=0;AF=0.00;AN=2;DP=45;MQ=10.29;MQ0=36	GT:DP:GQ:PL:A:C:G:T:IR	0/0:45:27.03:0,27,249:25,20:0,0:0,0:0,0:0
+22	16050731	.	A	.	54.02	.	AC=0;AF=0.00;AN=2;DP=44;MQ=10.40;MQ0=35	GT:DP:GQ:PL:A:C:G:T:IR	0/0:44:24.02:0,24,221:24,20:0,0:0,0:0,0:0
+22	16050732	.	C	.	54.02	.	AC=0;AF=0.00;AN=2;DP=43;MQ=9.92;MQ0=35	GT:DP:GQ:PL:A:C:G:T:IR	0/0:43:24.02:0,24,221:0,0:23,19:0,0:1,0:0
+22	16050733	.	A	.	54.02	.	AC=0;AF=0.00;AN=2;DP=45;MQ=9.70;MQ0=37	GT:DP:GQ:PL:A:C:G:T:IR	0/0:45:24.02:0,24,221:24,21:0,0:0,0:0,0:0
+22	16050734	.	C	.	54.02	.	AC=0;AF=0.00;AN=2;DP=45;MQ=9.70;MQ0=37	GT:DP:GQ:PL:A:C:G:T:IR	0/0:45:24.02:0,24,221:0,0:24,21:0,0:0,0:0
+22	16050735	.	T	.	54.02	.	AC=0;AF=0.00;AN=2;DP=47;MQ=9.49;MQ0=39	GT:DP:GQ:PL:A:C:G:T:IR	0/0:47:24.02:0,24,221:0,0:0,0:0,0:24,23:0
+22	16050736	.	G	.	54.02	.	AC=0;AF=0.00;AN=2;DP=45;MQ=9.70;MQ0=37	GT:DP:GQ:PL:A:C:G:T:IR	0/0:45:24.02:0,24,221:0,0:0,0:23,22:0,0:0
+22	16050737	.	A	.	54.02	.	AC=0;AF=0.00;AN=2;DP=45;MQ=9.70;MQ0=37	GT:DP:GQ:PL:A:C:G:T:IR	0/0:45:24.02:0,24,221:23,22:0,0:0,0:0,0:0
+22	16050738	.	G	.	54.02	.	AC=0;AF=0.00;AN=2;DP=45;MQ=9.70;MQ0=37	GT:DP:GQ:PL:A:C:G:T:IR	0/0:45:24.02:0,24,221:0,0:0,0:23,22:0,0:0
+22	16050739	.	T	.	54.02	.	AC=0;AF=0.00;AN=2;DP=47;MQ=9.74;MQ0=38;1000gALT=T;AF1000g=0.02;AFR_AF=0.02;AMR_AF=0.03;ASN_AF=0.04;EUR_AF=0.01	GT:DP:GQ:PL:A:C:G:T:IR	0/0:47:24.02:0,24,221:0,0:0,0:0,0:23,24:0
+22	16050740	.	A	.	51.01	.	AC=0;AF=0.00;AN=2;DP=49;MQ=9.54;MQ0=40	GT:DP:GQ:PL:A:C:G:T:IR	0/0:49:21.02:0,21,194:23,26:0,0:0,0:0,0:0
+22	16050741	.	A	.	51.01	.	AC=0;AF=0.00;AN=2;DP=49;MQ=8.95;MQ0=41	GT:DP:GQ:PL:A:C:G:T:IR	0/0:49:21.02:0,21,194:23,26:0,0:0,0:0,0:0
+22	16050742	.	A	.	51.01	.	AC=0;AF=0.00;AN=2;DP=49;MQ=8.95;MQ0=41	GT:DP:GQ:PL:A:C:G:T:IR	0/0:49:21.02:0,21,194:23,26:0,0:0,0:0,0:0
+22	16050743	.	C	.	51.01	.	AC=0;AF=0.00;AN=2;DP=50;MQ=8.86;MQ0=42	GT:DP:GQ:PL:A:C:G:T:IR	0/0:50:21.02:0,21,194:0,0:24,26:0,0:0,0:0
+22	16050744	.	A	.	51.01	.	AC=0;AF=0.00;AN=2;DP=49;MQ=8.95;MQ0=41	GT:DP:GQ:PL:A:C:G:T:IR	0/0:49:21.02:0,21,194:22,27:0,0:0,0:0,0:0
+22	16050745	.	G	.	51.01	.	AC=0;AF=0.00;AN=2;DP=50;MQ=8.86;MQ0=42	GT:DP:GQ:PL:A:C:G:T:IR	0/0:50:21.02:0,21,194:0,0:0,0:22,28:0,0:0
+22	16050746	.	C	.	51.01	.	AC=0;AF=0.00;AN=2;DP=51;MQ=8.78;MQ0=43	GT:DP:GQ:PL:A:C:G:T:IR	0/0:51:21.02:0,21,194:1,0:21,29:0,0:0,0:0
+22	16050747	.	T	.	51.01	.	AC=0;AF=0.00;AN=2;DP=50;MQ=8.86;MQ0=42	GT:DP:GQ:PL:A:C:G:T:IR	0/0:50:21.02:0,21,194:0,0:0,0:0,0:21,29:0
+22	16050748	.	C	.	51.01	.	AC=0;AF=0.00;AN=2;DP=51;MQ=8.78;MQ0=43	GT:DP:GQ:PL:A:C:G:T:IR	0/0:51:21.02:0,21,194:0,0:21,30:0,0:0,0:0
+22	16050749	.	T	.	48.01	.	AC=0;AF=0.00;AN=2;DP=52;MQ=8.69;MQ0=44	GT:DP:GQ:PL:A:C:G:T:IR	0/0:52:18.02:0,18,166:0,1:0,0:0,0:21,30:0
+22	16050750	.	T	.	45.01	.	AC=0;AF=0.00;AN=2;DP=52;MQ=8.08;MQ0=45	GT:DP:GQ:PL:A:C:G:T:IR	0/0:52:15.01:0,15,138:0,0:0,0:0,0:20,32:0
+22	16050751	.	T	.	45.01	.	AC=0;AF=0.00;AN=2;DP=53;MQ=8.01;MQ0=46	GT:DP:GQ:PL:A:C:G:T:IR	0/0:53:15.01:0,15,138:0,0:0,0:0,0:20,33:0
+22	16050752	.	T	.	45.01	.	AC=0;AF=0.00;AN=2;DP=51;MQ=7.50;MQ0=45	GT:DP:GQ:PL:A:C:G:T:IR	0/0:51:15.01:0,15,138:0,0:0,0:0,0:18,33:0
+22	16050753	.	A	.	45.01	.	AC=0;AF=0.00;AN=2;DP=51;MQ=7.50;MQ0=45	GT:DP:GQ:PL:A:C:G:T:IR	0/0:51:15.01:0,15,138:18,33:0,0:0,0:0,0:0
+22	16050754	.	T	.	45.01	.	AC=0;AF=0.00;AN=2;DP=48;MQ=7.73;MQ0=42	GT:DP:GQ:PL:A:C:G:T:IR	0/0:48:15.01:0,15,138:0,0:0,0:0,0:16,32:0
+22	16050755	.	A	.	45.01	.	AC=0;AF=0.00;AN=2;DP=48;MQ=7.73;MQ0=42	GT:DP:GQ:PL:A:C:G:T:IR	0/0:48:15.01:0,15,138:15,33:0,0:0,0:0,0:0
+22	16050756	.	T	.	45.01	.	AC=0;AF=0.00;AN=2;DP=48;MQ=7.73;MQ0=42	GT:DP:GQ:PL:A:C:G:T:IR	0/0:48:15.01:0,15,138:0,0:0,1:0,0:15,32:0
+22	16050757	.	G	.	45.01	.	AC=0;AF=0.00;AN=2;DP=46;MQ=7.90;MQ0=40	GT:DP:GQ:PL:A:C:G:T:IR	0/0:46:15.01:0,15,138:0,0:0,0:13,33:0,0:0
+22	16050758	.	T	.	45.01	.	AC=0;AF=0.00;AN=2;DP=46;MQ=7.90;MQ0=40	GT:DP:GQ:PL:A:C:G:T:IR	0/0:46:15.01:0,15,138:0,0:0,0:0,0:13,33:0
+22	16050759	.	G	.	45.01	.	AC=0;AF=0.00;AN=2;DP=45;MQ=7.99;MQ0=39	GT:DP:GQ:PL:A:C:G:T:IR	0/0:45:15.01:0,15,138:0,0:0,0:12,33:0,0:0
+22	16050760	.	T	.	42.01	.	AC=0;AF=0.00;AN=2;DP=45;MQ=7.99;MQ0=39	GT:DP:GQ:PL:A:C:G:T:IR	0/0:45:12.01:0,12,111:0,0:0,0:0,0:13,32:0
+22	16050761	.	T	.	42.01	.	AC=0;AF=0.00;AN=2;DP=43;MQ=7.38;MQ0=38	GT:DP:GQ:PL:A:C:G:T:IR	0/0:43:12.01:0,12,111:0,0:0,0:0,0:12,31:0
+22	16050762	.	T	.	42.01	.	AC=0;AF=0.00;AN=2;DP=43;MQ=7.38;MQ0=38	GT:DP:GQ:PL:A:C:G:T:IR	0/0:43:12.01:0,12,111:0,0:0,0:0,0:12,31:0
+22	16050763	.	C	.	42.01	.	AC=0;AF=0.00;AN=2;DP=42;MQ=7.47;MQ0=37	GT:DP:GQ:PL:A:C:G:T:IR	0/0:42:12.01:0,12,111:0,0:12,29:0,1:0,0:0
+22	16050764	.	C	.	42.01	.	AC=0;AF=0.00;AN=2;DP=42;MQ=7.47;MQ0=37	GT:DP:GQ:PL:A:C:G:T:IR	0/0:42:12.01:0,12,111:0,0:12,30:0,0:0,0:0
+22	16050765	.	T	.	42.01	.	AC=0;AF=0.00;AN=2;DP=46;MQ=7.13;MQ0=41	GT:DP:GQ:PL:A:C:G:T:IR	0/0:46:12.01:0,12,111:0,0:0,0:0,0:12,34:0
+22	16050766	.	G	.	42.01	.	AC=0;AF=0.00;AN=2;DP=44;MQ=7.29;MQ0=39	GT:DP:GQ:PL:A:C:G:T:IR	0/0:44:12.01:0,12,111:0,0:0,0:12,32:0,0:0
+22	16050767	.	G	.	42.01	.	AC=0;AF=0.00;AN=2;DP=43;MQ=7.38;MQ0=38	GT:DP:GQ:PL:A:C:G:T:IR	0/0:43:12.01:0,12,111:0,0:0,0:12,31:0,0:0
+22	16050768	.	A	.	42.01	.	AC=0;AF=0.00;AN=2;DP=46;MQ=7.13;MQ0=41	GT:DP:GQ:PL:A:C:G:T:IR	0/0:46:12.01:0,12,111:13,33:0,0:0,0:0,0:0
+22	16050769	.	T	.	42.01	.	AC=0;AF=0.00;AN=2;DP=45;MQ=7.21;MQ0=40	GT:DP:GQ:PL:A:C:G:T:IR	0/0:45:12.01:0,12,111:0,0:0,0:0,0:13,32:0
+22	16050770	.	G	.	42.01	.	AC=0;AF=0.00;AN=2;DP=45;MQ=7.21;MQ0=40	GT:DP:GQ:PL:A:C:G:T:IR	0/0:45:12.01:0,12,111:0,0:0,0:13,32:0,0:0
+22	16050771	.	A	.	42.01	.	AC=0;AF=0.00;AN=2;DP=44;MQ=7.29;MQ0=39	GT:DP:GQ:PL:A:C:G:T:IR	0/0:44:12.01:0,12,111:12,32:0,0:0,0:0,0:0
+22	16050772	.	G	.	39	.	AC=0;AF=0.00;AN=2;DP=43;MQ=6.49;MQ0=39	GT:DP:GQ:PL:A:C:G:T:IR	0/0:43:9.01:0,9,83:0,0:0,0:11,32:0,0:0
+22	16050773	.	C	.	36	.	AC=0;AF=0.00;AN=2;DP=42;MQ=5.53;MQ0=39	GT:DP:GQ:PL:A:C:G:T:IR	0/0:42:6:0,6,53:0,0:11,30:0,1:0,0:0
+22	16050774	.	C	.	36	.	AC=0;AF=0.00;AN=2;DP=42;MQ=5.53;MQ0=39	GT:DP:GQ:PL:A:C:G:T:IR	0/0:42:6.01:0,6,55:0,0:12,30:0,0:0,0:0
+22	16050775	.	T	.	32.99	.	AC=0;AF=0.00;AN=2;DP=45;MQ=5.34;MQ0=42	GT:DP:GQ:PL:A:C:G:T:IR	0/0:45:3:0,3,28:0,0:0,0:0,0:12,33:0
+22	16050776	.	T	.	32.99	.	AC=0;AF=0.00;AN=2;DP=48;MQ=5.17;MQ0=45	GT:DP:GQ:PL:A:C:G:T:IR	0/0:48:3:0,3,28:0,0:0,0:0,0:14,34:0
+22	16050777	.	C	.	32.99	.	AC=0;AF=0.00;AN=2;DP=47;MQ=4.01;MQ0=45	GT:DP:GQ:PL:A:C:G:T:IR	0/0:47:3:0,3,28:0,0:13,34:0,0:0,0:0
+22	16050778	.	T	.	32.99	.	AC=0;AF=0.00;AN=2;DP=51;MQ=3.85;MQ0=49	GT:DP:GQ:PL:A:C:G:T:IR	0/0:51:3:0,3,28:0,0:0,0:0,0:14,37:0
+22	16050779	.	T	.	32.99	.	AC=0;AF=0.00;AN=2;DP=51;MQ=3.85;MQ0=49	GT:DP:GQ:PL:A:C:G:T:IR	0/0:51:3:0,3,28:0,0:0,0:0,0:14,37:0
+22	16050780	.	T	.	32.99	.	AC=0;AF=0.00;AN=2;DP=51;MQ=3.85;MQ0=49	GT:DP:GQ:PL:A:C:G:T:IR	0/0:51:3:0,3,28:0,0:0,0:0,0:14,37:0
+22	16050781	.	T	.	32.99	.	AC=0;AF=0.00;AN=2;DP=52;MQ=3.81;MQ0=50	GT:DP:GQ:PL:A:C:G:T:IR	0/0:52:3:0,3,28:0,1:0,0:0,0:14,37:0
+22	16050782	.	A	.	32.99	.	AC=0;AF=0.00;AN=2;DP=53;MQ=3.77;MQ0=51	GT:DP:GQ:PL:A:C:G:T:IR	0/0:53:3:0,3,28:14,39:0,0:0,0:0,0:0
+22	16050783	.	A	.	32.99	.	AC=0;AF=0.00;AN=2;DP=52;MQ=3.81;MQ0=50	GT:DP:GQ:PL:A:C:G:T:IR	0/0:52:3:0,3,28:13,39:0,0:0,0:0,0:0
+22	16050784	.	T	.	32.99	.	AC=0;AF=0.00;AN=2;DP=52;MQ=3.81;MQ0=50	GT:DP:GQ:PL:A:C:G:T:IR	0/0:52:3:0,3,28:0,0:0,0:0,0:13,39:0
+22	16050785	.	T	.	32.99	.	AC=0;AF=0.00;AN=2;DP=52;MQ=3.81;MQ0=50	GT:DP:GQ:PL:A:C:G:T:IR	0/0:52:3:0,3,28:0,0:0,0:0,0:13,39:0
+22	16050786	.	A	.	32.99	.	AC=0;AF=0.00;AN=2;DP=51;MQ=3.85;MQ0=49	GT:DP:GQ:PL:A:C:G:T:IR	0/0:51:3:0,3,28:13,38:0,0:0,0:0,0:0
+22	16050787	.	A	.	32.99	.	AC=0;AF=0.00;AN=2;DP=51;MQ=3.85;MQ0=49	GT:DP:GQ:PL:A:C:G:T:IR	0/0:51:3:0,3,28:13,38:0,0:0,0:0,0:0
+22	16050788	.	T	.	32.99	.	AC=0;AF=0.00;AN=2;DP=50;MQ=3.88;MQ0=48	GT:DP:GQ:PL:A:C:G:T:IR	0/0:50:3:0,3,28:0,0:0,0:0,0:13,37:0
+22	16050789	.	T	.	32.96	.	AC=0;AF=0.00;AN=2;DP=49;MQ=3.92;MQ0=47	GT:DP:GQ:PL:A:C:G:T:IR	0/0:49:2.99:0,3,23:0,0:0,0:0,0:13,36:0
+22	16050790	.	T	.	32.99	.	AC=0;AF=0.00;AN=2;DP=48;MQ=3.96;MQ0=46	GT:DP:GQ:PL:A:C:G:T:IR	0/0:48:3:0,3,27:0,0:0,0:0,0:13,35:0
+22	16050791	.	T	.	32.99	.	AC=0;AF=0.00;AN=2;DP=47;MQ=4.01;MQ0=45	GT:DP:GQ:PL:A:C:G:T:IR	0/0:47:3:0,3,28:0,0:0,0:0,0:13,34:0
+22	16050792	.	G	.	32.99	.	AC=0;AF=0.00;AN=2;DP=47;MQ=4.01;MQ0=45	GT:DP:GQ:PL:A:C:G:T:IR	0/0:47:3:0,3,28:0,0:0,0:13,34:0,0:0
+22	16050793	.	T	.	32.99	.	AC=0;AF=0.00;AN=2;DP=49;MQ=3.92;MQ0=47	GT:DP:GQ:PL:A:C:G:T:IR	0/0:49:3:0,3,28:0,0:0,0:0,0:15,34:0
+22	16050794	.	T	.	32.99	.	AC=0;AF=0.00;AN=2;DP=49;MQ=3.92;MQ0=47	GT:DP:GQ:PL:A:C:G:T:IR	0/0:49:3:0,3,28:0,0:0,0:0,0:15,34:0
+22	16050795	.	A	.	32.99	.	AC=0;AF=0.00;AN=2;DP=49;MQ=3.92;MQ0=47	GT:DP:GQ:PL:A:C:G:T:IR	0/0:49:3:0,3,28:15,34:0,0:0,0:0,0:0
+22	16050796	.	A	.	32.99	.	AC=0;AF=0.00;AN=2;DP=48;MQ=3.96;MQ0=46	GT:DP:GQ:PL:A:C:G:T:IR	0/0:48:3:0,3,28:15,33:0,0:0,0:0,0:0
+22	16050797	.	G	.	.	.	DP=46;HaplotypeScore=0.0000;MQ=2.21;MQ0=45	GT:A:C:G:T:IR	./.:0,0:0,0:14,32:0,0:0
+22	16050798	.	G	.	.	.	DP=46;HaplotypeScore=0.0000;MQ=2.21;MQ0=45	GT:A:C:G:T:IR	./.:0,0:0,0:14,32:0,0:0
+22	16050799	.	G	.	.	.	DP=46;HaplotypeScore=0.0000;MQ=2.21;MQ0=45	GT:A:C:G:T:IR	./.:0,0:0,1:14,31:0,0:0
+22	16050800	.	A	.	.	.	DP=46;HaplotypeScore=0.0000;MQ=2.21;MQ0=45	GT:A:C:G:T:IR	./.:14,32:0,0:0,0:0,0:0
+22	16050801	.	T	.	.	.	DP=46;HaplotypeScore=0.0000;MQ=2.21;MQ0=45	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:14,32:0
+22	16050802	.	T	.	.	.	DP=46;HaplotypeScore=0.0000;MQ=2.21;MQ0=45	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:14,32:0
+22	16050803	.	T	.	.	.	DP=45;HaplotypeScore=0.0000;MQ=2.24;MQ0=44	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:14,31:0
+22	16050804	.	C	.	.	.	DP=44;HaplotypeScore=0.0000;MQ=2.26;MQ0=43	GT:A:C:G:T:IR	./.:0,0:13,31:0,0:0,0:0
+22	16050805	.	C	.	.	.	DP=44;HaplotypeScore=0.0000;MQ=2.26;MQ0=43	GT:A:C:G:T:IR	./.:0,0:13,31:0,0:0,0:0
+22	16050806	.	T	.	.	.	DP=42;HaplotypeScore=0.0000;MQ=2.31;MQ0=41	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:12,30:0
+22	16050807	.	C	.	.	.	DP=41;HaplotypeScore=0.0000;MQ=2.34;MQ0=40	GT:A:C:G:T:IR	./.:0,0:12,29:0,0:0,0:0
+22	16050808	.	T	.	.	.	DP=44;HaplotypeScore=0.0000;MQ=2.26;MQ0=43	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:13,31:0
+22	16050809	.	A	.	.	.	DP=42;HaplotypeScore=0.0000;MQ=2.31;MQ0=41	GT:A:C:G:T:IR	./.:11,31:0,0:0,0:0,0:0
+22	16050810	.	G	.	.	.	DP=40;HaplotypeScore=0.0000;MQ=2.37;MQ0=39	GT:A:C:G:T:IR	./.:0,0:0,0:11,29:0,0:0
+22	16050811	.	G	.	.	.	DP=40;HaplotypeScore=0.0000;MQ=2.37;MQ0=39	GT:A:C:G:T:IR	./.:0,0:0,0:11,29:0,0:0
+22	16050812	.	G	.	.	.	DP=39;HaplotypeScore=0.0000;MQ=2.40;MQ0=38	GT:A:C:G:T:IR	./.:1,1:0,0:10,27:0,0:0
+22	16050813	.	C	.	.	.	DP=39;HaplotypeScore=0.0000;MQ=2.40;MQ0=38	GT:A:C:G:T:IR	./.:0,0:13,26:0,0:0,0:0
+22	16050814	.	C	.	.	.	DP=37;HaplotypeScore=0.0000;MQ=2.47;MQ0=36	GT:A:C:G:T:IR	./.:0,0:13,24:0,0:0,0:0
+22	16050815	.	A	.	.	.	DP=37;HaplotypeScore=0.0000;MQ=2.47;MQ0=36	GT:A:C:G:T:IR	./.:13,24:0,0:0,0:0,0:0
+22	16050816	.	C	.	.	.	DP=34;HaplotypeScore=0.0000;MQ=2.57;MQ0=33	GT:A:C:G:T:IR	./.:0,0:13,21:0,0:0,0:0
+22	16050817	.	T	.	.	.	DP=36;HaplotypeScore=0.0000;MQ=2.50;MQ0=35	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:14,22:0
+22	16050818	.	G	.	.	.	DP=35;HaplotypeScore=0.0000;MQ=2.54;MQ0=34	GT:A:C:G:T:IR	./.:0,0:0,0:14,21:0,0:0
+22	16050819	.	C	.	.	.	DP=35;HaplotypeScore=0.0000;MQ=2.54;MQ0=34	GT:A:C:G:T:IR	./.:0,0:14,21:0,0:0,0:0
+22	16050820	.	A	.	.	.	DP=36;HaplotypeScore=0.0000;MQ=2.50;MQ0=35	GT:A:C:G:T:IR	./.:15,21:0,0:0,0:0,0:0
+22	16050821	.	C	.	.	.	DP=33;HaplotypeScore=0.0000;MQ=2.61;MQ0=32;CpG	GT:A:C:G:T:IR	./.:0,0:14,19:0,0:0,0:0
+22	16050822	.	G	.	.	.	DP=32;HaplotypeScore=0.0000;MQ=2.65;MQ0=31;CpG	GT:A:C:G:T:IR	./.:10,9:0,0:4,9:0,0:0
+22	16050823	.	T	.	.	.	DP=31;HaplotypeScore=0.0000;MQ=2.69;MQ0=30	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:16,15:0
+22	16050824	.	C	.	.	.	DP=31;HaplotypeScore=0.0000;MQ=2.69;MQ0=30	GT:A:C:G:T:IR	./.:0,0:16,15:0,0:0,0:0
+22	16050825	.	A	.	.	.	DP=31;HaplotypeScore=0.0000;MQ=2.69;MQ0=30	GT:A:C:G:T:IR	./.:16,15:0,0:0,0:0,0:0
+22	16050826	.	T	.	.	.	DP=31;HaplotypeScore=0.0000;MQ=2.69;MQ0=30	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:16,15:0
+22	16050827	.	G	.	.	.	DP=31;HaplotypeScore=0.0000;MQ=2.69;MQ0=30	GT:A:C:G:T:IR	./.:0,0:0,0:16,15:0,0:0
+22	16050828	.	G	.	.	.	DP=31;HaplotypeScore=0.0000;MQ=2.69;MQ0=30	GT:A:C:G:T:IR	./.:0,0:0,0:16,15:0,0:0
+22	16050829	.	G	.	.	.	DP=30;HaplotypeScore=0.0000;MQ=2.74;MQ0=29	GT:A:C:G:T:IR	./.:0,0:0,0:16,14:0,0:0
+22	16050830	.	G	.	.	.	DP=27;HaplotypeScore=0.0000;MQ=2.89;MQ0=26	GT:A:C:G:T:IR	./.:0,0:0,0:14,13:0,0:0
+22	16050831	.	A	.	.	.	DP=28;HaplotypeScore=0.0000;MQ=2.83;MQ0=27	GT:A:C:G:T:IR	./.:15,13:0,0:0,0:0,0:0
+22	16050832	.	G	.	.	.	DP=29;HaplotypeScore=0.0000;MQ=2.79;MQ0=28	GT:A:C:G:T:IR	./.:0,1:0,0:15,13:0,0:0
+22	16050833	.	T	.	.	.	DP=30;HaplotypeScore=0.0000;MQ=2.74;MQ0=29	GT:A:C:G:T:IR	./.:0,0:0,0:0,0:16,14:0
+22	16050834	.	C	.	.	.	DP=29;HaplotypeScore=0.0000;MQ=0.00;MQ0=29	GT:A:C:G:T:IR	./.:0,0:16,13:0,0:0,0:0
+22	16050835	.	A	.	.	.	DP=31;HaplotypeScore=0.0000;MQ=0.00;MQ0=31	GT:A:C:G:T:IR	./.:17,13:0,0:0,1:0,0:0
+22	16050836	.	C	.	.	.	DP=31;HaplotypeScore=0.0000;MQ=0.00;MQ0=31	GT:A:C:G:T:IR	./.:0,0:18,13:0,0:0,0:0
+22	16050837	.	C	.	.	.	DP=30;HaplotypeScore=0.0000;MQ=0.00;MQ0=30	GT:A:C:G:T:IR	./.:0,0:17,13:0,0:0,0:0
+22	16050838	.	C	.	.	.	DP=31;HaplotypeScore=0.0000;MQ=0.00;MQ0=31	GT:A:C:G:T:IR	./.:0,0:18,13:0,0:0,0:0
+22	16050839	.	C	.	.	.	DP=32;HaplotypeScore=0.0000;MQ=0.00;MQ0=32	GT:A:C:G:T:IR	./.:0,0:19,13:0,0:0,0:0
+22	16050840	.	C	.	.	.	DP=33;HaplotypeScore=0.0000;MQ=0.00;MQ0=33	GT:A:C:G:T:IR	./.:0,0:19,13:0,0:0,0:0
+22	16050841	.	A	.	.	.	DP=36;HaplotypeScore=0.0000;MQ=3.83;MQ0=35	GT:A:C:G:T:IR	./.:21,15:0,0:0,0:0,0:0
+22	16050842	.	G	.	32.99	.	AC=0;AF=0.00;AN=2;DP=36;MQ=3.83;MQ0=35	GT:DP:GQ:PL:A:C:G:T:IR	0/0:36:3:0,3,28:0,0:0,0:21,15:0,0:0
+22	16050843	.	A	.	32.99	.	AC=0;AF=0.00;AN=2;DP=37;MQ=3.78;MQ0=36	GT:DP:GQ:PL:A:C:G:T:IR	0/0:37:3:0,3,28:22,15:0,0:0,0:0,0:0
+22	16050844	.	C	.	32.99	.	AC=0;AF=0.00;AN=2;DP=37;MQ=3.78;MQ0=36	GT:DP:GQ:PL:A:C:G:T:IR	0/0:37:3:0,3,28:0,0:22,15:0,0:0,0:0
+22	16050845	.	A	.	32.99	.	AC=0;AF=0.00;AN=2;DP=37;MQ=3.78;MQ0=36	GT:DP:GQ:PL:A:C:G:T:IR	0/0:37:3:0,3,28:21,16:0,0:0,0:0,0:0
+22	16050846	.	C	.	36	.	AC=0;AF=0.00;AN=2;DP=37;MQ=5.35;MQ0=35	GT:DP:GQ:PL:A:C:G:T:IR	0/0:37:6.01:0,6,55:0,0:22,15:0,0:0,0:0
+22	16050847	.	T	.	36	.	AC=0;AF=0.00;AN=2;DP=39;MQ=5.21;MQ0=37	GT:DP:GQ:PL:A:C:G:T:IR	0/0:39:6.01:0,6,55:0,0:0,0:0,0:23,16:0
+22	16050848	.	C	.	36	.	AC=0;AF=0.00;AN=2;DP=40;MQ=5.14;MQ0=38	GT:DP:GQ:PL:A:C:G:T:IR	0/0:40:6.01:0,6,55:0,0:24,16:0,0:0,0:0
+22	16050849	.	C	.	36	.	AC=0;AF=0.00;AN=2;DP=40;MQ=5.14;MQ0=38	GT:DP:GQ:PL:A:C:G:T:IR	0/0:40:6.01:0,6,55:0,0:24,16:0,0:0,0:0
+22	16050850	.	C	.	36	.	AC=0;AF=0.00;AN=2;DP=42;MQ=5.02;MQ0=40	GT:DP:GQ:PL:A:C:G:T:IR	0/0:42:6.01:0,6,55:0,0:24,18:0,0:0,0:0
+22	16050851	.	A	.	36	.	AC=0;AF=0.00;AN=2;DP=44;MQ=4.90;MQ0=42	GT:DP:GQ:PL:A:C:G:T:IR	0/0:44:6.01:0,6,55:25,19:0,0:0,0:0,0:0
+22	16050852	.	A	.	36	.	AC=0;AF=0.00;AN=2;DP=44;MQ=4.90;MQ0=42	GT:DP:GQ:PL:A:C:G:T:IR	0/0:44:6.01:0,6,55:25,19:0,0:0,0:0,0:0
+22	16050853	.	T	.	36	.	AC=0;AF=0.00;AN=2;DP=44;MQ=4.90;MQ0=42	GT:DP:GQ:PL:A:C:G:T:IR	0/0:44:6.01:0,6,55:0,0:0,0:0,0:25,19:0
+22	16050854	.	T	.	36	.	AC=0;AF=0.00;AN=2;DP=44;MQ=4.90;MQ0=42	GT:DP:GQ:PL:A:C:G:T:IR	0/0:44:6.01:0,6,55:0,0:0,0:0,0:25,19:0
+22	16050855	.	G	.	36	.	AC=0;AF=0.00;AN=2;DP=42;MQ=5.02;MQ0=40	GT:DP:GQ:PL:A:C:G:T:IR	0/0:42:6.01:0,6,55:0,0:0,0:24,18:0,0:0
+22	16050856	.	G	.	36	.	AC=0;AF=0.00;AN=2;DP=40;MQ=5.14;MQ0=38	GT:DP:GQ:PL:A:C:G:T:IR	0/0:40:6.01:0,6,55:0,0:0,0:22,18:0,0:0
+22	16050857	.	C	.	36	.	AC=0;AF=0.00;AN=2;DP=39;MQ=5.21;MQ0=37	GT:DP:GQ:PL:A:C:G:T:IR	0/0:39:6.01:0,6,55:0,0:22,17:0,0:0,0:0
+22	16050858	.	C	.	36	.	AC=0;AF=0.00;AN=2;DP=39;MQ=5.21;MQ0=37	GT:DP:GQ:PL:A:C:G:T:IR	0/0:39:6.01:0,6,55:0,0:22,17:0,0:0,0:0
+22	16050859	.	C	.	36	.	AC=0;AF=0.00;AN=2;DP=38;MQ=5.28;MQ0=36	GT:DP:GQ:PL:A:C:G:T:IR	0/0:38:6.01:0,6,55:0,0:22,16:0,0:0,0:0
+22	16050860	.	C	.	36	.	AC=0;AF=0.00;AN=2;DP=38;MQ=5.28;MQ0=36	GT:DP:GQ:PL:A:C:G:T:IR	0/0:38:6.01:0,6,55:0,0:22,16:0,0:0,0:0
+22	16050861	.	T	.	36	.	AC=0;AF=0.00;AN=2;DP=39;MQ=5.21;MQ0=37	GT:DP:GQ:PL:A:C:G:T:IR	0/0:39:6.01:0,6,55:0,0:0,0:0,0:23,16:0
+22	16050862	.	T	.	36	.	AC=0;AF=0.00;AN=2;DP=40;MQ=5.14;MQ0=38	GT:DP:GQ:PL:A:C:G:T:IR	0/0:40:6.01:0,6,55:0,0:0,0:0,0:23,17:0
+22	16050863	.	G	.	36	.	AC=0;AF=0.00;AN=2;DP=40;MQ=5.14;MQ0=38	GT:DP:GQ:PL:A:C:G:T:IR	0/0:40:6.01:0,6,55:0,0:0,0:23,17:0,0:0
+22	16050864	.	T	.	36	.	AC=0;AF=0.00;AN=2;DP=46;MQ=4.80;MQ0=44	GT:DP:GQ:PL:A:C:G:T:IR	0/0:46:6.01:0,6,55:0,0:0,0:0,0:27,19:0
+22	16050865	.	C	.	36	.	AC=0;AF=0.00;AN=2;DP=45;MQ=4.85;MQ0=43	GT:DP:GQ:PL:A:C:G:T:IR	0/0:45:6.01:0,6,55:0,0:26,19:0,0:0,0:0
+22	16050866	.	A	.	36	.	AC=0;AF=0.00;AN=2;DP=45;MQ=4.85;MQ0=43	GT:DP:GQ:PL:A:C:G:T:IR	0/0:45:6.01:0,6,55:26,19:0,0:0,0:0,0:0
+22	16050867	.	C	.	36	.	AC=0;AF=0.00;AN=2;DP=44;MQ=4.90;MQ0=42	GT:DP:GQ:PL:A:C:G:T:IR	0/0:44:6.01:0,6,55:0,0:25,19:0,0:0,0:0
+22	16050868	.	C	.	36	.	AC=0;AF=0.00;AN=2;DP=45;MQ=4.85;MQ0=43	GT:DP:GQ:PL:A:C:G:T:IR	0/0:45:6.01:0,6,55:0,0:26,19:0,0:0,0:0
+22	16050869	.	C	.	36	.	AC=0;AF=0.00;AN=2;DP=48;MQ=4.69;MQ0=46	GT:DP:GQ:PL:A:C:G:T:IR	0/0:48:6.01:0,6,55:0,0:28,20:0,0:0,0:0
+22	16050870	.	A	.	36	.	AC=0;AF=0.00;AN=2;DP=48;MQ=4.69;MQ0=46	GT:DP:GQ:PL:A:C:G:T:IR	0/0:48:6.01:0,6,55:28,20:0,0:0,0:0,0:0
+22	16050871	.	G	.	36	.	AC=0;AF=0.00;AN=2;DP=47;MQ=4.74;MQ0=45	GT:DP:GQ:PL:A:C:G:T:IR	0/0:47:6.01:0,6,55:0,0:0,0:27,20:0,0:0
+22	16050872	.	G	.	36	.	AC=0;AF=0.00;AN=2;DP=46;MQ=4.80;MQ0=44	GT:DP:GQ:PL:A:C:G:T:IR	0/0:46:6.01:0,6,55:0,0:0,0:26,20:0,0:0
+22	16050873	.	G	.	36	.	AC=0;AF=0.00;AN=2;DP=47;MQ=4.74;MQ0=45	GT:DP:GQ:PL:A:C:G:T:IR	0/0:47:6.01:0,6,55:0,0:0,0:28,19:0,0:0
+22	16050874	.	G	.	36	.	AC=0;AF=0.00;AN=2;DP=49;MQ=4.65;MQ0=47	GT:DP:GQ:PL:A:C:G:T:IR	0/0:49:6.01:0,6,55:0,0:0,0:30,19:0,0:0
+22	16050875	.	C	.	36	.	AC=0;AF=0.00;AN=2;DP=50;MQ=4.60;MQ0=48	GT:DP:GQ:PL:A:C:G:T:IR	0/0:50:6.01:0,6,55:0,0:32,18:0,0:0,0:0
+22	16050876	.	A	.	36	.	AC=0;AF=0.00;AN=2;DP=52;MQ=4.51;MQ0=50	GT:DP:GQ:PL:A:C:G:T:IR	0/0:52:6.01:0,6,55:34,18:0,0:0,0:0,0:0
+22	16050877	.	C	.	36	.	AC=0;AF=0.00;AN=2;DP=53;MQ=4.47;MQ0=51	GT:DP:GQ:PL:A:C:G:T:IR	0/0:53:6.01:0,6,55:0,0:35,18:0,0:0,0:0
+22	16050878	.	A	.	36	.	AC=0;AF=0.00;AN=2;DP=54;MQ=4.43;MQ0=52	GT:DP:GQ:PL:A:C:G:T:IR	0/0:54:6.01:0,6,55:36,18:0,0:0,0:0,0:0
+22	16050879	.	T	.	36	.	AC=0;AF=0.00;AN=2;DP=53;MQ=4.47;MQ0=51	GT:DP:GQ:PL:A:C:G:T:IR	0/0:53:6.01:0,6,55:0,0:0,0:0,0:35,18:0
+22	16050880	.	T	.	36	.	AC=0;AF=0.00;AN=2;DP=54;MQ=4.43;MQ0=52	GT:DP:GQ:PL:A:C:G:T:IR	0/0:54:6.01:0,6,55:0,0:0,0:0,0:36,18:0
+22	16050881	.	T	.	39	.	AC=0;AF=0.00;AN=2;DP=56;MQ=5.32;MQ0=53	GT:DP:GQ:PL:A:C:G:T:IR	0/0:56:9.01:0,9,83:0,0:0,0:0,0:37,18:0
+22	16050882	.	C	.	17.40	LowQual	AC=0;AF=0.00;AN=2;DP=56;MQ=5.32;MQ0=53	GT:DP:GQ:PL:A:C:G:T:IR	0/0:56:0.23:13,0,46:0,0:38,17:0,0:0,0:0
+22	16050883	.	A	.	36	.	AC=0;AF=0.00;AN=2;DP=57;MQ=5.28;MQ0=54	GT:DP:GQ:PL:A:C:G:T:IR	0/0:57:6.01:0,6,55:39,17:0,0:0,0:0,0:0
+22	16050884	.	G	.	39	.	AC=0;AF=0.00;AN=2;DP=58;MQ=6.04;MQ0=54	GT:DP:GQ:PL:A:C:G:T:IR	0/0:58:9.01:0,9,83:0,0:0,0:40,17:0,0:0
+22	16050885	.	C	.	39	.	AC=0;AF=0.00;AN=2;DP=60;MQ=5.94;MQ0=56	GT:DP:GQ:PL:A:C:G:T:IR	0/0:60:9.01:0,9,83:0,0:42,17:0,0:0,0:0
+22	16050886	.	T	.	15.45	LowQual	AC=0;AF=0.00;AN=2;DP=63;MQ=5.80;MQ0=59	GT:DP:GQ:PL:A:C:G:T:IR	0/0:63:0.15:15,0,71:0,0:0,0:0,0:44,18:0
+22	16050887	.	A	.	16.42	LowQual	AC=0;AF=0.00;AN=2;DP=64;MQ=5.75;MQ0=60	GT:DP:GQ:PL:A:C:G:T:IR	0/0:64:0.18:14,0,71:44,19:0,0:0,0:0,0:0
+22	16050888	.	T	.	45.01	.	AC=0;AF=0.00;AN=2;DP=65;MQ=6.38;MQ0=60	GT:DP:GQ:PL:A:C:G:T:IR	0/0:65:15.01:0,15,138:0,0:0,0:0,0:44,20:0
+22	16050889	.	T	.	45.01	.	AC=0;AF=0.00;AN=2;DP=65;MQ=6.38;MQ0=60	GT:DP:GQ:PL:A:C:G:T:IR	0/0:65:15.01:0,15,138:0,0:0,0:0,0:44,20:0
+22	16050890	.	T	.	45.01	.	AC=0;AF=0.00;AN=2;DP=66;MQ=6.33;MQ0=61	GT:DP:GQ:PL:A:C:G:T:IR	0/0:66:15.01:0,15,138:0,0:0,0:0,0:44,21:0
+22	16050891	.	G	.	45.01	.	AC=0;AF=0.00;AN=2;DP=65;MQ=6.38;MQ0=60	GT:DP:GQ:PL:A:C:G:T:IR	0/0:65:15.01:0,15,138:0,0:0,0:44,20:0,0:0
+22	16050892	.	T	.	45.01	.	AC=0;AF=0.00;AN=2;DP=66;MQ=6.33;MQ0=61	GT:DP:GQ:PL:A:C:G:T:IR	0/0:66:15.01:0,15,138:0,0:0,0:0,0:45,20:0
+22	16050893	.	A	.	45.01	.	AC=0;AF=0.00;AN=2;DP=66;MQ=6.33;MQ0=61	GT:DP:GQ:PL:A:C:G:T:IR	0/0:66:15.01:0,15,138:46,19:0,0:0,0:0,0:0
+22	16050894	.	A	.	45.01	.	AC=0;AF=0.00;AN=2;DP=66;MQ=6.33;MQ0=61	GT:DP:GQ:PL:A:C:G:T:IR	0/0:66:15.01:0,15,138:46,19:0,0:0,0:0,0:0
+22	16050895	.	A	.	45.01	.	AC=0;AF=0.00;AN=2;DP=66;MQ=6.33;MQ0=61	GT:DP:GQ:PL:A:C:G:T:IR	0/0:66:15.01:0,15,138:46,19:0,0:0,0:0,0:0
+22	16050896	.	A	.	45.01	.	AC=0;AF=0.00;AN=2;DP=65;MQ=6.38;MQ0=60	GT:DP:GQ:PL:A:C:G:T:IR	0/0:65:15.01:0,15,138:45,19:0,0:0,0:0,0:0
+22	16050897	.	C	.	45	.	AC=0;AF=0.00;AN=2;DP=64;MQ=6.43;MQ0=59	GT:DP:GQ:PL:A:C:G:T:IR	0/0:64:15.01:0,15,135:0,0:44,19:0,0:0,0:0
+22	16050898	.	C	.	48.01	.	AC=0;AF=0.00;AN=2;DP=66;MQ=6.93;MQ0=60	GT:DP:GQ:PL:A:C:G:T:IR	0/0:66:18.02:0,18,166:0,0:46,19:0,0:0,0:0
+22	16050899	.	T	.	48.01	.	AC=0;AF=0.00;AN=2;DP=67;MQ=6.88;MQ0=61	GT:DP:GQ:PL:A:C:G:T:IR	0/0:67:18.02:0,18,166:0,0:0,0:0,0:47,19:1
+22	16050900	.	G	.	51.01	.	AC=0;AF=0.00;AN=2;DP=67;MQ=7.43;MQ0=60	GT:DP:GQ:PL:A:C:G:T:IR	0/0:66:21.02:0,21,194:0,0:0,0:46,19:0,0:0
+22	16050901	.	A	.	48.01	.	AC=0;AF=0.00;AN=2;DP=68;MQ=7.38;MQ0=61	GT:DP:GQ:PL:A:C:G:T:IR	0/0:68:18.02:0,18,166:47,20:0,0:0,0:0,0:0
