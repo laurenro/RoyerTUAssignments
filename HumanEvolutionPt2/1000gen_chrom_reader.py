@@ -1,5 +1,5 @@
 # RoyerTUAssignments
-import allel
+import allel ##ref here: https://scikit-allel.readthedocs.io/en/stable/
 import pandas as pd
 import numpy as np
 
@@ -9,8 +9,8 @@ longvcf = 'C:/Users/laure/Documents/BIOL5131/Week4/ALL.chr22.phase3_shapeit2_mvn
 ### read in pop data
 panel = pd.read_csv('integrated_call_samples_v3.20130502.ALL.panel', sep='\t')
 ### chop it up
-pop_filter = None
-super_pop_filter = 'EUR'
+pop_filter = 'PJL'
+super_pop_filter = 'SAS'
 
 # select the sample names from metadata
 if pop_filter is not None:
@@ -22,7 +22,7 @@ else:
 
 
 ###adding in pop filters
-callset = allel.read_vcf(tmpvcf, fields=['calldata/GT','variants/REF', 'variants/ALT', 'variants/POS'], samples=samples_to_keep)
+callset = allel.read_vcf(longvcf, fields=['calldata/GT','variants/REF', 'variants/ALT', 'variants/POS'], samples=samples_to_keep)
 
 genotypes = allel.GenotypeArray(callset['calldata/GT'])
 alt_alleles = callset['variants/ALT'] ##pull from last week down
